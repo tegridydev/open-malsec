@@ -1,0 +1,951 @@
+[
+    {
+      "id": 1,
+      "instruction": "Analyze this message supposedly from a RuneScape moderator requesting login details.",
+      "input": {
+        "source": "in-game private message (RuneScape)",
+        "sender_username": "ModHelpRS",
+        "message_content": "Hello, this is Jagex staff. Your account has suspicious activity. Please confirm your password to avoid a ban."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Scammer impersonating a Jagex staff member to obtain the player's password in-game.",
+        "indicators": [
+          "Impersonation of official moderator/staff",
+          "Request for password (Jagex staff never ask this)",
+          "Threat of ban to induce fear and compliance",
+          "Private message from an unverified 'Mod' username"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "instruction": "Determine whether this WoW guild recruitment message is genuine or a scam.",
+      "input": {
+        "source": "in-game chat (World of Warcraft)",
+        "guild_name": "LegitGuildInvites",
+        "message_content": "Welcome to our guild raffle! For a limited time, deposit 5,000 gold into the guild bank for a chance at 50,000 gold!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Guild 'raffle' requiring a gold deposit, likely used to scam players with no real payout.",
+        "indicators": [
+          "Unusual deposit for raffle entry",
+          "No verifiable or transparent raffle process",
+          "Excessive 'prize' with no official oversight",
+          "Likely the guild bank is controlled by scammers"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "instruction": "Evaluate this offer of 'instant max level' in Diablo for a small payment via third-party site. Is it safe?",
+      "input": {
+        "source": "forum post (Diablo)",
+        "poster_username": "MaxLevelBooster",
+        "post_content": "Pay $10 on my site, and I’ll boost your character to level cap instantly. Safe method, 100% ban-proof!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Boosting service guaranteeing instant max level in Diablo, likely requiring account sharing or scamming money without delivering.",
+        "indicators": [
+          "Unrealistic or unsupported 'instant' level cap",
+          "Third-party payment, no official mechanism",
+          "Claims 'ban-proof' method (no such guarantee)",
+          "Likely account compromise or money scam"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "instruction": "Analyze this private message about doubling gold in RuneScape. Real or a scam?",
+      "input": {
+        "source": "in-game private message (RuneScape)",
+        "sender_username": "GoldMultipl1er",
+        "message_content": "Send me any amount of GP, and I'll double it right now! I'm quitting and want to give back to the community."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Classic 'doubling money' scam where the victim sends gold expecting it to be returned doubled, which never happens.",
+        "indicators": [
+          "Unsolicited offer to double gold",
+          "Emotional angle: 'I'm quitting the game'",
+          "No mechanism explaining how gold is doubled",
+          "Likely the scammer just keeps the gold"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "instruction": "Decide if this 'Blizzard GM' whisper is real or a scam attempt in World of Warcraft.",
+      "input": {
+        "source": "in-game whisper (WoW)",
+        "sender_username": "BlizzGM-Proof",
+        "message_content": "Greetings, we suspect account compromise. Visit hxxp://battle-net-confirm[.]com to verify your account or face suspension."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Player impersonates a Blizzard GM, linking to a fake Battle.net verification site to steal credentials.",
+        "indicators": [
+          "No official GM tag or in-game alert",
+          "Suspicious external link (battle-net-confirm[.]com)",
+          "Threatens suspension to create urgency",
+          "Blizzard employees do not ask players to visit random third-party domains"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "instruction": "Classify this Diablo 4 item trade link posted in chat. Is it safe or a scam attempt?",
+      "input": {
+        "source": "in-game chat (Diablo 4)",
+        "sender_username": "TraderCentralX",
+        "message_content": "Check out these legendary items: hxxp://d4-rareloots[.]info. Trade your gear, pay in crypto for instant delivery!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "External site requesting out-of-game payment (crypto) for in-game items—common sign of a scam or RMT scheme risking account bans.",
+        "indicators": [
+          "Link to an unofficial website for item trading",
+          "Offers gear for crypto payment (violating TOS)",
+          "High risk of non-delivery or account theft",
+          "Likely phishing or compromised 'marketplace'"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "instruction": "Analyze this Discord post about selling a high-level WoW account cheap. Potential scam or legit sale?",
+      "input": {
+        "source": "Discord server post",
+        "sender_username": "CheapWoWAcc",
+        "message_content": "Selling my 15-year old WoW account with multiple 60+ characters for just $50. DM me for instant deal."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Account sale at an unrealistically low price, likely either stolen or a scam that takes payment without delivering valid credentials.",
+        "indicators": [
+          "Suspiciously low price for a high-value account",
+          "Violates game TOS to buy/sell accounts",
+          "No middleman or secure trade method",
+          "Likely stolen or nonexistent account details"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "instruction": "Evaluate this message about a RuneScape 'item duplication glitch' that requires file download.",
+      "input": {
+        "source": "fan forum post (RuneScape)",
+        "poster_username": "DupeGlitchPro",
+        "post_content": "Download this patch (hxxp://dupepatch-rs[.]exe) and run it while logged in to replicate items infinitely!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Alleged 'item duplication glitch' requiring the user to run an unknown .exe is almost certainly malware.",
+        "indicators": [
+          "Executable download from an untrusted source",
+          "Promises game-breaking glitch (exploits are usually server-side)",
+          "Likely keylogger or trojan to steal account info",
+          "No legitimate reference or proof"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "instruction": "Determine if this 'gold swap' service between WoW and RuneScape is trustworthy.",
+      "input": {
+        "source": "YouTube comment",
+        "comment_content": "Swap your WoW gold for RuneScape GP at the best rate! No fees: hxxp://gold-swap-fast[.]com"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Unregulated cross-game gold swap via third-party site, likely to steal gold from unsuspecting traders.",
+        "indicators": [
+          "Non-official channel bridging two different games",
+          "Zero fees or oversight implies high risk",
+          "Likely never receives the swapped currency",
+          "Possible phishing or account data theft"
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "instruction": "Analyze this in-game whisper asking for 'game card' codes in exchange for Diablo 3 gear.",
+      "input": {
+        "source": "in-game whisper (Diablo 3)",
+        "sender_username": "NeedCardForGear",
+        "message_content": "Send me a $20 Blizzard balance code, and I'll drop you my primal set. Hurry before I log off!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User demands Blizzard balance card code for in-game items, a typical scam method with no guarantee of item delivery.",
+        "indicators": [
+          "Direct request for gift/balance card code",
+          "No official trade system guaranteeing item handover",
+          "Pressure to finalize deal quickly",
+          "Likely to redeem code then vanish"
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "instruction": "Examine this clan recruitment post claiming it can generate 'free membership' in RuneScape.",
+      "input": {
+        "source": "RuneScape clan forum",
+        "poster_username": "FreeMem4Life",
+        "post_content": "Join our clan, and we’ll pay your monthly membership using a glitch. Spots limited!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Group claims to exploit a glitch to pay membership, which is highly unlikely and likely a ploy to gather personal or account info.",
+        "indicators": [
+          "Promises free membership via a 'glitch'",
+          "No official method or evidence provided",
+          "Likely a front to get clan invites or personal info",
+          "Scam targeting players seeking free membership"
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "instruction": "Identify if this 'GM event' invitation in WoW is a legitimate Blizzard event or a scam.",
+      "input": {
+        "source": "in-game general chat (WoW)",
+        "sender_username": "EventMasterBlizz",
+        "message_content": "Teleporting all participants to GM Island for a surprise. Type /script Teleport('GMIsland') now to join!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake 'GM Island' event tricking players into running suspicious scripts or commands that may compromise their account.",
+        "indicators": [
+          "Claimed 'GM Island' event not announced officially",
+          "In-game scripts provided by random user",
+          "No real command to legit teleport to GM areas",
+          "Exploit or phishing attempt via script injection"
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "instruction": "Determine if this Diablo 4 'duplication glitch' post is safe or a potential scam or malware risk.",
+      "input": {
+        "source": "Reddit post (r/Diablo)",
+        "poster_username": "LootGuru",
+        "post_content": "Check this video tutorial (hxxp://diablo4-dupe-vid[.]mp4.exe) for infinite item duplication!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Executable disguised as a video tutorial, highly likely to be malware posing as an exploit method.",
+        "indicators": [
+          "File extension .mp4.exe reveals possible hidden .exe",
+          "Promises game-breaking duplication exploit",
+          "Hosted on suspicious domain or link shorteners",
+          "No actual proof or safe demonstration"
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "instruction": "Evaluate this private chat about a 'magic trick' in RuneScape to turn items into more valuable ones.",
+      "input": {
+        "source": "in-game private message (RuneScape)",
+        "sender_username": "MagicTrader007",
+        "message_content": "Trade me your Rune items, and I'll convert them to Dragon items using a special P2P method. 100% success!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User claims they can 'upgrade' items for free, a well-known trade scam to trick the victim into parting with gear.",
+        "indicators": [
+          "Unfounded claim of item transformation",
+          "No legitimate in-game mechanic matches this",
+          "Requires handing over valuable items",
+          "Victim likely never sees upgraded items"
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "instruction": "Analyze this external website for 'WoW TBC Classic gold' that offers half price. Is it legit or a scam?",
+      "input": {
+        "source": "Google Ad",
+        "ad_content": "Buy TBC Classic Gold at 50% off: hxxp://cheap-wow-gold[.]online. No account details needed, instant delivery!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Suspicious gold-selling site offering unrealistic discounts, commonly used to steal credit card info or deliver no gold.",
+        "indicators": [
+          "Unlicensed gold-selling violating TOS",
+          "Very cheap rate implies potential fraud",
+          "Likely to request payment details with no guarantee of gold",
+          "Possible identity theft or payment scam"
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "instruction": "Decide if this 'e-sports guild' in Diablo 3 that demands a deposit for 'entry trials' is legitimate.",
+      "input": {
+        "source": "Fan forum (Diablo 3)",
+        "poster_username": "ProGuildLead",
+        "post_content": "Join our pro e-sports guild. Deposit 10 million gold to prove commitment. Refunded if you pass the trial."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "High deposit requirement with no official e-sports affiliation, likely a setup to steal gold with no real 'trial.'",
+        "indicators": [
+          "Deposit required for 'trial' membership",
+          "No recognized e-sports or tournament references",
+          "Promise of refund with no mechanism or proof",
+          "Potential gold theft with no recourse"
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "instruction": "Check if this RuneScape friend request offering 'bond giveaways' is suspicious.",
+      "input": {
+        "source": "in-game friend request (RuneScape)",
+        "sender_username": "FreeBond4U",
+        "message_content": "Add me for a chance to claim a free bond. I just need to verify your account info first!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake friend request claiming free bonds but requiring 'account verification,' a known phishing or account theft attempt.",
+        "indicators": [
+          "Unsolicited bond giveaway request",
+          "Asking for private account info",
+          "No official Jagex-sanctioned promotion",
+          "Likely just a trick to gain account control"
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "instruction": "Evaluate if this Diablo 4 'freelance leveling service' on Fiverr is legitimate or a scam.",
+      "input": {
+        "source": "Fiverr listing",
+        "username": "D4BoostExpert",
+        "description": "I will log into your Diablo 4 account and level your character to 70 within 12 hours. 100% safe!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Leveling service requiring full account access. Often leads to account theft or TOS violation bans.",
+        "indicators": [
+          "Requires personal login credentials",
+          "Promises unrealistic speed (12 hours to 70)",
+          "Potentially violates Terms of Service",
+          "High risk of account hijack or later ban"
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "instruction": "Identify if this in-game WoW mail about a 'tax' to remain in a capital city is real or a scam.",
+      "input": {
+        "source": "in-game mail (WoW)",
+        "sender_username": "CityTaxCollector",
+        "mail_content": "Pay 1,000 gold to stay in Stormwind. If you ignore this, your account is flagged for removal."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake in-game mail threatening removal unless a 'tax' is paid to a player-run mailbox. Blizzard does not levy city taxes.",
+        "indicators": [
+          "No official Blizzard mailing (strange sender name)",
+          "Bogus claim of city tax or account removal",
+          "Demands direct payment of gold to a player or alt",
+          "No official system for city 'tax' in WoW"
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "instruction": "Analyze this private message offering 'rare Diablo cosmetics' via a code redeem link. Safe or scam?",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "CosmeticGiveaway#666",
+        "message_content": "Redeem your free Diablo 4 mount now: hxxp://diablo-free-code[.]link. Limited to first 100 clicks!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing link disguised as a free cosmetic redemption, likely aiming to collect Blizzard account credentials.",
+        "indicators": [
+          "Unsolicited free cosmetic offer",
+          "Suspicious link not matching official Blizzard domain",
+          "Urgent 'first 100 clicks' tactic",
+          "Potential credential-harvesting or account hijack"
+        ]
+      }
+    },
+    {
+      "id": 21,
+      "instruction": "Assess if this 'PvP carry service' in WoW requiring gold upfront is legitimate or a potential rip-off.",
+      "input": {
+        "source": "trade chat (WoW)",
+        "sender_username": "Carry4Gold",
+        "message_content": "We’ll boost your arena rating to 2400 for 100k gold paid in advance. Guaranteed or no refund!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "High-rated PvP carry for a large upfront gold payment with no legitimate escrow or partial payment method—high scam risk.",
+        "indicators": [
+          "Upfront full payment without a safe middleman",
+          "Over-promised rating guarantee",
+          "No mention of partial or milestone-based payments",
+          "Likely the group vanishes after receiving gold"
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "instruction": "Determine if this Diablo 3 'trading post' website is a safe place to swap legendary items.",
+      "input": {
+        "source": "Google search result",
+        "url": "hxxp://d3-trade-portal[.]biz",
+        "page_content": "Trade your legendary items safely. Just enter your Battle.net login for instant item listing!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Site requiring direct Battle.net login for 'item listing,' a strong indication of phishing or account compromise.",
+        "indicators": [
+          "Requests login credentials outside official Blizzard site",
+          "Claims a 'safe' third-party listing with no official backing",
+          "Likely a phishing interface capturing login data",
+          "No secure, known trade system for Diablo 3 items"
+        ]
+      }
+    },
+    {
+      "id": 23,
+      "instruction": "Check if an in-game WoW text about a charity mount sale via direct trades is genuine or a con.",
+      "input": {
+        "source": "in-game trade chat (WoW)",
+        "sender_username": "MountForCharity",
+        "message_content": "I have a special charity mount code from Blizzard. Trade me 200k gold, and I'll give you the code."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Alleged 'charity mount code' sold for gold, no official backing. Likely a worthless or invalid code.",
+        "indicators": [
+          "No official Blizzard charity mention or link",
+          "Large gold requirement for an external code",
+          "No secure method to verify code authenticity",
+          "Mount codes typically redeemed on official store or site"
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "instruction": "Evaluate this RuneScape forum thread about joining an exclusive 'mod testing group.' Real or scam?",
+      "input": {
+        "source": "official-sounding forum (but suspicious)",
+        "poster_username": "JModTester",
+        "post_content": "Participate in testing new Jagex content. Provide your account login + bank PIN to gain mod privileges temporarily."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake 'mod testing' recruitment asking for full account details, including bank PIN—guaranteed account theft attempt.",
+        "indicators": [
+          "Promise of mod privileges (not how Jagex recruits testers)",
+          "Asks for account login + bank PIN",
+          "Unauthorized method to 'test content'",
+          "Likely a direct hack of user’s account"
+        ]
+      }
+    },
+    {
+      "id": 25,
+      "instruction": "Analyze this Diablo-themed email about an 'official patch' to fix lag issues. Safe or malicious?",
+      "input": {
+        "source": "email",
+        "sender_email": "support@diablo-patch[.]com",
+        "subject": "Urgent Diablo Lag Fix - Official Patch",
+        "body": "Download the patch here: hxxp://diablo-patch[.]com/fix.exe"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake 'official patch' .exe from an unaffiliated domain, very likely malware or keylogger.",
+        "indicators": [
+          "Unofficial domain not from blizzard.com or battle.net",
+          "Executable file (fix.exe) emailed unsolicited",
+          "No official patch instructions from Blizzard",
+          "Likely Trojan or account data stealer"
+        ]
+      }
+    },
+    {
+      "id": 26,
+      "instruction": "Decide if a promise to 'merge two WoW accounts' for extra character slots is valid or a scam.",
+      "input": {
+        "source": "in-game WoW whisper",
+        "sender_username": "MergeMasterPro",
+        "message_content": "I can merge your alt account with your main for more character slots! Need your logins to do it."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "No official method to merge accounts by a random player. They’re requesting login data to hijack both accounts.",
+        "indicators": [
+          "Asks for credentials of both accounts",
+          "Claim of extra character slots not recognized by Blizzard policy",
+          "Likely an account theft operation",
+          "No official in-game or support channel involved"
+        ]
+      }
+    },
+    {
+      "id": 27,
+      "instruction": "Identify if this advertisement for 'RuneScape PK boosting' for real money is safe or a scam.",
+      "input": {
+        "source": "Facebook Gaming group",
+        "poster_username": "PKBoostGuru",
+        "post_content": "I will guarantee 10 kills per hour in PK for $5. Just share your account or let me remote into it!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User demands account sharing or remote access, clearly risky. Likely leads to item/gold theft or ban for real-money trading.",
+        "indicators": [
+          "Requires direct account sharing or remote control",
+          "Violates game’s Terms of Service on real-money deals",
+          "Unverifiable guarantee of kills",
+          "High potential for account compromise"
+        ]
+      }
+    },
+    {
+      "id": 28,
+      "instruction": "Evaluate if this direct message about a 'WoW Arena tournament entry' is legitimate or a con.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "ArenaOfficial#2222",
+        "message_content": "Pay 50k gold to register for the official Blizzard Arena Cup. Hurry, bracket spots are limited!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake 'official' tournament demanding in-game gold as a registration fee, likely pocketing the gold with no real event.",
+        "indicators": [
+          "No official Blizzard event references or website",
+          "In-game gold registration fee is unusual for official tournaments",
+          "Pressuring FOMO approach (limited spots)",
+          "Likely a player-run scam with no real bracket"
+        ]
+      }
+    },
+    {
+      "id": 29,
+      "instruction": "Check if a 'guaranteed boss drop run' for Diablo 4 requiring real currency upfront is a scam or legit.",
+      "input": {
+        "source": "community forum (Diablo 4)",
+        "poster_username": "BossRunSeller",
+        "post_content": "Pay me $20 via PayPal, I'll carry you in the next World Boss kill for guaranteed legendary drops."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Charging real money for a carry with 'guaranteed' legendary is suspicious and not officially recognized—likely a scam without recourse.",
+        "indicators": [
+          "Real money transaction for a chance-based drop",
+          "Unfounded guarantee about random drop mechanics",
+          "No official third-party escrow or verification",
+          "Likely no service provided after payment"
+        ]
+      }
+    },
+    {
+      "id": 30,
+      "instruction": "Analyze if a 'boost your clan rank' advertisement in RuneScape is a legitimate service or a trick.",
+      "input": {
+        "source": "in-game clan chat (RuneScape)",
+        "sender_username": "RankBoosterVIP",
+        "message_content": "Pay 3 bonds, and I'll talk to the clan owner to make you a general. I've done it for others!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Offers clan rank for bonds or real currency with no official mechanism—likely a scam with no actual clan authority.",
+        "indicators": [
+          "Promises rank that typically only clan leadership can grant",
+          "Demands in-game currency or items upfront",
+          "Claim of special influence not verifiable",
+          "Likely keeps the bonds without fulfilling the rank"
+        ]
+      }
+    },
+    {
+      "id": 31,
+      "instruction": "Assess if this Kickstarter-like campaign for a 'WoW private server' is legitimate or not.",
+      "input": {
+        "source": "Crowdfunding site",
+        "project_title": "WoW: Nostalgia Private Server",
+        "description": "We need $10,000 to launch our private server. Your donation gets you VIP gear and GM commands!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Project aims to create an unauthorized private server, offering 'GM commands' for donors—likely to vanish or break Blizzard rules.",
+        "indicators": [
+          "Violation of Blizzard's TOS (private servers)",
+          "Promises GM-level privileges for money",
+          "Crowdfunding with no transparent progress or licensing",
+          "High chance of a 'cash grab' never delivered"
+        ]
+      }
+    },
+    {
+      "id": 32,
+      "instruction": "Identify if this 'Diablo 4 clan synergy' requiring a sponsor fee is suspicious.",
+      "input": {
+        "source": "in-game chat (Diablo 4)",
+        "sender_username": "ClanMasterUSA",
+        "message_content": "Our clan offers synergy runs and weekly legendary gifts. Just pay a 1M gold sponsor fee to join!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Clan demands high sponsor fee for promised 'weekly legendary gifts,' which are not guaranteed by the game’s loot system.",
+        "indicators": [
+          "Upfront large gold requirement for membership",
+          "Claims of guaranteed legendary items (random drops in Diablo 4)",
+          "No transparent breakdown of how 'gifts' are provided",
+          "Likely a gold grab with no real benefit"
+        ]
+      }
+    },
+    {
+      "id": 33,
+      "instruction": "Evaluate this message offering a direct item trade from Diablo 2 to Diablo 4. Could it be a scam?",
+      "input": {
+        "source": "Discord server message",
+        "sender_username": "CrossGameTrader#0011",
+        "message_content": "I can convert your Diablo 2 runes into Diablo 4 gold. 100% legit. Just send me your account details so I can do the swap."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "No official cross-game item trading. Asking for account details to 'swap' is a clear attempt to compromise the account.",
+        "indicators": [
+          "Claiming cross-franchise item transfer (not a real feature)",
+          "Needs full login to complete transaction",
+          "Likely an account theft approach",
+          "Preys on players seeking easy resource transfers"
+        ]
+      }
+    },
+    {
+      "id": 34,
+      "instruction": "Analyze if this WoW gold giveaway for following a Twitch channel is a legitimate promotion.",
+      "input": {
+        "source": "Twitch chat",
+        "channel_name": "StreamerX",
+        "chat_message": "Follow now and whisper your Blizzard login details to claim 5,000 gold. Hurry, only for first 50 followers!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Streamer or impersonator requesting Blizzard login details for a 'gold giveaway,' strongly indicative of a phishing scam.",
+        "indicators": [
+          "Request for sensitive login info as part of a 'giveaway'",
+          "Unusual to require login details to deliver in-game gold",
+          "No official Blizzard or Twitch procedure",
+          "Likely channel impersonator or compromised account"
+        ]
+      }
+    },
+    {
+      "id": 35,
+      "instruction": "Determine if this RuneScape house party claiming free construction training is real or a trap.",
+      "input": {
+        "source": "in-game friend chat (RuneScape)",
+        "sender_username": "PartyHost99",
+        "message_content": "Come to my house for free Construction exp! Just pay 1M GP for 'entry fee'—we’ll skill together!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Claims free Construction XP but requires a large 'entry fee.' Likely no actual training or benefit, just gold theft.",
+        "indicators": [
+          "Requires upfront 'entry fee' with no explanation",
+          "Promises 'free XP' but charges 1M GP ironically",
+          "Likely never repays or provides real benefit",
+          "Common scamming tactic disguised as a party or drop event"
+        ]
+      }
+    },
+    {
+      "id": 36,
+      "instruction": "Check if this Diablo 3 ladder rank boosting offer with remote desktop login is legitimate.",
+      "input": {
+        "source": "gaming forum post (Diablo 3)",
+        "poster_username": "LadderChampion",
+        "post_content": "I’ll get you top 10 on the ladder! Let me remote into your PC and run rifts for you. Payment via PayPal friends & family only."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User demands remote PC access and a non-refundable payment method—very risky and likely a con or account theft method.",
+        "indicators": [
+          "Remote desktop access to victim’s computer",
+          "Payment method is 'friends & family' (no buyer protection)",
+          "Unverifiable claim of top 10 ladder rank",
+          "High chance of theft or scam"
+        ]
+      }
+    },
+    {
+      "id": 37,
+      "instruction": "Analyze if this WoW in-game community event link is actually a phishing site.",
+      "input": {
+        "source": "in-game chat (WoW)",
+        "sender_username": "CommunityEventLead",
+        "message_content": "Register for the official WoW Community Day: hxxp://wow-event-community[.]io. Free mount for all sign-ups!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "External link offering a free mount for 'community day'—Blizzard events are typically on official domains.",
+        "indicators": [
+          "Fake domain (wow-event-community[.]io)",
+          "No mention on official Blizzard channels",
+          "Promised mount for sign-ups (rare or exclusive items not given this way)",
+          "Likely phishing or data collection"
+        ]
+      }
+    },
+    {
+      "id": 38,
+      "instruction": "Evaluate if this new Diablo 4 clan's request for 'ID or passport photo for clan verification' is normal or suspicious.",
+      "input": {
+        "source": "Discord server message",
+        "sender_username": "D4ClanMaster#0101",
+        "message_content": "To join, send ID photo so we can confirm you're not a troll. We keep it on file for security."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Outrageous demand for real-life ID documents to join a gaming clan, likely an identity theft tactic.",
+        "indicators": [
+          "No legitimate reason to collect personal ID for a clan",
+          "Potential identity or personal data theft attempt",
+          "Red flag to 'keep it on file' with no official capacity",
+          "Gross invasion of privacy well beyond typical clan requirements"
+        ]
+      }
+    },
+    {
+      "id": 39,
+      "instruction": "Check this RuneScape forum exchange about 'selling large clan treasury' for PayPal. Safe or scam?",
+      "input": {
+        "source": "unofficial trading forum",
+        "poster_username": "ClanTreasureSale",
+        "post_content": "Our clan is quitting; we have 1 billion GP in treasury. Sell for PayPal $500. You go first—trusted seller!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Massive GP sale with questionable 'trust me' approach, demanding buyer to pay first—commonly a sign of no delivery scam.",
+        "indicators": [
+          "Huge gold amount for below market rate",
+          "No middleman or escrow recommended",
+          "Insists buyer go first on a random forum",
+          "Likely never delivers gold after receiving money"
+        ]
+      }
+    },
+    {
+      "id": 40,
+      "instruction": "Determine if this in-game Diablo 2 Resurrected message about 'upgrade your items' is a hack attempt.",
+      "input": {
+        "source": "in-game chat (Diablo 2R)",
+        "sender_username": "ItemUpgrader",
+        "message_content": "Give me your runeword gear, I'll recast it with a new hidden rune to double stats. 100% legit secret!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Player claims they can add a hidden rune to double item stats, an impossible game mechanic. Scam to steal gear.",
+        "indicators": [
+          "False claim of hidden or special runes not recognized in official game data",
+          "Requests transfer of valuable gear with no guarantee of return",
+          "No legitimate ‘double stats’ system in Diablo 2",
+          "Likely runs off with the items"
+        ]
+      }
+    },
+    {
+      "id": 41,
+      "instruction": "Analyze a WoW trade channel advertisement for 'legacy mount codes' at half price. Possible scam?",
+      "input": {
+        "source": "in-game trade chat (WoW)",
+        "sender_username": "MountSellerX",
+        "message_content": "Get TCG legacy mounts for half price. Pay gold or PayPal, message me now. Guaranteed working codes!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Offers TCG mount codes at a fraction of their usual price, likely invalid or already redeemed codes, scamming players out of gold or cash.",
+        "indicators": [
+          "High-value TCG items at suspiciously low cost",
+          "Payment outside official Blizzard store or TCG redemption",
+          "No safe trade method (like guaranteed AH item or official marketplace)",
+          "Common code resale scam"
+        ]
+      }
+    },
+    {
+      "id": 42,
+      "instruction": "Evaluate if a 'Diablo Immortal top clan membership' requiring personal info is legitimate or risky.",
+      "input": {
+        "source": "Reddit post (r/DiabloImmortal)",
+        "poster_username": "TopClanRecruit",
+        "post_content": "Join the #1 clan. Fill out this Google Form with your real name, phone number, and Blizz login. We do thorough checks!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Clan recruitment form asking for unnecessary personal data (real name, phone, login) is highly suspect for phishing.",
+        "indicators": [
+          "Excessive personal data requested",
+          "No official or third-party verification needed for clan membership typically",
+          "Possible identity and account theft attempt",
+          "No legitimate reason to gather real name or phone"
+        ]
+      }
+    },
+    {
+      "id": 43,
+      "instruction": "Decide if this direct message about a 'RuneScape account recovery service' is legitimate or a scam.",
+      "input": {
+        "source": "in-game private message (RuneScape)",
+        "sender_username": "RecoveryExpertRS",
+        "message_content": "Struggling to recover your old RS account? I can do it for you. Just share your email and previous passwords with me!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User offers 'recovery service' but demands all account recovery details, enabling them to hijack the account instead.",
+        "indicators": [
+          "Asks for old passwords and email (full recovery details)",
+          "No official Jagex partnership or user support credentials",
+          "Likely to permanently claim the account after obtaining info",
+          "Exploitative tactic targeting players with lost accounts"
+        ]
+      }
+    },
+    {
+      "id": 44,
+      "instruction": "Analyze if this 'secret Discord code' can unlock Diablo 4 expansions for free. Real or scammy?",
+      "input": {
+        "source": "Discord server message",
+        "sender_username": "Expansion4Free#4455",
+        "message_content": "Enter code FREED4EXP at hxxp://blizz-claim[.]info to get expansions added automatically. 1 day only!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake code to 'unlock expansions' on a suspicious site. Likely phishing for Battle.net credentials or payment info.",
+        "indicators": [
+          "Promises free expansions outside official channels",
+          "Dubious domain (blizz-claim[.]info)",
+          "Sense of urgency with a 1-day limit",
+          "Could harvest login credentials or personal data"
+        ]
+      }
+    },
+    {
+      "id": 45,
+      "instruction": "Check if this WoW 'recruit a friend' link from an unknown user is safe or a phishing link.",
+      "input": {
+        "source": "email",
+        "sender_email": "raf@wowconnect[.]com",
+        "subject": "Join me in World of Warcraft, get a free month!",
+        "body": "Click here: hxxp://wowconnect[.]com/raf-offer. Enter your Blizzard login to claim your free month."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake recruit-a-friend link requesting direct Blizzard login info on a non-official website, typical phishing method.",
+        "indicators": [
+          "Domain does not match official WoW or Blizzard sites",
+          "Email from unknown user referencing free month",
+          "Asks for login credentials outside battle.net",
+          "Classic phish exploiting recruit-a-friend system"
+        ]
+      }
+    },
+    {
+      "id": 46,
+      "instruction": "Identify if this RuneScape message about a 'PP reward' (player moderator) is real or a con.",
+      "input": {
+        "source": "in-game system message (spoofed)",
+        "message_content": "Congrats, you’ve been selected as a Player Moderator. Visit hxxp://runescape-mod-confirm[.]site to finalize!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Spoofed system message awarding player mod status, redirecting to an external site for credentials.",
+        "indicators": [
+          "Jagex does not send in-game system messages with third-party links",
+          "Fake mod invitation with no official Jagex domain",
+          "Likely credentials or personal data theft attempt",
+          "Exploits desire for mod privileges"
+        ]
+      }
+    },
+    {
+      "id": 47,
+      "instruction": "Analyze this whisper in Diablo 4 about a 'clan bank' deposit for future item draws. Is it safe?",
+      "input": {
+        "source": "in-game Diablo 4 whisper",
+        "sender_username": "ClanTreasurer",
+        "message_content": "Deposit 500k gold into the clan bank for random legendary draws. The more you deposit, the better your odds!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Unverified 'clan bank' deposit system for random legendaries. No official Diablo 4 clan bank mechanic, likely gold theft.",
+        "indicators": [
+          "No official in-game clan bank feature with random draws",
+          "Encourages higher deposits for better odds",
+          "No legitimate method to convert gold to guaranteed items",
+          "Likely pure scam collecting gold"
+        ]
+      }
+    },
+    {
+      "id": 48,
+      "instruction": "Examine if this announcement about a 'WoW cross-faction cross-server gold transfer' is a scam.",
+      "input": {
+        "source": "in-game trade chat (WoW)",
+        "sender_username": "XRealmGold",
+        "message_content": "Send me your gold on Alliance, I’ll return it on Horde same server. I only charge a small handling fee."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Player claims to handle cross-faction gold transfer with no official mechanism, likely to keep the gold without returning anything.",
+        "indicators": [
+          "No official cross-faction gold exchange (aside from specific methods on neutral AH, etc.)",
+          "Requires trusting a random player with your gold",
+          "Possible partial up-front fee or entire gold stolen",
+          "Scam exploiting cross-faction trade confusion"
+        ]
+      }
+    },
+    {
+      "id": 49,
+      "instruction": "Decide if this website offering 'instant Diablo 2 ladder resets' is legitimate or not.",
+      "input": {
+        "source": "Google Ad",
+        "url": "hxxp://ladder-reset-quick[.]net",
+        "ad_text": "Get your account reset to fresh ladder instantly. Just provide your account info!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake ladder reset service demanding account info. Official ladder resets occur server-side by Blizzard, not third-party sites.",
+        "indicators": [
+          "No external mechanism can reset Blizzard’s ladder",
+          "Requests full login credentials to 'reset' the account",
+          "Likely to steal the user’s Diablo 2 credentials",
+          "Exploits players wanting a fresh start"
+        ]
+      }
+    },
+    {
+      "id": 50,
+      "instruction": "Evaluate if this new 'RuneScape skill trainer script' requiring direct injection is safe or a cheat scam.",
+      "input": {
+        "source": "botting forum post",
+        "poster_username": "SkillBotMaster",
+        "post_content": "Inject this .dll into your RuneScape client for 99 in all skills within a week. Zero ban risk!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Unverified .dll injection cheat likely containing malware or keyloggers, plus guaranteed ban risk if used.",
+        "indicators": [
+          "DLL injection approach with no credible developer",
+          "Promise of 'zero ban risk' is untrue",
+          "High likelihood of account compromise or infostealer",
+          "Cheating typically violates TOS, risking bans"
+        ]
+      }
+    }
+  ]

@@ -1,0 +1,955 @@
+[
+    {
+      "id": 1,
+      "instruction": "Evaluate this Telegram post promoting a brand-new DeFi meme token. Identify if it's a scam.",
+      "input": {
+        "source": "Telegram",
+        "channel_name": "MemeCoinPromotions",
+        "message_content": "Join our new token launch, FluffyInu! 100x potential within days. Liquidity locked for 24 hours only! Hurry before it’s too late: hxxp://fluffyinu[.]finance"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Suspicious DeFi meme token promotion promising quick 100x returns with only a short liquidity lock.",
+        "indicators": [
+          "Unrealistic profit claims (100x in days)",
+          "Very short liquidity lock period",
+          "Telegram marketing without reputable audit",
+          "Likely rug-pull or honeypot scenario"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "instruction": "Analyze this tweet about a new dog-themed crypto token. Determine scam indicators if any.",
+      "input": {
+        "source": "Twitter",
+        "handle": "@DogLoverCrypto",
+        "tweet_content": "DOGGIEINU just launched! Invest now for instant 500% gains. Dev is ex-Binance staff. #memecrypto #moonshot"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Tweet claims insider connections and extreme gains for a newly launched dog-themed token.",
+        "indicators": [
+          "Overblown profit claims (500% 'instant')",
+          "False or unverifiable dev background",
+          "Hype-based marketing with no substance",
+          "No legitimate documentation or audit link"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "instruction": "Determine whether this Discord announcement about a farm-staking DeFi token is reliable.",
+      "input": {
+        "source": "Discord",
+        "server_name": "CryptoYieldFarmers",
+        "announcement": "New token, FrogFi, offers 1,000% APY. No rug risk. Stake now with zero fees: hxxp://frogfi[.]farm"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "High-APY DeFi token with zero fees and no disclaimers—common lure for yield-farming rug pulls.",
+        "indicators": [
+          "Extremely high APY (1,000%) with no explanation",
+          "Claims 'no rug risk' yet no verifiable proof",
+          "Lack of contract audit or transparency",
+          "Likely a farming scam or rug pull"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "instruction": "Review this email promoting a Shiba-like meme token IDO. Any scam red flags?",
+      "input": {
+        "source": "email",
+        "sender_email": "ido@shibaclone[.]pro",
+        "subject": "Private IDO Access for ShibaClone Token",
+        "body": "Exclusive chance for early birds: deposit your ETH to this address and get 30% bonus tokens. Hurry, limited spots!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "A so-called ‘private’ IDO email demanding direct ETH deposits, promising bonus tokens—classic tactic for scamming.",
+        "indicators": [
+          "Direct wallet address with no official platform",
+          "Unrealistic bonus token incentive (30%)",
+          "No mention of KYC or IDO platform details",
+          "Likely to vanish with deposited funds"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "instruction": "Assess this 'celebrity endorsement' for a new meme coin on Instagram. Is it legitimate?",
+      "input": {
+        "source": "Instagram",
+        "profile_name": "CryptoCelebrityOfficial",
+        "post_content": "I love @PandaToken! This will be the next 1000x gem. I personally bought $10K worth. Join me: hxxp://panda-token[.]live"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake celebrity promo likely a paid shill for a meme coin with unrealistic 1000x hype.",
+        "indicators": [
+          "Celebrity account not verified or suspicious handle",
+          "Promises 1000x returns with no fundamentals",
+          "Likely paid promotion with no disclosure",
+          "No evidence of real token utility or liquidity"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "instruction": "Analyze this Telegram voice chat claiming a new DeFi meme token 'launching next hour'. Identify possible red flags.",
+      "input": {
+        "source": "Telegram Voice Chat",
+        "group_name": "MoonShotsCommunity",
+        "message_summary": "Devs claim guaranteed profits and immediate listing on top exchanges, urging immediate BNB deposit."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Hyped voice chat about 'guaranteed' gains and urgent BNB deposit for a token not yet listed or verified.",
+        "indicators": [
+          "Guaranteed profits (no such guarantee in crypto)",
+          "Immediate deposit request before any official listing",
+          "No mention of contract address or audits",
+          "High-pressure FOMO tactics"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "instruction": "Check this Reddit post about a token that will 'donate 50% of profits' to charity. Real or scam?",
+      "input": {
+        "source": "Reddit",
+        "subreddit": "r/CryptoMoonShots",
+        "post_content": "CharityPaw token: 50% of all transactions go to animal shelters. Guaranteed price floor. Join our presale now!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Token claims enormous charitable donations with a 'guaranteed floor'—no transparency or actual proof of donations.",
+        "indicators": [
+          "Promised huge charity portion with no credible evidence",
+          "No legitimate audit or trackable donation wallet",
+          "Misleading 'guaranteed floor' claim",
+          "Likely to exploit emotional appeal for funds"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "instruction": "Evaluate this direct message about a 'memecoin airdrop' requiring a small deposit. Any scam signals?",
+      "input": {
+        "source": "DM (any social platform)",
+        "sender_username": "MemeAirdropAdmin",
+        "message_content": "Claim your 1,000 free MemeBurger tokens! Just send 0.01 ETH to verify your wallet address."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Airdrop requiring a 'verification deposit,' a typical method to scam ETH from unsuspecting users.",
+        "indicators": [
+          "Airdrop demanding initial payment",
+          "Unverified 'admin' account",
+          "No public proof or official channels",
+          "Likely no tokens delivered after deposit"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "instruction": "Analyze this YouTube video comment linking to a 'safe' meme token presale. Potential scam?",
+      "input": {
+        "source": "YouTube Comment",
+        "video_title": "Top 5 Memecoins to Invest In",
+        "comment_content": "Don't miss CatNeko presale! 100% safe, dev is doxxed. Link: hxxp://catneko-verified[.]com/presale"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Random comment touting a 'safe' meme token with an unofficial link, possibly a presale scam.",
+        "indicators": [
+          "Comment spam with hype claims",
+          "Unverified doxxed dev claim",
+          "Likely a random external link outside known platforms",
+          "Could be collecting funds with no actual token"
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "instruction": "Examine this token's whitepaper excerpt on Medium. Does it contain signs of a scam?",
+      "input": {
+        "source": "Medium Article",
+        "author_handle": "@MoonTokenDev",
+        "article_snippet": "Our HyperMoon token will reward holders with 10% reflections in BNB, guaranteed 100x ROI, plus weekly Tesla giveaways."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Over-the-top promises of high reflections and guaranteed ROI plus extravagant prizes—indicative of a pump-and-dump.",
+        "indicators": [
+          "Guaranteed 100x ROI claim",
+          "Extravagant weekly Tesla giveaways with no proof",
+          "High reflection percentages (10%) unsustainable",
+          "No mention of token fundamentals or real utility"
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "instruction": "Assess whether this brand-new DeFi aggregator claiming no impermanent loss is legit or a scam.",
+      "input": {
+        "source": "Project Website",
+        "url": "hxxp://noimpermanentloss[.]io",
+        "tagline": "Stake with us and enjoy 0% impermanent loss, 5,000% APY, guaranteed returns in our Meme Farm!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Promises zero impermanent loss and extremely high APY, violating basic DeFi principles—likely a scam.",
+        "indicators": [
+          "Claims of 0% impermanent loss (not realistic)",
+          "5,000% APY with no explanation of risk",
+          "Guarantee of returns, ignoring market volatility",
+          "Likely a rug pull or pyramid scheme"
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "instruction": "Determine if this 'whale group' on Telegram promising a new memecoin pump is malicious.",
+      "input": {
+        "source": "Telegram Group",
+        "group_name": "WhalePumpChannel",
+        "message_content": "All members buy FuzzyBearToken at 3:00 PM UTC. Target 400% pump, then we all sell together. Join quick!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Coordinated pump-and-dump group orchestrating a forced price pump, exposing participants to risk of a scam exit.",
+        "indicators": [
+          "Coordinated buy time to manipulate price",
+          "Short-term pump goal (400%)",
+          "Encourages group dumping after the pump",
+          "Likely results in bag holders losing money"
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "instruction": "Analyze this tweet from a newly created account praising a memecoin. Possible scam or genuine review?",
+      "input": {
+        "source": "Twitter",
+        "handle": "@CryptoFanForLife2023",
+        "tweet_content": "OMG I just found DinoMoonToken. It’s going to 1000x this week. Already partnered with Binance. #FOMO #crypto"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Newly created Twitter account pushing a claim of 1000x gains and fake 'partnership' with Binance.",
+        "indicators": [
+          "Account likely a shill or bot created recently",
+          "Unsubstantiated partnership claims",
+          "Hyperbolic 1000x hype in short timeframe",
+          "No official Binance confirmation"
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "instruction": "Check if this Facebook ad about a secret presale for a cat-themed token is a scam.",
+      "input": {
+        "source": "Facebook Ad",
+        "page_name": "KittyFiOfficial",
+        "ad_text": "Private presale for next big Cat-Fi token! Only 500 spots. Send BNB now to our contract: hxxp://kittyfi[.]io/presale"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Ad calling for BNB deposits to a 'private presale' with limited spots—typical scam format lacking any proven legitimacy.",
+        "indicators": [
+          "Request for direct token purchase from an unknown link",
+          "No mention of locked liquidity or vesting",
+          "Fake sense of scarcity (only 500 spots)",
+          "Paid Facebook ad with questionable info"
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "instruction": "Assess whether this 'fair launch' for a new DeFi meme coin is trustworthy, based on the website text.",
+      "input": {
+        "source": "Website",
+        "url": "hxxp://fairlaunchdegen[.]info",
+        "page_content": "No dev tokens, no presale! 90% to liquidity, 10% burned. Guaranteed instant moon! Join now!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Website claims a 'fair launch' but also promises a 'guaranteed instant moon,' which is unrealistic hype.",
+        "indicators": [
+          "Exaggerated 'guaranteed instant moon' statement",
+          "No third-party audits or team details",
+          "Overemphasis on tokenomics without real utility",
+          "Likely a marketing ploy to attract quick investors"
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "instruction": "Identify any rug pull signals in this newly formed meme token Telegram's pinned post.",
+      "input": {
+        "source": "Telegram",
+        "channel_name": "HotMemeAlerts",
+        "pinned_post": "Dev here: no contract code shown yet, but trust me, I'm honest. We’ll lock liquidity next week after we raise funds."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Devs refusing to show contract code or lock liquidity until after fundraising is a major rug pull red flag.",
+        "indicators": [
+          "No code transparency or open-source contract",
+          "Liquidity lock delayed until after money is collected",
+          "Vague claim of trust with no evidence",
+          "High potential for devs to vanish with funds"
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "instruction": "Determine if this direct message on Twitter about an 'exclusive Whale DAO' for a meme token is credible.",
+      "input": {
+        "source": "Twitter DM",
+        "sender_handle": "@BigWhaleElite",
+        "message_content": "Join our private Whale DAO. We invest in new meme tokens and guarantee 5x returns in 24 hours. Entry fee: 1 ETH."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Exclusive 'Whale DAO' offering guaranteed short-term returns for a high entry fee is suspicious and likely a scam.",
+        "indicators": [
+          "Guarantee of 5x in 24 hours",
+          "High entry fee (1 ETH) with no governance structure details",
+          "Unverified DAO or legitimate business structure",
+          "Likely pyramid or Ponzi-like operation"
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "instruction": "Examine this Medium article about a meme token 'launchpad.' Are there scam clues?",
+      "input": {
+        "source": "Medium",
+        "author_handle": "@LaunchGuru",
+        "article_excerpt": "Introducing MemeX Launchpad—No KYC, instant 100x potential, and zero rug risk guaranteed by AI!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Launchpad claiming 'zero rug risk' and '100x potential' with no KYC or proven track record is suspicious.",
+        "indicators": [
+          "Absolute claims of no rug risk",
+          "Hype around AI 'guarantees' with no explanation",
+          "No regulatory compliance or KYC mention",
+          "Likely unlicensed, high-risk scheme"
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "instruction": "Analyze this Instagram Story from an influencer linking to a new MemeFarm token pool. Malicious or not?",
+      "input": {
+        "source": "Instagram Story",
+        "influencer_handle": "@CryptoGoddess",
+        "story_text": "You must check MemeFarm Pool—3000% APY. I’ve made $5k in a day. Swipe up: hxxp://memefarm-pool[.]cc"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Inflated APY claim from an influencer’s story linking to an unknown domain suggests a high-risk or scam farm.",
+        "indicators": [
+          "Extreme APY with no detailed explanation",
+          "Influencer’s unverified profits claim",
+          "Domain not recognized or official",
+          "Likely short-term scam or pyramid scheme"
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "instruction": "Assess if this 'meme token bridging platform' found on a random Twitter thread is a legitimate DeFi service.",
+      "input": {
+        "source": "Twitter Thread",
+        "thread_title": "Best DeFi Tools for 2023",
+        "post_content": "Use DogeBridgeX to move your tokens between chains instantly, 0 fees. hxxp://dogebridge-x[.]one"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Platform claims zero fees bridging for meme tokens with no official audits or known partnerships—likely a token-stealing trick.",
+        "indicators": [
+          "Zero fees bridging (unrealistic for cross-chain swaps)",
+          "No known brand or security audits",
+          "Likely prompts users to grant wallet permissions",
+          "Possible drain of tokens upon contract interaction"
+        ]
+      }
+    },
+    {
+      "id": 21,
+      "instruction": "Review this new BSCscan token listing claiming 'locked liquidity forever.' Potentially safe or scam?",
+      "input": {
+        "source": "BSCScan",
+        "contract_description": "HuskyKing Token: 70% supply locked, liquidity locked forever. Click website: hxxp://huskyking[.]bsc"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "No verifiable proof of 'forever lock' and a suspicious website domain—often used to mislead new investors.",
+        "indicators": [
+          "Lack of reputable third-party lock references (e.g., DxLock, Unicrypt)",
+          "Website domain not well-known or SSL-secured",
+          "Unclear token distribution details",
+          "Possible marketing ploy with no real locked liquidity"
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "instruction": "Analyze this DM in a crypto forum about a 'yield aggregator for meme coins' offering up to 10,000% returns.",
+      "input": {
+        "source": "Forum DM",
+        "platform_name": "BitTalkForum",
+        "message_content": "MemeVault aggregator can give you 10,000% APR. Just connect wallet at hxxp://memevault-highapy[.]io"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Unrealistic 10,000% APR and direct wallet-connecting link strongly indicate a scam aggregator site.",
+        "indicators": [
+          "Excessively high APR with no mechanism explained",
+          "Direct link for wallet connection on unknown site",
+          "Likely to request suspicious permissions",
+          "May drain funds upon contract approval"
+        ]
+      }
+    },
+    {
+      "id": 23,
+      "instruction": "Check if this Facebook Messenger chain message urging an 'urgent buy' is real or part of a pump scheme.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_name": "Crypto Pete",
+        "message_content": "Buy WolfPaw token now. It's about to explode! Forward this to 5 friends or you'll miss the pump!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Chain message with fear-of-missing-out tactics, typical of pump-and-dump or referral-based scam.",
+        "indicators": [
+          "Push to forward to multiple friends",
+          "No real project fundamentals mentioned",
+          "Fear-based FOMO approach",
+          "Likely multi-level or Ponzi-style recruitment"
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "instruction": "Evaluate this LinkedIn post about a 'professional DeFi management team' handling memecoin investments.",
+      "input": {
+        "source": "LinkedIn Post",
+        "poster_profile": "DeFi-Pro-Team",
+        "post_content": "Outsource your MemeCoin portfolio to experts. Guaranteed 50% weekly growth. DM for details."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Unregulated 'DeFi management' guaranteeing weekly returns—likely a Ponzi scheme or management scam.",
+        "indicators": [
+          "Guaranteed weekly growth (50%) is unrealistic",
+          "No legitimate license or track record",
+          "Vague on investment strategy or custody of funds",
+          "Likely fraud disguised as professional service"
+        ]
+      }
+    },
+    {
+      "id": 25,
+      "instruction": "Determine if this message about a 'community-driven token burn event' is a genuine plan or a possible con.",
+      "input": {
+        "source": "Discord Announcement",
+        "server_name": "FlameTokenOfficial",
+        "announcement": "We’ll burn 50% supply next week if we reach $1M in volume. Buy now to drive price up before the burn!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Token burn promise contingent on hitting a volume target, pressuring buys to artificially inflate price.",
+        "indicators": [
+          "Condition-based burn to push trading volume",
+          "No transparent schedule or verifiable burn wallet",
+          "Manipulative tactic encouraging speculation",
+          "May not burn tokens at all post-volume spike"
+        ]
+      }
+    },
+    {
+      "id": 26,
+      "instruction": "Check this alleged 'game partner' tweet for a memecoin. Real or fake partnership likely?",
+      "input": {
+        "source": "Twitter",
+        "handle": "@MoonGameStudio",
+        "tweet_content": "Proud to announce $GalaxyDog partnership with our upcoming game. Soon integrated into gameplay!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Token claims partnership with a gaming studio on Twitter, but no official brand account or proof—indicative of a false partnership marketing scam.",
+        "indicators": [
+          "No official game developer verification",
+          "Vague or missing details on how token integrates",
+          "Likely just hype with no real contract or game link",
+          "Possible attempt to lure gamers into a worthless token"
+        ]
+      }
+    },
+    {
+      "id": 27,
+      "instruction": "Analyze this promotional email about a memecoin's flash sale. Are there scam signals?",
+      "input": {
+        "source": "email",
+        "sender_email": "flashsale@nextshib[.]vip",
+        "subject": "50% Discount on NextShib Token Purchase",
+        "body": "For 24 hours only, buy NextShib at half-price directly from dev wallet. Hurry up, offer ends soon!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Email claims a direct purchase from a dev wallet at a discount—a strategy often used to swindle funds with no real tokens delivered.",
+        "indicators": [
+          "Direct buy from dev wallet, bypassing DEX/IDO platforms",
+          "Steep discount not typical of real tokenomics",
+          "Short-lived 'offer' to create FOMO",
+          "No contract address or official exchange listing"
+        ]
+      }
+    },
+    {
+      "id": 28,
+      "instruction": "Evaluate this pinned message about a 'meme token reflections' system on a DEX forum. Is it suspicious?",
+      "input": {
+        "source": "Forum Post",
+        "platform_name": "DexTradersHub",
+        "post_content": "Get 15% reflection in stablecoins by just holding MemeLion. Passive income for life guaranteed!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Overly high reflection in stablecoins is unsustainable, often a sign of a pyramid or reflection scam.",
+        "indicators": [
+          "Unusually high reflection rate (15%)",
+          "No mention of how liquidity or rewards are generated",
+          "Promised lifetime passive income guaranteed",
+          "Likely collapses when new buyers stop entering"
+        ]
+      }
+    },
+    {
+      "id": 29,
+      "instruction": "Check if this Instagram story about 'live dev video chat' is a legitimate AMA or a scam stunt.",
+      "input": {
+        "source": "Instagram Story",
+        "profile_name": "MemeGainsOfficial",
+        "story_text": "Join our dev in a live video chat now, deposit 0.05 BNB to get the private link: hxxp://memegains-chat[.]info"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Charging a deposit in BNB just to access a 'dev chat' is highly suspicious and manipulative.",
+        "indicators": [
+          "Pay-to-attend developer AMA with no official platform",
+          "Unconventional method (BNB deposit) for accessing a chat",
+          "Likely collecting funds with no real event",
+          "Preying on users seeking transparency"
+        ]
+      }
+    },
+    {
+      "id": 30,
+      "instruction": "Determine if this 'locked liquidity proof' is valid or deceptive, based on the link provided.",
+      "input": {
+        "source": "Token Website",
+        "url": "hxxp://samoyedmoon[.]info/liquidity",
+        "page_content": "Liquidity locked (click to verify): hxxp://samoyedmoon[.]info/lock-proof"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake liquidity lock proof hosted on the same suspicious domain, offering no real third-party verification.",
+        "indicators": [
+          "Self-hosted 'proof' link with no external lock service",
+          "No recognized locker (e.g., Unicrypt, DXLock) or smart contract details",
+          "Circular referencing on the same website",
+          "Likely dishonest marketing"
+        ]
+      }
+    },
+    {
+      "id": 31,
+      "instruction": "Analyze this Telegram broadcast about a 'buy-back' mechanism for a meme token. Could it be a ruse?",
+      "input": {
+        "source": "Telegram",
+        "channel_name": "MoonShotNews",
+        "broadcast": "GorillaCoin devs will buy back tokens at 10% increments every hour. Price can only go up!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Guaranteed buy-back schedule claiming price 'can only go up' is unrealistic and manipulative.",
+        "indicators": [
+          "Artificial price support claims",
+          "No proof of dev funds or buy-back mechanism in code",
+          "Likely a short-term pump to attract buyers",
+          "No mention of distribution or token sell function"
+        ]
+      }
+    },
+    {
+      "id": 32,
+      "instruction": "Evaluate the 'token metrics' infographic posted on a crypto forum. Identify any scam patterns.",
+      "input": {
+        "source": "Crypto Forum Post",
+        "thread_title": "New BSC Meme Gem",
+        "content": "PieToken: 2% dev fee, 48% marketing, 50% presale. Wait, that’s 100%+ distribution?"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Tokenomics that add up incorrectly (2% dev fee plus 48% marketing plus 50% presale = 100% total supply confusion).",
+        "indicators": [
+          "Inconsistent or mathematically impossible token allocation",
+          "High marketing cut with vague usage",
+          "No clarity on actual circulating supply",
+          "Likely incompetent or deceptive token structure"
+        ]
+      }
+    },
+    {
+      "id": 33,
+      "instruction": "Check if this direct message about 'airdropped tokens stuck in your wallet' is legitimate or a scam.",
+      "input": {
+        "source": "Telegram DM",
+        "sender_username": "HelpDeskAirdrop",
+        "message_content": "We see you received random tokens. Approve them at hxxp://fix-airdrop[.]info to safely remove or sell them."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Scammer claims airdropped tokens are stuck, prompting user to 'approve' via malicious contract and drain wallet.",
+        "indicators": [
+          "Random unsolicited help about airdropped tokens",
+          "Asks user to interact with a suspicious contract",
+          "Likely a known 'token approval' scam to access wallet",
+          "No official sources or references"
+        ]
+      }
+    },
+    {
+      "id": 34,
+      "instruction": "Assess if this 'audit certificate' from an unknown firm posted on a meme coin website is reliable.",
+      "input": {
+        "source": "Website Audit Link",
+        "url": "hxxp://fakedefiguard[.]com/FlokiBeeAudit",
+        "page_content": "Audit concluded: SAFE. No vulnerabilities."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake or unknown auditing entity providing a blanket 'SAFE' verdict, with no recognized firm credentials.",
+        "indicators": [
+          "Audit from an unverified or non-industry auditor",
+          "Generic statement of 'no vulnerabilities' with no details",
+          "No formal PDF or methodology proof",
+          "Likely a self-made or bogus audit"
+        ]
+      }
+    },
+    {
+      "id": 35,
+      "instruction": "Analyze this message from a 'miner' offering 'passive reflection' in a new meme coin. Real or scam?",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "MemeMiner#9870",
+        "message_content": "My GPU farm mines MemeStar daily. You can buy shares from me directly. 2x returns guaranteed!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Unrealistic GPU mining approach for a meme coin with guaranteed double returns, likely an investment scam.",
+        "indicators": [
+          "Direct sale of 'shares' with guaranteed doubling",
+          "No verifiable miner or pool data",
+          "Suspicious claim about GPU mining a low-cap meme token",
+          "Likely a deposit scam with no actual mining operation"
+        ]
+      }
+    },
+    {
+      "id": 36,
+      "instruction": "Determine if this LinkedIn direct message about joining a 'meme venture capital group' is legitimate.",
+      "input": {
+        "source": "LinkedIn DM",
+        "sender_profile": "MemeVenturesCEO",
+        "message_content": "We pool investor funds for newly minted meme tokens. 300% monthly ROI guaranteed. Minimum $5,000 buy-in."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Likely a fraudulent 'VC group' guaranteeing unregulated high returns in meme tokens, demanding a large entry fee.",
+        "indicators": [
+          "Unrealistic monthly ROI (300%)",
+          "Large minimum buy-in with no legal disclaimers",
+          "No official website or track record",
+          "Common signs of an unregistered investment scheme"
+        ]
+      }
+    },
+    {
+      "id": 37,
+      "instruction": "Review if a tweet about random 'airdrops to active addresses' is real or just a tactic to collect data.",
+      "input": {
+        "source": "Twitter",
+        "handle": "@AirdropGuruFree",
+        "tweet_content": "All active addresses on BSC get a free MemeLizard airdrop. Submit your wallet key at hxxp://memelizard-claim[.]org"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Tweet instructs users to submit their private key for an airdrop—classic scam to seize wallets.",
+        "indicators": [
+          "Asks for private key (never share that)",
+          "Unsolicited mention of random airdrop",
+          "No legitimate method for airdrops (requires only a public address)",
+          "Likely immediate wallet compromise upon sharing"
+        ]
+      }
+    },
+    {
+      "id": 38,
+      "instruction": "Check if this 'DAO governance poll' about a sudden token contract change is suspicious.",
+      "input": {
+        "source": "DAO Poll Announcement",
+        "platform_name": "MemeDAO",
+        "poll_description": "Vote to allow devs to mint unlimited tokens for 'growth'. Time-limited vote: 3 hours only!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "DAO poll proposing unlimited minting powers with a rushed 3-hour window, a huge red flag for abuse.",
+        "indicators": [
+          "Unlimited minting authority for devs",
+          "Short timeframe (3 hours) to pass critical vote",
+          "Likely a manipulation to push a malicious contract update",
+          "No rational justification for 'growth' requiring unlimited tokens"
+        ]
+      }
+    },
+    {
+      "id": 39,
+      "instruction": "Analyze if this 'lottery token' on a DeFi aggregator site is legitimate or a potential rug pull.",
+      "input": {
+        "source": "DeFi Aggregator Listing",
+        "token_name": "LuckyCatToken",
+        "listing_details": "Jackpot lottery every hour. Dev wallet controls 20% supply for 'lottery draws.'"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "A 'lottery token' with dev wallet holding 20% supply can easily be manipulated or sold off.",
+        "indicators": [
+          "Developer controlling large portion of supply",
+          "No transparent lottery mechanism or on-chain randomness",
+          "Hour-based jackpot claims with no proof of winners",
+          "Likely dev can dump or misuse funds"
+        ]
+      }
+    },
+    {
+      "id": 40,
+      "instruction": "Examine this promotional video on TikTok about an 'overnight memecoin' success story. Any scam clues?",
+      "input": {
+        "source": "TikTok",
+        "user_handle": "@CryptoManiaVids",
+        "video_description": "I turned $100 into $10k in 24 hours with FoxyInu. Use my link to buy in now before next pump!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Short viral video claiming unrealistic overnight profit, pushing a referral link for the next 'pump.'",
+        "indicators": [
+          "24-hour 100x gain claim with no proof",
+          "Influencer hype with a referral link",
+          "No mention of token fundamentals or risk",
+          "Likely a pump-and-dump scheme targeting impulsive viewers"
+        ]
+      }
+    },
+    {
+      "id": 41,
+      "instruction": "Determine if this email from 'Uniswap' about a new meme token listing is genuine or a phishing attempt.",
+      "input": {
+        "source": "email",
+        "sender_email": "uniswap@listsnewtoken[.]xyz",
+        "subject": "MemeAPE now live on Uniswap!",
+        "body": "Click here to trade MemeAPE token on Uniswap: hxxp://listsnewtoken[.]xyz"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake email impersonating Uniswap with a suspicious link that likely redirects to a scam swap interface.",
+        "indicators": [
+          "Domain not associated with uniswap.org",
+          "No official announcement from Uniswap channels",
+          "Likely a phishing link to steal tokens",
+          "Claims new listing without verification or Etherscan reference"
+        ]
+      }
+    },
+    {
+      "id": 42,
+      "instruction": "Review if this 'ETH 2.0 Meme Pool' is real or a con based on the official-sounding name.",
+      "input": {
+        "source": "Website Banner Ad",
+        "url": "hxxp://eth2-memepool[.]co",
+        "banner_text": "Stake your ETH and get memecoin yields on ETH 2.0 Meme Pool!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake synergy with ETH 2.0 branding to appear official, likely a fraudulent staking platform collecting ETH.",
+        "indicators": [
+          "Uses 'ETH 2.0' name to gain credibility",
+          "No mention of official Ethereum or well-known staking providers",
+          "Staking overshadowed by 'meme yields' concept",
+          "Likely scam to drain ETH from depositors"
+        ]
+      }
+    },
+    {
+      "id": 43,
+      "instruction": "Analyze this newly formed memecoin's roadmap from a GitBook. Identify possible scam signals.",
+      "input": {
+        "source": "GitBook",
+        "project_name": "ZebraShiba",
+        "roadmap_snippet": "Phase 1: Launch, Phase 2: 100x marketing push, Phase 3: Tesla giveaway, Phase 4: Partnerships with big names."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Unrealistic roadmap promising marketing leading to 100x growth and a Tesla giveaway, with no real details on utility or dev progress.",
+        "indicators": [
+          "Roadmap heavily reliant on hype and giveaways",
+          "No technical or product developments outlined",
+          "Guaranteed 100x marketing push is pure speculation",
+          "Possible ploy to attract naive investors"
+        ]
+      }
+    },
+    {
+      "id": 44,
+      "instruction": "Evaluate if this 'meme coin insurance' platform is legitimate or a predatory scam.",
+      "input": {
+        "source": "Website",
+        "url": "hxxp://memecoininsure[.]org",
+        "pitch": "Protect your meme token investments from rug pulls. Pay a premium in our own token for coverage."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Claims to offer rug pull insurance but demands payment in their own unproven token, lacking real underwriting or licensing.",
+        "indicators": [
+          "No legal or regulatory framework for insurance",
+          "Requires usage of the platform's own token for premiums",
+          "No actual guarantee of coverage or payout mechanism",
+          "Likely a scam pivoting on fear of rug pulls"
+        ]
+      }
+    },
+    {
+      "id": 45,
+      "instruction": "Check if this press release about a 'celebrity NFT collab with MemeCoin' is genuine or a promotional scam.",
+      "input": {
+        "source": "Online Press Release",
+        "url": "hxxp://cryptobuzz-press[.]com",
+        "headline": "Movie Star Partners with MemeRocket for Exclusive NFT Collection"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Press release on an obscure site touting a star collaboration with no official verification or actual statements from the celebrity.",
+        "indicators": [
+          "No direct quotes or confirmation from the celebrity’s verified accounts",
+          "Published on an unknown or low-credibility news site",
+          "Attempts to inflate token hype with big names",
+          "No official NFT platform or contract details"
+        ]
+      }
+    },
+    {
+      "id": 46,
+      "instruction": "Analyze this pinned tweet from devs claiming they burned the liquidity tokens. Any way it might be deceptive?",
+      "input": {
+        "source": "Twitter",
+        "handle": "@MonkeyCoinDevs",
+        "tweet_content": "Liquidity tokens are burned forever. #MonkeyCoin is 100% safe! TX hash: 0x123fakeTx"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Claiming a burn of liquidity tokens but providing a possibly fake transaction hash with no verifiable data on Etherscan/BSCScan.",
+        "indicators": [
+          "Transaction hash might be invalid or not match the claimed event",
+          "No link to official block explorer verifying token burn",
+          "Overemphasis on '100% safe'",
+          "Likely an attempt to appear rug-proof without real evidence"
+        ]
+      }
+    },
+    {
+      "id": 47,
+      "instruction": "Evaluate this email about a 'secure Meme staking platform' with guaranteed ROI. Identify any red flags.",
+      "input": {
+        "source": "email",
+        "sender_email": "securestaker@meme-lock[.]net",
+        "subject": "Secure Meme Staking: 200% ROI in 7 Days!",
+        "body": "Guaranteed daily returns! Just stake your tokens at hxxp://meme-lock[.]net"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Exaggerated short-term ROI in a suspicious email with no official references or auditing info.",
+        "indicators": [
+          "200% ROI in 7 days is extremely unrealistic",
+          "No proof of actual yield generation",
+          "Likely an exit scam once enough tokens are staked",
+          "Suspicious domain name and unsolicited email"
+        ]
+      }
+    },
+    {
+      "id": 48,
+      "instruction": "Assess if this random DM about a 'bug bounty' in a meme token contract is actually a scam.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "BugBountyRep#111",
+        "message_content": "We found a vulnerability in FlokiBear contract. Send 0.1 BNB to fix it and you'll be rewarded 1 BNB after patch."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Claims a vulnerability fix requiring user funds, typical of a scam disguised as a bug bounty reward.",
+        "indicators": [
+          "User must pay to get a bigger reward",
+          "No official association with the dev team or project",
+          "Inconsistent logic (why user’s funds are needed to fix code?)",
+          "Likely run away with user’s BNB"
+        ]
+      }
+    },
+    {
+      "id": 49,
+      "instruction": "Determine if this BSC token about 'auto-lottery' each block is honest or a scheme.",
+      "input": {
+        "source": "Token Announcement",
+        "platform_name": "PancakeSwap Forum",
+        "post_content": "BunnyWin: every block triggers a random lottery awarding BNB. 20% tax on transactions to fund it."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "High transaction tax (20%) to fund a 'lottery' with no real proof of distribution, typical of a scammy tokenomics design.",
+        "indicators": [
+          "Excessive tax with vague lottery mechanics",
+          "No transparent winner selection or distribution logs",
+          "Claim of random draw each block not validated by code audits",
+          "Likely dev can reroute funds"
+        ]
+      }
+    },
+    {
+      "id": 50,
+      "instruction": "Review this newly launched DEX claiming 'instant listing of any meme token' with no fees. Possible scam?",
+      "input": {
+        "source": "Website",
+        "url": "hxxp://instantmemedex[.]org",
+        "pitch": "List your meme token for free. No fees, no contract checks. Everyone is welcome!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "A DEX with zero listing fees or contract checks can facilitate rug pulls or might itself be a front for phishing liquidity providers.",
+        "indicators": [
+          "No contract checks or safety measures",
+          "Free listing raises no revenue model—suspicious",
+          "Potentially fake DEX to harvest user liquidity or tokens",
+          "Unverified code with no audits or known partners"
+        ]
+      }
+    }
+  ]

@@ -1,0 +1,952 @@
+[
+    {
+      "id": 1,
+      "instruction": "Analyze this direct message claiming to offer free Nitro. Determine if it's a scam and explain why.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "FreeNitroBot#1234",
+        "message_content": "Congratulations! You've been randomly selected to receive 3 months of free Discord Nitro. Click here: hxxp://discord-nitro-free[.]me"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "A common fake Nitro giveaway scam on Discord, linking to a phishing site.",
+        "indicators": [
+          "Unsolicited Nitro giveaway",
+          "Suspicious link (discord-nitro-free[.]me)",
+          "Bot-like or newly created account",
+          "No official Discord domain"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "instruction": "Evaluate this message from someone posing as a Discord admin. Is it a legitimate request?",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "DiscordAdminOfficial#2022",
+        "message_content": "Your account is flagged for policy violation. Please provide your password here to verify ownership."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User impersonates a Discord admin to collect account credentials.",
+        "indicators": [
+          "Impersonation of staff without official badge",
+          "Request for password (Discord staff never ask)",
+          "Threatening tone to force compliance",
+          "Likely account hijacking attempt"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "instruction": "Determine if this invite link to a 'Crypto NFT' server is genuine or a social engineering scam.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "NFTGuru#9999",
+        "message_content": "Join our NFT presale server! Big giveaways daily: hxxp://discord.gg/fakeNFTpromo"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Suspicious invite claiming big NFT giveaways, likely aiming to scam newcomers or harvest data.",
+        "indicators": [
+          "Unsolicited NFT/crypto promotion",
+          "Promises unrealistic 'big giveaways'",
+          "Newly created or low-member server",
+          "Likely scam targeting naive investors"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "instruction": "Classify this private message about 'server boosting' and identify any social engineering tactics used.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "ServerBoostDealz#0001",
+        "message_content": "Hey, want free server boosts? Just send me your login token so I can apply them from my account!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User asks for Discord login token under the pretense of providing free server boosts.",
+        "indicators": [
+          "Request for personal login token",
+          "Unrealistic offer of free boosts",
+          "Likely token theft or account hijack",
+          "Exploits confusion around Nitro/Boost mechanics"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "instruction": "Assess this DM from a 'Server Moderator' claiming you violated server rules. Is it legit or a scam?",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "ModAlert#4501",
+        "message_content": "You broke the server rules. Verify your account at hxxp://discordverify-admin[.]co or you'll be banned."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Impersonation of a moderator with a fake verification link designed to steal credentials.",
+        "indicators": [
+          "Threat of ban unless verified externally",
+          "Non-Discord domain for 'verification'",
+          "No mention of the specific rule broken",
+          "Likely phishing for user login info"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "instruction": "Determine if this friend request message is suspicious. Explain any social engineering aspects.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "FriendlyTrader#7777",
+        "message_content": "Hey buddy, let's trade Steam gift codes. You go first, I'll send right after!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User requests Steam gift code trades, a common scam to get the recipient’s code with no return.",
+        "indicators": [
+          "Stranger approaching with a 'trade' request",
+          "Wants you to provide your code first",
+          "No guarantee they'll reciprocate",
+          "Likely gift code theft attempt"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "instruction": "Analyze this link posted in a Discord server claiming to be a 'free game' download. Suspicious or safe?",
+      "input": {
+        "source": "Discord channel message",
+        "sender_username": "Gaming4Life#3210",
+        "message_content": "Check out this new free game! Download now: hxxp://freesteamgame[.]exe"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Likely malicious executable disguised as a free game link posted in a Discord channel.",
+        "indicators": [
+          "Executable download link (.exe)",
+          "No official game or developer references",
+          "Potential malware distribution",
+          "Generic 'free game' claim with no proof"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "instruction": "Evaluate this message about a 'super rare Discord badge' you can claim. Real or a scam?",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "BadgeGiver#2021",
+        "message_content": "Limited time only! Click here to claim your exclusive Discord OG badge: hxxp://discord-badges.com/claim"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phony message offering a nonexistent 'OG badge,' directing users to a phishing site.",
+        "indicators": [
+          "Promised exclusive badge not recognized by Discord",
+          "Unknown external link for claiming badges",
+          "Likely data theft or token grab page",
+          "Inconsistent with official Discord badge distribution"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "instruction": "Decide if this event invitation on Discord is genuine or a social engineering attempt.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "OfficialEventHost#1000",
+        "message_content": "You've been selected to participate in our private beta test. Submit your account info here to join."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake private beta invitation asking for 'account info' instead of a normal invite link or sign-up process.",
+        "indicators": [
+          "No direct invite link or official website",
+          "Request for full account credentials",
+          "Generic message with no specifics",
+          "Likely account compromise attempt"
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "instruction": "Analyze this 'verification' message from a bot in a public Discord server. Is it legitimate?",
+      "input": {
+        "source": "Discord channel message",
+        "sender_username": "VerificationBot#9999",
+        "message_content": "Attention! Verify your Discord account: hxxp://official-discord-check[.]club"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phony verification bot providing a suspicious link to collect user credentials.",
+        "indicators": [
+          "Unrecognized or newly created bot",
+          "URL not related to official Discord domains",
+          "Forces verification outside official channels",
+          "Likely password/token harvesting"
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "instruction": "Check if this user demanding 'personal information' to join a special role is suspicious.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "EliteRoleManager#8800",
+        "message_content": "To join our VIP role, send me your full name, address, and a photo ID. It's mandatory."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User requires sensitive personal info for a role, likely a scam or identity theft attempt.",
+        "indicators": [
+          "Demand for real-world personal details",
+          "No legitimate reason for ID or address",
+          "No official server policy or staff endorsement",
+          "Possible identity theft vector"
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "instruction": "Determine if this direct message from a 'crypto giveaway bot' is legitimate or not.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "CryptoGiveawayBot#6666",
+        "message_content": "You’ve won 0.5 ETH! Claim by sending 0.01 ETH to verify your wallet address: hxxp://verify-eth[.]io"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User must send cryptocurrency first to 'verify' for a giveaway, a classic crypto scam.",
+        "indicators": [
+          "Upfront payment needed to claim a prize",
+          "No official or recognized crypto platform link",
+          "Likely never receives the promised ETH",
+          "Bot name and link are suspicious"
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "instruction": "Evaluate this link posted in a Discord server claiming there's a 'leaked' video of you. Malicious or safe?",
+      "input": {
+        "source": "Discord channel message",
+        "sender_username": "RandomUser#5123",
+        "message_content": "OMG, is this really you in this video? hxxp://discord-media-leak[.]com/watch"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Social engineering attempt playing on curiosity or fear, linking to a suspicious site.",
+        "indicators": [
+          "Emotional manipulation claiming there's embarrassing content",
+          "Suspicious link with no credible domain",
+          "Likely phishing or malware-laden page",
+          "Common tactic to steal credentials"
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "instruction": "Classify this unsolicited DM from a 'server manager' about a free partnership. Legit or scam?",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "ServerManagerPro#1045",
+        "message_content": "Partner with us for immediate server growth. Just share your Discord token so we can integrate seamlessly."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User demands a Discord token under the guise of a partnership, aiming to hijack the account or server.",
+        "indicators": [
+          "Token request disguised as integration",
+          "No official partnership credentials",
+          "Claim of immediate results or massive growth",
+          "Likely compromise of server ownership"
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "instruction": "Analyze this message from a random user wanting to screenshare quickly. Any social engineering risk?",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "FastHelp#0007",
+        "message_content": "I can fix your lag issues! Just screenshare your Discord settings and user info with me."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Offering 'tech support' via screenshare to capture sensitive data or tokens from the app settings.",
+        "indicators": [
+          "Unsolicited tech support offer",
+          "Screenshare request for settings or personal info",
+          "Likely aims to see user token or account details",
+          "No legitimate expertise or references"
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "instruction": "Evaluate if this 'Nitro Generator' link shared in a server is safe or malicious.",
+      "input": {
+        "source": "Discord channel message",
+        "sender_username": "NitroGenMaster#5533",
+        "message_content": "Generate unlimited Nitro codes instantly! Download here: hxxp://nitro-gen-pro[.]exe"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Executable claiming to generate free Nitro codes—commonly malware or a Trojan.",
+        "indicators": [
+          "Promises free or unlimited Nitro codes",
+          "Executable file from untrusted source",
+          "Likely to install malware or keylogger",
+          "No legitimate Nitro generator exists"
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "instruction": "Determine if this private message about a donation request for a 'Discord charity event' is suspicious.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "CharityEventHost#2001",
+        "message_content": "Please donate to our cause via gift cards. We will allocate them to needy members in the community."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake charity request asking for gift cards, a common scam method with no official event details.",
+        "indicators": [
+          "Gift card payment request (untraceable)",
+          "No official charity or server info",
+          "Unsolicited DM to random users",
+          "Likely personal gain or scam"
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "instruction": "Identify if this DM from 'Discord Security' about age verification is genuine or not.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "OfficialSecurityBot#9998",
+        "message_content": "We see your account has no age info. Submit your birthday and ID photo at hxxp://discord-age-verify[.]info"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake 'Discord Security Bot' demanding personal info and ID photo under the guise of age verification.",
+        "indicators": [
+          "Discord does not request ID via random DMs",
+          "Unknown external link for 'verification'",
+          "Personal data (ID) demanded with no official process",
+          "Likely identity theft or account compromise"
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "instruction": "Check if this link from a user promising 'exclusive custom emojis' is safe.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "EmojiCreator#1111",
+        "message_content": "Download these custom emojis for free: hxxp://emojicreator.net/discord-bundle"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Suspicious external link for 'custom emojis' likely containing malware or phishing.",
+        "indicators": [
+          "Emojis typically uploaded directly to servers, not via external .exe or .zip links",
+          "Unknown website offering a download",
+          "Enticing free content that needs external installation",
+          "Potential hidden payload"
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "instruction": "Analyze this threat from someone claiming to dox you on Discord. Provide classification.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "DoxThreat#0006",
+        "message_content": "I've got your IP and personal info. Pay me $100 or I'll post it everywhere."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Extortion attempt on Discord, threatening to leak personal info for ransom.",
+        "indicators": [
+          "Threatening message demanding money",
+          "Claims of doxxing or revealing personal data",
+          "Extortion tactic with no proof provided",
+          "Likely scare tactic to force payment"
+        ]
+      }
+    },
+    {
+      "id": 21,
+      "instruction": "Evaluate this 'Steam code' request in a gaming Discord. Could it be social engineering?",
+      "input": {
+        "source": "Discord server message",
+        "sender_username": "TradeBot#0202",
+        "message_content": "I'm collecting spare Steam wallet codes for charity. Just DM me your unused codes."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Scammer claims codes are for charity to trick users into giving away valid Steam wallet codes.",
+        "indicators": [
+          "Unverifiable charity story",
+          "Request for Steam codes with no checks",
+          "Likely redemption of codes for personal gain",
+          "No official partnership or transparency"
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "instruction": "Classify this DM about a 'Discord server collaboration' that needs immediate login confirmation.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "CollabManager#4040",
+        "message_content": "We want to collaborate with your server. Confirm your login at hxxp://server-collab-confirm[.]link"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "A purported collaboration requiring a suspicious 'login confirmation' on an external site.",
+        "indicators": [
+          "No official or recognized collaboration terms",
+          "External link for Discord login",
+          "Likely credential harvesting via fake login page",
+          "Sense of urgency with no specifics"
+        ]
+      }
+    },
+    {
+      "id": 23,
+      "instruction": "Analyze this private message praising your artwork and asking you to test a 'new design tool.'",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "ArtEnthusiast#3409",
+        "message_content": "Your art is amazing! Try my new software to make it even better: hxxp://art-tool-free[.]exe"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Malicious user flattering the recipient to entice downloading an unknown .exe 'tool.'",
+        "indicators": [
+          "Out-of-the-blue praise and request to install .exe",
+          "No reputable source or brand for the software",
+          "Potential malware disguised as a design tool",
+          "Emotional manipulation (flattery) to lower guard"
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "instruction": "Determine if this message from someone claiming to be a 'server co-owner' is legitimate or scammy.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "RealCoOwner#2222",
+        "message_content": "The main owner asked me to collect your login credentials to update roles. Send them now, please."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User impersonates a co-owner, seeking direct login credentials under false pretenses.",
+        "indicators": [
+          "Requests for actual Discord login details",
+          "No official server announcement or explanation",
+          "Impersonation with no prior introduction",
+          "Likely account takeover attempt"
+        ]
+      }
+    },
+    {
+      "id": 25,
+      "instruction": "Analyze this mass DM about a 'huge Roblox giveaway' shared in multiple servers. Malicious or safe?",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "RobloxPromo#5100",
+        "message_content": "Join my new server for free Robux and exclusive items: hxxp://robloxbonus[.]io"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Mass DM spam advertising free Robux on a suspicious site, a common scam targeting Roblox players.",
+        "indicators": [
+          "Mass DM spam in multiple servers",
+          "Link to external site offering free Robux",
+          "No official Roblox domain or verification",
+          "Likely phishing for Roblox account details"
+        ]
+      }
+    },
+    {
+      "id": 26,
+      "instruction": "Assess whether this message about 'compensating you for promoting my music' is safe or not.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "MusicPromoter#9021",
+        "message_content": "I'll pay $50 if you share my music link in 10 servers. Just give me your PayPal login so I can send the money."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User claims they will pay for promotion, but requests PayPal login—indicative of financial credential theft.",
+        "indicators": [
+          "Unsolicited payment for simple task",
+          "Asks for PayPal login credentials instead of email or link",
+          "No mention of secure payment methods",
+          "Likely attempt to hijack PayPal account"
+        ]
+      }
+    },
+    {
+      "id": 27,
+      "instruction": "Classify this DM offering a 'brand deal' but asking to install a 'Discord ad plugin.'",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "BrandRep#1122",
+        "message_content": "We love your channel! Please install our plugin to show ads and earn revenue: hxxp://discord-ad-plugin[.]zip"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Malware disguised as a 'plugin' for earning ad revenue on Discord.",
+        "indicators": [
+          "Zip file containing unknown code",
+          "Promises revenue without legitimate process",
+          "No verifiable brand or references",
+          "Likely malicious plugin or keylogger"
+        ]
+      }
+    },
+    {
+      "id": 28,
+      "instruction": "Check this 'server raid' threat message. Is it a scam or actual threat?",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "RaidCrew#999",
+        "message_content": "Your server will be raided unless you pay us 5000 Robux or $50 in PayPal. Last warning."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Extortion threat for a 'server raid,' demanding payment in Robux or cash. Likely bluff to scam money.",
+        "indicators": [
+          "Threatening message demanding payment",
+          "Unconventional currency (Robux) or real money",
+          "Attempted intimidation tactic",
+          "No legitimate reason for 'raid'"
+        ]
+      }
+    },
+    {
+      "id": 29,
+      "instruction": "Analyze this direct message about 'premium Discord server templates' that require account details to import.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "TemplateGuru#6644",
+        "message_content": "Unlock premium server templates. Provide your Discord email & password to auto-import them now!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User demands the victim’s credentials to supposedly import 'premium templates,' a front for account theft.",
+        "indicators": [
+          "Credentials demanded instead of using normal Discord server template share features",
+          "No official marketplace or link",
+          "Promises exclusive content as bait",
+          "High risk of losing account access"
+        ]
+      }
+    },
+    {
+      "id": 30,
+      "instruction": "Evaluate if this mention of 'Discord official event staff' awarding gift codes is legitimate.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "EventStaff#9001",
+        "message_content": "Congrats! You were randomly chosen. Redeem your $100 Amazon code: hxxp://discord-event-prize.me"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake staff member awarding a nonexistent Amazon gift card via a suspicious link.",
+        "indicators": [
+          "Impersonating event staff with no official role badges",
+          "Randomly awarding high-value gift codes",
+          "Unverified external link for redemption",
+          "No official Discord or Amazon collaboration"
+        ]
+      }
+    },
+    {
+      "id": 31,
+      "instruction": "Determine if this DM about 'exploiting a game server' is a trap or a legitimate tip.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "GameHax#3131",
+        "message_content": "I found a method to duplicate in-game currency. You just need to paste this code into your console."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User instructs the victim to run unknown code, possibly stealing tokens or data from the Discord console.",
+        "indicators": [
+          "Encouraging suspicious console commands",
+          "Promise of cheating or duplication exploit",
+          "Risk of token theft (Discord console injection)",
+          "Likely leads to compromised account"
+        ]
+      }
+    },
+    {
+      "id": 32,
+      "instruction": "Classify this suspicious link from a new user claiming there's a 'funny meme video' about you.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "MemeFinder#8888",
+        "message_content": "Lol, you won't believe this video of you: hxxp://vidfun-check[.]com/watch"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Classic social engineering trick using curiosity about a 'video of you,' likely a phishing or malware site.",
+        "indicators": [
+          "Emotional hook claiming personal involvement",
+          "Unknown external video link",
+          "User with no prior history or friendship",
+          "Likely tries to harvest credentials or push malware"
+        ]
+      }
+    },
+    {
+      "id": 33,
+      "instruction": "Assess if this 'Boosting partnership' proposal in a server is legitimate or a potential scam.",
+      "input": {
+        "source": "Discord server message",
+        "sender_username": "BoostPartner#7700",
+        "message_content": "I can boost your server to Level 3 for free if you add me as an admin. Interested?"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User offering free server boosts in exchange for admin privileges—likely aims to hijack or sabotage the server.",
+        "indicators": [
+          "Unrealistic offer of free server boosts",
+          "Requires high-level server access (admin)",
+          "No known legit reason to hand over admin",
+          "Potential server takeover attempt"
+        ]
+      }
+    },
+    {
+      "id": 34,
+      "instruction": "Check if this 'Steam item trade' request on Discord is safe or a scam attempt.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "ItemCollector#0715",
+        "message_content": "I want to trade that rare CSGO skin. Let's use a middleman I know. You go first, though."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Likely a scam to coerce the victim into trading valuable in-game items with a fake or rigged 'middleman.'",
+        "indicators": [
+          "Encourages using an unknown 'friend' as middleman",
+          "User insists the victim go first",
+          "No official Steam trading channel or approach",
+          "High risk of losing in-game items"
+        ]
+      }
+    },
+    {
+      "id": 35,
+      "instruction": "Analyze this DM from a user claiming to be an 'e-girl' needing help. Is it a romance scam or legit?",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "CuteEgirl#2023",
+        "message_content": "I love talking with you. Could you send me some money? My PayPal is having issues, so maybe gift cards?"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Romance-like approach with quick financial requests, typical of 'e-girl' or catfish scam on Discord.",
+        "indicators": [
+          "Sudden emotional attachment or flattery",
+          "Request for unconventional payments (gift cards)",
+          "No real personal details or video call verification",
+          "Likely catfish or romance scam attempt"
+        ]
+      }
+    },
+    {
+      "id": 36,
+      "instruction": "Classify this user selling 'graphic design services' on Discord for an upfront fee. Suspicious or real?",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "ProDesigner#1110",
+        "message_content": "Pay 100% upfront, and I'll deliver the designs next week. No PayPal goods/services, only friends/family."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Suspicious design offer requiring fully upfront, non-refundable payment method—common scam tactic.",
+        "indicators": [
+          "Full payment before any sample or contract",
+          "Insistence on non-protected payment method",
+          "Refusal of safer transaction methods",
+          "Likely no service delivered after payment"
+        ]
+      }
+    },
+    {
+      "id": 37,
+      "instruction": "Evaluate this voice channel request where a user wants to see your open browser tabs. Safe or malicious?",
+      "input": {
+        "source": "Discord voice channel",
+        "sender_username": "HelperTech#404",
+        "message_content": "Share your screen with me and show all your open tabs so I can diagnose the issue."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User requests full screen and browser tab sharing, potentially to spot sensitive data or manipulate the user.",
+        "indicators": [
+          "Demanding to see all browser tabs or personal data",
+          "No valid reason to fix a 'tech issue'",
+          "Could reveal personal accounts, tokens, or info",
+          "Likely data harvesting under false pretenses"
+        ]
+      }
+    },
+    {
+      "id": 38,
+      "instruction": "Identify if this user offering a 'Custom Discord theme' is distributing malware or legitimate assets.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "ThemeCreator#7890",
+        "message_content": "Try my new .exe theme installer for Discord. It's awesome and safe, trust me!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Executable file masquerading as a Discord theme installer, likely a Trojan or keylogger.",
+        "indicators": [
+          "Discord themes generally do not require .exe files",
+          "No open-source or verified code",
+          "Forceful or manipulative reassurance ('trust me')",
+          "Potential system compromise if run"
+        ]
+      }
+    },
+    {
+      "id": 39,
+      "instruction": "Determine if this link posted about a 'secret alpha test' for a new game is authentic or a scam.",
+      "input": {
+        "source": "Discord channel message",
+        "sender_username": "AlphaTester#7652",
+        "message_content": "Exclusive alpha test access: hxxp://early-game-access[.]com. Hurry before spots run out!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Entices users with an 'exclusive alpha test' link that is likely phishing or malware distribution.",
+        "indicators": [
+          "Generic domain name, no official studio mention",
+          "Pressure to act quickly (FOMO tactic)",
+          "No proof of official partnership or developer info",
+          "Potential credential or data theft"
+        ]
+      }
+    },
+    {
+      "id": 40,
+      "instruction": "Analyze this invitation claiming to be from a famous streamer’s 'official alpha project' on Discord.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "StreamerEvents#4477",
+        "message_content": "Join the exclusive alpha test for [Famous Streamer]'s new game mod. Download: hxxp://youshouldtrust[.]exe"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Pretends to be associated with a famous streamer, but offers a suspicious .exe file to 'test' a mod.",
+        "indicators": [
+          "Executable download for a supposed mod",
+          "No official mention by the actual streamer",
+          "Unknown or suspicious domain",
+          "Likely uses the streamer's name as bait"
+        ]
+      }
+    },
+    {
+      "id": 41,
+      "instruction": "Assess if this user acting as 'Giveaway Manager' in a large server is distributing safe links.",
+      "input": {
+        "source": "Discord server message",
+        "sender_username": "GiveawayManager#9090",
+        "message_content": "Claim your free skins here: hxxp://skin-giveaway[.]club! No verification needed, just login with Discord."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Unverified giveaway manager linking to a site that requires Discord login—likely a phishing scheme.",
+        "indicators": [
+          "Suspicious external website requiring Discord login",
+          "No official giveaway details or announcements",
+          "Possibility of OAuth token capture",
+          "Exploits trust in the 'manager' role"
+        ]
+      }
+    },
+    {
+      "id": 42,
+      "instruction": "Check if this 'IP leak' warning from a random user is legit or a scam tactic.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "IPTracker#2211",
+        "message_content": "Your IP was leaked in chat. Click here to fix it: hxxp://leak-fixer[.]tk"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Alleges an IP leak to scare users into clicking a link, likely a malware or phishing site.",
+        "indicators": [
+          "Random user claiming an IP leak",
+          "Suspicious domain with no legitimate service",
+          "Urgent fear-based approach",
+          "Likely attempt to compromise user’s device"
+        ]
+      }
+    },
+    {
+      "id": 43,
+      "instruction": "Analyze this DM from 'Discord Support' about 'suspicious messages' on your account. Real or not?",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "DiscordSupport#8008",
+        "message_content": "We’ve flagged suspicious behavior in your DMs. Verify your email and password now or face a ban."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Impersonation of Discord Support, threatening a ban unless user shares credentials.",
+        "indicators": [
+          "Fake support account with no official badge",
+          "Demand for direct password disclosure",
+          "Threat-based intimidation tactic",
+          "No official process or link to real Discord site"
+        ]
+      }
+    },
+    {
+      "id": 44,
+      "instruction": "Determine if this user wanting help to 'test a new bot' is sincere or a social engineering attempt.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "BotTester#3030",
+        "message_content": "I made a new Discord bot. Please click this link and grant all permissions so I can finish coding it."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Asks user to grant all permissions for an unknown bot, potentially hijacking or data-mining the server.",
+        "indicators": [
+          "Excessive permission request for an unverified bot",
+          "No code repository or official documentation",
+          "Highly suspicious or brand-new account",
+          "Could escalate privileges or compromise servers"
+        ]
+      }
+    },
+    {
+      "id": 45,
+      "instruction": "Inspect this message about a 'vanity URL for premium membership' on Discord. Scam or legit?",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "VanityUpgrade#777",
+        "message_content": "Upgrade to a custom vanity URL for $10! Send me your Discord token so I can apply it on your server."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User claims to sell vanity URL feature (reserved for partnered or boosted servers) in exchange for token access.",
+        "indicators": [
+          "Token request to apply server features",
+          "Paid vanity URLs not offered outside official Boost system",
+          "Likely server or account takeover tactic",
+          "Misuse of Discord’s official features"
+        ]
+      }
+    },
+    {
+      "id": 46,
+      "instruction": "Analyze this directive from a user telling you to run a command in the Discord console. Any risk?",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "FixYourClient#4567",
+        "message_content": "Type this code in your Discord console to remove the glitch. It's totally safe: `document.write('<script src=...>')`"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Command injection attempt aimed at stealing tokens or altering client behavior in the Discord console.",
+        "indicators": [
+          "Encouraging code execution in Discord console",
+          "No official instructions from Discord support",
+          "Potential XSS or token grab script",
+          "Likely malicious client modification"
+        ]
+      }
+    },
+    {
+      "id": 47,
+      "instruction": "Check this DM offering '3 months free Nitro through Steam' with a special link. Legit or scam?",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "SteamGiftCodes#9009",
+        "message_content": "Claim your free 3-month Nitro on Steam now: hxxp://steam-discordnitro[.]gift"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake Steam Discord Nitro promotion linking to a phishing site that mimics Steam or Discord login.",
+        "indicators": [
+          "Domain mismatch (steam-discordnitro[.]gift)",
+          "Promises free Nitro via external link",
+          "Commonly used scam approach with fake Steam pages",
+          "Likely seeks login credentials"
+        ]
+      }
+    },
+    {
+      "id": 48,
+      "instruction": "Decide if this message about 'downloading a new Discord client' is safe or a hack attempt.",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "UpgradeClient#123",
+        "message_content": "Discord is upgrading to a new client version. Download the official .exe here: hxxp://discord-newclient[.]com"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Claims Discord update requiring an external .exe from a non-official domain, indicating a malware threat.",
+        "indicators": [
+          "Non-official domain for 'Discord client'",
+          "Discord updates automatically via official channels",
+          "Executable from unknown source",
+          "Likely Trojan or malicious software"
+        ]
+      }
+    },
+    {
+      "id": 49,
+      "instruction": "Analyze this file link from a user claiming to be 'BetterDiscordPlugins.' Is it trustworthy?",
+      "input": {
+        "source": "Discord channel message",
+        "sender_username": "BetterDiscordPlugins#2024",
+        "message_content": "Get the latest plugin pack here: hxxp://better-discord-pack[.]exe"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Executable link pretending to be BetterDiscord plugins, likely containing malware or keyloggers.",
+        "indicators": [
+          "BetterDiscord plugins are typically .js or .plugin.js, not .exe",
+          "External domain not affiliated with official BetterDiscord community",
+          "No open-source or GitHub repository link",
+          "High risk of system compromise"
+        ]
+      }
+    },
+    {
+      "id": 50,
+      "instruction": "Assess this message from a 'Daily Quest Bot' linking to an external site for reward claims. Scam or safe?",
+      "input": {
+        "source": "Discord DM",
+        "sender_username": "DailyQuestBot#2025",
+        "message_content": "Congrats! You completed today’s quest. Claim your reward here: hxxp://dailyquest-claims[.]xyz"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Bot claims to offer daily quest rewards but links to a suspicious external site that likely harvests credentials.",
+        "indicators": [
+          "Unverified bot or unrecognized official system",
+          "External site for 'reward claim' requiring login",
+          "No legitimate daily quest system in default Discord",
+          "Likely phishing or data-collection scam"
+        ]
+      }
+    }
+  ]

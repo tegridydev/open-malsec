@@ -1,0 +1,973 @@
+[
+    {
+      "id": 1,
+      "instruction": "Analyze this email impersonating the CEO, requesting a wire transfer for an urgent vendor payment.",
+      "input": {
+        "source": "email",
+        "sender_email": "ceo.office@outlook-proxy[.]com",
+        "subject": "RE: Urgent Vendor Payment",
+        "body": "Hello. Please transfer $25,000 to our new supplier account before noon. We risk a penalty if not done immediately."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Email impersonating the company's CEO, pressuring an employee to wire money to an unverified account.",
+        "indicators": [
+          "External, non-corporate sender email domain",
+          "Demand for urgent wire transfer",
+          "Threat of penalty if not sent quickly",
+          "Spoofed CEO identity"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "instruction": "Decide if this phone call, claiming to be the HR director, is a scam. The caller asks for employee payroll info.",
+      "input": {
+        "source": "phone call",
+        "caller_id": "Blocked",
+        "claimed_identity": "HR Director",
+        "scenario": "Caller claims to need immediate access to payroll records due to a system error."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fraudster impersonating HR director via phone, requesting sensitive payroll data with no formal verification.",
+        "indicators": [
+          "Blocked caller ID",
+          "Urgent demand for payroll info",
+          "No established authentication method",
+          "Impersonation of HR leadership"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "instruction": "Identify red flags in this email from 'Accounts Dept' about a supplier invoice with updated bank details.",
+      "input": {
+        "source": "email",
+        "sender_email": "accounts@my-supplier-updates[.]net",
+        "subject": "Updated Bank Details for Invoice #4512",
+        "body": "Please note our new bank details for invoice #4512. Kindly make the payment ASAP to avoid delays."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Invoice scam email requesting payment to a newly provided bank account, impersonating a known supplier.",
+        "indicators": [
+          "Domain mismatch or unknown domain",
+          "Unsolicited request to change bank details",
+          "Pressure to pay quickly",
+          "Likely compromised or spoofed vendor account"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "instruction": "Examine this text message claiming to be from HR, asking for employee Social Security numbers. Classify it.",
+      "input": {
+        "source": "SMS",
+        "sender_number": "+1-404-HR-VERIFY",
+        "message_text": "HR ALERT: We need your SSN immediately to finalize new benefits. Reply now."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Text message impersonating HR, requesting SSNs from employees without proper procedure.",
+        "indicators": [
+          "Unsolicited request for SSN",
+          "No official HR contact method",
+          "Pressure to respond immediately via SMS",
+          "Attempt to gather sensitive personal data"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "instruction": "Determine whether this email from the CFO about an urgent bill payment to an unknown vendor is legitimate.",
+      "input": {
+        "source": "email",
+        "sender_email": "cfo.emergency@fake-company[.]top",
+        "subject": "Urgent Bill Payment Needed - Invoice #X701",
+        "body": "We must pay an outstanding invoice immediately. Transfer $10,000 to the attached account details."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "BEC email impersonating CFO, demanding immediate payment for a suspicious invoice.",
+        "indicators": [
+          "Urgent tone from CFO with unfamiliar domain",
+          "Vague references to invoice details",
+          "Pressure to bypass standard approval protocols",
+          "Potential BEC (Business Email Compromise)"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "instruction": "Analyze this voicemail from an individual claiming to be an external HR consultant, requesting employee tax info.",
+      "input": {
+        "source": "voicemail",
+        "caller_id": "Unknown",
+        "message_content": "This is the new HR consultant. I need the W-2 forms for all employees. Please call back with the data."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Unknown caller masquerading as HR consultant, aiming to obtain employee tax forms (W-2) for identity theft.",
+        "indicators": [
+          "No official introduction or reference from real HR",
+          "Demand for bulk sensitive employee data",
+          "Caller ID unknown or restricted",
+          "Potential attempt to gather personal info on employees"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "instruction": "Identify whether this email from 'Legal Department' about a past-due invoice is part of an invoice scam.",
+      "input": {
+        "source": "email",
+        "sender_email": "legaldept@company-collections[.]com",
+        "subject": "Final Notice: Past-Due Invoice #8812",
+        "body": "Your account is in arrears for invoice #8812. Pay immediately to avoid legal repercussions."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phony collections threat, pressuring the recipient to pay a suspicious invoice or face alleged legal actions.",
+        "indicators": [
+          "No official company domain or internal references",
+          "Threatening legal language for immediate payment",
+          "Lack of official invoice documentation or history",
+          "Likely fake invoice to intimidate quick payment"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "instruction": "Determine if this LinkedIn message from 'HR Specialist' about verifying personal bank info is a scam.",
+      "input": {
+        "source": "social media (LinkedIn)",
+        "sender_profile": "HR Specialist at BigCorp Inc.",
+        "message_content": "We need to finalize your direct deposit. Please send your full bank account details here in chat."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake HR request on LinkedIn asking for sensitive financial info via chat, a strong sign of phishing.",
+        "indicators": [
+          "Unsolicited request for direct deposit details",
+          "No secure portal or official HR system used",
+          "Likely impersonation or unauthorized approach",
+          "Attempts to gather personal banking info quickly"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "instruction": "Evaluate this phone call claiming to be from the finance department, instructing a vendor payment change.",
+      "input": {
+        "source": "phone call",
+        "caller_id": "+1-888-NEW-ACCT",
+        "scenario": "Caller demands the AP clerk update vendor bank details to a new account, effective immediately."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Call instructing an urgent vendor bank detail change, likely a BEC tactic to reroute payments.",
+        "indicators": [
+          "Insistence on immediate banking update",
+          "No official request or email from recognized domain",
+          "Caller ID does not match known internal lines",
+          "High risk of payment diversion to a fraudulent account"
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "instruction": "Classify this email request from a CFO about purchasing gift cards as suspicious or valid.",
+      "input": {
+        "source": "email",
+        "sender_email": "cfo.urgent@companyfinance[.]info",
+        "subject": "Gift Cards Needed for Client",
+        "body": "Please buy $2,000 in Amazon gift cards and send me the codes ASAP for a client appreciation event."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Gift card scam impersonating CFO, requesting codes that can be instantly redeemed, a classic CEO/CFO fraud approach.",
+        "indicators": [
+          "Unfamiliar domain extension (.info)",
+          "Unusual or urgent request for gift cards",
+          "No official procedure or PO for purchase",
+          "Frequent hallmark of BEC/CEO scams"
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "instruction": "Analyze this email about a 'management-level pay adjustment' from a suspicious HR domain. Scam or not?",
+      "input": {
+        "source": "email",
+        "sender_email": "hr.review@unknown-hrportal[.]co",
+        "subject": "Management Pay Adjustment Notice",
+        "body": "We have processed a raise for your position. Confirm your bank details to receive backpay."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email impersonating HR, luring employees with a fake pay raise to obtain financial credentials.",
+        "indicators": [
+          "Unknown domain not matching official HR/Company domain",
+          "Promise of unexpected pay raise requiring account info",
+          "Likely leads to phishing form or direct data request",
+          "Tactic exploiting employee excitement about raises"
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "instruction": "Identify red flags in a text message telling an employee they must pay a 'uniform fee' via a provided link.",
+      "input": {
+        "source": "SMS",
+        "sender_number": "Workplace Alert",
+        "message_text": "HR: Uniform fee is overdue. Pay $100 now at hxxp://hr-pay-fees[.]biz or face payroll deduction."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Threatening text claiming a uniform fee is overdue, directing to a suspicious payment site.",
+        "indicators": [
+          "Unofficial, suspicious URL",
+          "Threat of payroll deduction if not paid promptly",
+          "No prior notice or official email about uniform fees",
+          "Likely a scam to capture payment info"
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "instruction": "Decide if this email about an 'overpaid invoice' from the AR department is legitimate or a scam tactic.",
+      "input": {
+        "source": "email",
+        "sender_email": "ar@fake-accountsreceivable[.]com",
+        "subject": "Overpaid Invoice Refund - Immediate Attention",
+        "body": "We have discovered an overpayment on your recent invoice. Fill out the attached form to receive a refund."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Scam email claiming an overpayment, prompting the target to fill out a form that likely harvests financial details.",
+        "indicators": [
+          "Unknown AR department domain",
+          "Promises a refund with no supporting invoice detail",
+          "Likely malicious attachment or link",
+          "Overpayment/refund approach is a common BEC variation"
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "instruction": "Evaluate the authenticity of an in-person courier delivering a sealed envelope with an invoice and a new bank account.",
+      "input": {
+        "source": "in-person",
+        "scenario": "Courier claims urgent invoice re-issue, instructing accounts payable to wire funds to the enclosed bank detail."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Physical scam attempt: unsolicited courier delivers a changed invoice with new bank info, urging immediate payment.",
+        "indicators": [
+          "Unexpected invoice re-issue by hand delivery",
+          "Altered bank account details with no prior notice",
+          "High-pressure tactic for immediate wire",
+          "No official verification or contact from known vendor"
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "instruction": "Analyze this phone call from someone claiming to be the CEO, instructing urgent changes to employee direct deposit info.",
+      "input": {
+        "source": "phone call",
+        "caller_id": "Private",
+        "scenario": "Caller insists HR must move certain employees’ direct deposits to new accounts."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Impersonator calls HR, demanding immediate payroll changes to redirect employees’ pay to fraudulent accounts.",
+        "indicators": [
+          "CEO impersonation with no prior internal request",
+          "Urgent demand to bypass standard procedures",
+          "Restricted caller ID preventing callback verification",
+          "Likely part of a payroll diversion scheme"
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "instruction": "Identify if an email from a supplier about a second invoice for an 'accidental undercharge' is a scam or real.",
+      "input": {
+        "source": "email",
+        "sender_email": "billing@official-supplier[.]biz",
+        "subject": "IMPORTANT: Additional Invoice for Undercharge",
+        "body": "We realized your last invoice was undercharged by $1,200. Please wire the balance to the updated account."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake additional invoice request from a suspicious domain, claiming an undercharge and demanding a wire transfer.",
+        "indicators": [
+          "New domain that differs slightly from the real supplier site",
+          "Request to pay 'undercharge' with no breakdown or references",
+          "Demands an immediate wire transfer",
+          "Possibility of compromised or spoofed billing email"
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "instruction": "Determine if this text message from 'Company Rewards Team' about a bonus deposit is genuine or a phishing attempt.",
+      "input": {
+        "source": "SMS",
+        "sender_number": "+1-777-BONUS4U",
+        "message_text": "Congrats! You’ve been awarded a $500 bonus. Update direct deposit details here: hxxp://secure-bonus[.]link"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Smishing message promising a bonus deposit, linking to a dubious site to steal personal or banking details.",
+        "indicators": [
+          "Unexpected bonus notification via generic SMS",
+          "URL not associated with internal HR or payroll systems",
+          "High incentive to quickly click and 'update' info",
+          "Likely personal data harvesting"
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "instruction": "Classify this email from a CFO about 'reimbursing an overpaid client' with no official invoice reference. Scam or not?",
+      "input": {
+        "source": "email",
+        "sender_email": "cfo.office@company-management[.]co",
+        "subject": "URGENT: Overpayment Refund to Client",
+        "body": "Please arrange an immediate refund of $8,000 to the client’s bank details attached. No time to lose!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "BEC attempt impersonating CFO, instructing finance to send a large sum to an arbitrary account.",
+        "indicators": [
+          "Sense of urgency with no invoice or client info provided",
+          "Suspicious domain that differs from the real corporate domain",
+          "Amount and request not confirmed through official channels",
+          "Likely fraudulent payout redirection"
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "instruction": "Review this chat message from a coworker’s Slack handle, asking you to pay a vendor immediately. Is it safe?",
+      "input": {
+        "source": "Slack DM",
+        "sender_username": "CoworkerJohn",
+        "message_content": "Hey, I'm in a meeting. Please pay vendor ACME Inc. $4,500 now. I'll explain later."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Compromised coworker Slack account directing an urgent vendor payment, typical BEC technique on internal messaging platforms.",
+        "indicators": [
+          "Abrupt money request with no context or invoice detail",
+          "Uses Slack to circumvent normal accounting workflow",
+          "Claim of being in a meeting to avoid phone verification",
+          "Likely coworker’s account is hacked or spoofed"
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "instruction": "Decide if this email about updating 'employee medical benefits' is a legitimate HR notice or a phishing scam.",
+      "input": {
+        "source": "email",
+        "sender_email": "employee.benefits@hr-portalupdate[.]info",
+        "subject": "Employee Benefits Renewal - Action Required",
+        "body": "We need updated personal data, including SSN and date of birth, to process your new health plan."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Email impersonating HR benefits, seeking personal data through an unverified domain and lacking official disclaimers.",
+        "indicators": [
+          "Sketchy domain not matching official HR contact",
+          "Direct request for sensitive personal info",
+          "No link to official internal portal",
+          "Likely identity theft or credential phishing"
+        ]
+      }
+    },
+    {
+      "id": 21,
+      "instruction": "Check if this postal mail invoice from a new 'consultant' is legitimate or a fake invoice scam.",
+      "input": {
+        "source": "postal mail",
+        "sender": "Business Consulting Experts LLC",
+        "letter_content": "Invoice #C-102: $650 for consultation. Pay by check to PO Box 123, or call to confirm details."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Paper invoice for unsolicited consulting services with vague descriptions, typical of a small business invoice scam.",
+        "indicators": [
+          "Unrecognized consulting services or prior arrangement",
+          "Generic PO box for payment remittance",
+          "No itemized description or contact references",
+          "Likely tries to collect quick payment from unsuspecting recipients"
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "instruction": "Analyze whether this in-person request from someone claiming to be a new HR rep is suspect.",
+      "input": {
+        "source": "in-person at reception",
+        "claimed_identity": "HR Rep",
+        "scenario": "Individual arrives, says they need staff personal files immediately for an HR audit."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Person physically impersonating HR to access confidential staff records, lacking official ID or appointment.",
+        "indicators": [
+          "No prior notice or official documentation",
+          "Refusal to show official company badge or ID",
+          "Demands immediate access to personal files",
+          "Possible attempt to steal sensitive data"
+        ]
+      }
+    },
+    {
+      "id": 23,
+      "instruction": "Identify red flags in a phone call from 'Accounts Payable' requesting re-routing a large invoice to a new address.",
+      "input": {
+        "source": "phone call",
+        "caller_id": "Unknown",
+        "scenario": "Caller claims an updated address for mailing a check, insists on immediate redirection."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Caller impersonating AP, instructing to send a high-value check to a changed address, typical invoice redirection scam.",
+        "indicators": [
+          "No official notice or email from known internal domain",
+          "Insistence on immediate check mailing changes",
+          "Caller ID not recognized or withheld",
+          "Could lead to checks being cashed by fraudsters"
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "instruction": "Evaluate this email from a 'new CFO' introducing themselves and asking for a list of employees with salaries.",
+      "input": {
+        "source": "email",
+        "sender_email": "cfo.intro@company-updates[.]me",
+        "subject": "Meet the New CFO - Action Required",
+        "body": "Send me the full list of employees and their current salaries for a budget review."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email claiming to be from a new CFO, seeking sensitive salary data, typical HR/finance infiltration attempt.",
+        "indicators": [
+          "No internal announcement about a new CFO",
+          "Generic domain .me with no official references",
+          "Demands sensitive HR data without secure channel",
+          "Likely personal or corporate espionage tactic"
+        ]
+      }
+    },
+    {
+      "id": 25,
+      "instruction": "Assess if this text message from 'HR Dept' urging to click a link to update personal info is a scam.",
+      "input": {
+        "source": "SMS",
+        "sender_number": "HR-ALERT",
+        "message_text": "Important: Update your personal info for the new payroll system. hxxp://hr-payroll-update[.]host"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Smishing attempt, linking to a suspicious domain for 'personal info updates,' impersonating HR.",
+        "indicators": [
+          "Text from unknown short code or name (HR-ALERT)",
+          "URL with suspicious TLD (.host)",
+          "No prior email or official announcement about payroll changes",
+          "Likely data-harvesting scam"
+        ]
+      }
+    },
+    {
+      "id": 26,
+      "instruction": "Determine if an email instructing immediate gift card purchases from the HR manager is legitimate or not.",
+      "input": {
+        "source": "email",
+        "sender_email": "hr.manager@company-urgent[.]work",
+        "subject": "Quick Help Needed - Employee Recognition",
+        "body": "We need $1,000 in Walmart gift cards to distribute as employee rewards. Please purchase and send codes ASAP."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "BEC style request impersonating HR manager, pushing for gift card purchases with codes upfront.",
+        "indicators": [
+          "Domain mismatch (company-urgent.work)",
+          "Unusual request for gift cards in large sum",
+          "Immediate demand for code sharing",
+          "Common gift card scam tactic"
+        ]
+      }
+    },
+    {
+      "id": 27,
+      "instruction": "Classify this phone call from someone claiming to be an external auditing firm, requesting copies of all vendor invoices.",
+      "input": {
+        "source": "phone call",
+        "caller_id": "+1-888-AUDIT-NOW",
+        "scenario": "Caller claims the company is behind on an external audit and needs invoice records emailed to them immediately."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake auditor requesting large sets of financial documents, likely to glean data for further fraud or infiltration.",
+        "indicators": [
+          "No prior engagement letter or known audit schedule",
+          "Pushes for immediate submission of sensitive financial info",
+          "No legitimate credentials or references shared",
+          "Likely disguised data collection attempt"
+        ]
+      }
+    },
+    {
+      "id": 28,
+      "instruction": "Analyze this email from 'CEO Office' asking for employees’ personal phone numbers and addresses. Suspicious or real?",
+      "input": {
+        "source": "email",
+        "sender_email": "ceo.office@corp-admin[.]info",
+        "subject": "Personal Contact Verification",
+        "body": "We need to confirm direct lines for all employees. Please compile addresses and cell numbers and send them to me."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "CEO impersonation targeting personal contact details for all employees, common BEC data-harvesting approach.",
+        "indicators": [
+          "Unknown domain (corp-admin.info)",
+          "Request for extensive employee personal info without justification",
+          "Urgent or direct command from alleged CEO",
+          "Likely identity theft or spear-phishing preparation"
+        ]
+      }
+    },
+    {
+      "id": 29,
+      "instruction": "Identify potential invoice fraud in this email referencing an unknown 'freelance consultancy' fee.",
+      "input": {
+        "source": "email",
+        "sender_email": "invoices@freelance-consultants[.]cc",
+        "subject": "Invoice #2023-09-12: Consultancy Fee",
+        "attachment": "Freelance_Invoice_2023-09.pdf"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake freelance consultancy invoice with no prior contract or known project, pushing the recipient to pay quickly.",
+        "indicators": [
+          "Unrecognized consultancy company or domain",
+          "PDF invoice for unrequested services",
+          "Likely tries to slip into AP as a routine invoice",
+          "Common tactic to defraud finance departments"
+        ]
+      }
+    },
+    {
+      "id": 30,
+      "instruction": "Evaluate if a Slack message from 'HR_Bonuses' about uploading personal data to a Google Form is legitimate.",
+      "input": {
+        "source": "Slack message",
+        "sender_username": "HR_Bonuses",
+        "message_content": "Upload your social security and banking details here for bonus eligibility: [Google Form link]"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Unauthorized Slack user impersonating HR, using a Google Form to collect sensitive data under the guise of bonuses.",
+        "indicators": [
+          "Generic account name 'HR_Bonuses' not matching official HR staff",
+          "Request for SSN and banking info via public Google Form",
+          "No internal HR system usage or official communication",
+          "Immediate red flag for phishing"
+        ]
+      }
+    },
+    {
+      "id": 31,
+      "instruction": "Decide if this phone text about a 'backdated raise' from HR is credible or a social engineering scam.",
+      "input": {
+        "source": "SMS",
+        "sender_number": "+1-602-EMP-RAISE",
+        "message_text": "HR Update: You have a backdated raise. Submit your direct deposit info here: hxxp://hr-raiseportal[.]org"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Smishing claim of a surprise backdated raise, linking to an unverified portal to gather direct deposit credentials.",
+        "indicators": [
+          "Highly unusual domain extension (.org) not affiliated with official HR",
+          "Unexpected raise notice without official letter or email",
+          "Encourages immediate deposit data submission",
+          "Likely bank account phishing attempt"
+        ]
+      }
+    },
+    {
+      "id": 32,
+      "instruction": "Analyze this email claiming to be from 'Payroll Dept' about adjusting employees’ tax withholding. Malicious or not?",
+      "input": {
+        "source": "email",
+        "sender_email": "payroll@companytaxupdate[.]com",
+        "subject": "RE: Employee Tax Withholding Adjustments",
+        "body": "We noticed some irregularities. Send each employee’s SSN and pay rate so we can correct them."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email seeking SSNs and pay details under a false pretense of 'withholding adjustments.'",
+        "indicators": [
+          "Strange domain (companytaxupdate.com)",
+          "No official steps or secure portal for data changes",
+          "Large-scale request for sensitive info",
+          "Likely identity theft approach"
+        ]
+      }
+    },
+    {
+      "id": 33,
+      "instruction": "Check if this letter arrived by mail is legitimate: 'Final Overdue Payment' demanding immediate check to a P.O. Box.",
+      "input": {
+        "source": "postal mail",
+        "sender": "Collections & Recoveries Inc.",
+        "letter_content": "We represent your software supplier. Pay $1,850 now or we escalate to legal action. Remit to P.O. Box 567."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Paper letter claiming to be from a collections agency for a 'software supplier,' forcing a payment to a PO box with no details.",
+        "indicators": [
+          "No official reference or invoice number provided",
+          "Generic name 'Collections & Recoveries Inc.'",
+          "PO Box only for payment, no phone or contact references",
+          "High-pressure legal threat to coerce payment"
+        ]
+      }
+    },
+    {
+      "id": 34,
+      "instruction": "Identify if this Teams chat from 'Finance Head' about sending an urgent wire to cover a missed invoice is safe or not.",
+      "input": {
+        "source": "Microsoft Teams chat",
+        "sender_username": "Finance_Head",
+        "message_content": "We missed an invoice payment. Wire $5,500 to the vendor's new account within the next hour."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Likely compromised Teams account or impersonation, instructing an immediate wire transfer under false urgency.",
+        "indicators": [
+          "No official invoice or purchase order details",
+          "Unusual or urgent demand on a chat platform",
+          "No existing email chain or mention from actual finance policy",
+          "Common BEC style on internal collaboration tools"
+        ]
+      }
+    },
+    {
+      "id": 35,
+      "instruction": "Analyze this call from 'Corporate HR' claiming a new 401(k) plan, asking for personal data. Suspicious or real?",
+      "input": {
+        "source": "phone call",
+        "caller_id": "+1-855-HR-PLAN1",
+        "scenario": "Caller says they need personal details to enroll employees in a new 401(k) plan, including SSN, date of birth."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Cold call impersonating HR to gather personal data under the guise of setting up new 401(k) benefits.",
+        "indicators": [
+          "Unverified phone number or identity",
+          "Immediate request for sensitive data over phone",
+          "No prior company-wide announcement or memo",
+          "Likely identity theft or benefits fraud"
+        ]
+      }
+    },
+    {
+      "id": 36,
+      "instruction": "Determine if a text from 'CEO’s personal number' about an emergency vendor payment is legitimate.",
+      "input": {
+        "source": "SMS",
+        "sender_number": "+1-555-CEO-ALERT",
+        "message_text": "I'm in a meeting, can't talk. Need you to send $2,000 to vendor X right now. Will explain later."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "CEO impersonation via text, requesting an urgent payment with no official approval flow or context.",
+        "indicators": [
+          "Unrecognized personal number for CEO",
+          "Urgent request bypassing normal process",
+          "No supporting invoice or purchase details",
+          "Telltale sign of BEC scenario"
+        ]
+      }
+    },
+    {
+      "id": 37,
+      "instruction": "Review this Slack DM from 'HRCoordinator' about a new company health check, requiring personal data. Scam or not?",
+      "input": {
+        "source": "Slack DM",
+        "sender_username": "HRCoordinator",
+        "message_content": "We’re implementing health screenings. Please fill out your SSN and address in this form: [Shortened URL]"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake or compromised Slack account instructing employees to share SSN and address via a suspicious link.",
+        "indicators": [
+          "Shortened URL with no official domain",
+          "Demands personal data with no official HR system mention",
+          "Generic role name 'HRCoordinator' not recognized",
+          "Likely data-harvesting attempt"
+        ]
+      }
+    },
+    {
+      "id": 38,
+      "instruction": "Identify red flags in an email from 'vendor@updated-payee[.]com' referencing a changed invoice settlement process.",
+      "input": {
+        "source": "email",
+        "sender_email": "vendor@updated-payee[.]com",
+        "subject": "RE: Revised Payment Instructions for Invoice #1001",
+        "body": "Please disregard previous bank info and pay the outstanding amount to our new account details attached."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Vendor impersonation with a suspicious domain, urging an urgent switch in bank details to intercept payments.",
+        "indicators": [
+          "Unfamiliar or newly created domain",
+          "Immediate request to change established bank instructions",
+          "Attachment likely containing fraudulent details",
+          "Common tactic in invoice redirection scams"
+        ]
+      }
+    },
+    {
+      "id": 39,
+      "instruction": "Classify this phone call from someone claiming to be 'VP of Finance' demanding immediate invoice settlement to avoid penalties.",
+      "input": {
+        "source": "phone call",
+        "caller_id": "+1-855-FINANCE",
+        "scenario": "Caller says a vendor is threatening litigation unless paid today, instructs wire to a new account now."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Impersonation of a VP of Finance, using legal threats as leverage to push a same-day wire to an unknown account.",
+        "indicators": [
+          "Sudden urgent threat of litigation with no official documentation",
+          "Redirect of funds to a 'new account'",
+          "Caller ID not recognized or mismatch with real corporate line",
+          "High-pressure BEC tactic"
+        ]
+      }
+    },
+    {
+      "id": 40,
+      "instruction": "Check if an in-person approach by someone claiming to be an invoice collections officer is legitimate or a scam attempt.",
+      "input": {
+        "source": "in-person at front desk",
+        "claimed_identity": "Invoice Collections Officer",
+        "scenario": "Individual demands a check for an overdue invoice, providing only a personal ID and no official references."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Unverified person physically collecting a supposed overdue invoice payment, offering no formal company documentation.",
+        "indicators": [
+          "No legitimate proof of official collections agency or assignment",
+          "Requests immediate check payment in-person",
+          "Only personal ID shown, no matching corporate credentials",
+          "Likely a con to gather quick, untraceable funds"
+        ]
+      }
+    },
+    {
+      "id": 41,
+      "instruction": "Analyze an email from 'HR@employee-verification[.]team' urging employees to confirm personal addresses. Suspicious or valid?",
+      "input": {
+        "source": "email",
+        "sender_email": "hr@employee-verification[.]team",
+        "subject": "Employee Address Confirmation Needed",
+        "body": "Click the link below to verify your home address and phone number for our updated records. Deadline: 24 hours."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing attempt from an unofficial HR domain, requiring employees to 'verify' personal info on short notice.",
+        "indicators": [
+          "Strange domain (employee-verification.team)",
+          "Tight 24-hour deadline to create urgency",
+          "Link likely leads to a data capture form",
+          "No mention of official company channels or login"
+        ]
+      }
+    },
+    {
+      "id": 42,
+      "instruction": "Determine if a text from 'CEO' stating to buy gift cards for a corporate event is legitimate or fraudulent.",
+      "input": {
+        "source": "SMS",
+        "sender_number": "+1-707-MEET-CEO",
+        "message_text": "In a meeting right now, buy $1,500 in Apple gift cards for a conference raffle. Send pictures of codes ASAP."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "CEO impersonation via SMS, typical gift card scam demanding immediate code sharing with no standard procedure.",
+        "indicators": [
+          "Unknown phone number posing as CEO",
+          "Large gift card purchase with code distribution",
+          "Pressures immediate compliance (in a meeting)",
+          "Classic BEC-style gift card fraud"
+        ]
+      }
+    },
+    {
+      "id": 43,
+      "instruction": "Review an internal chat from someone claiming to be 'Head of HR' on Microsoft Teams, requesting employees’ ID scans. Classify it.",
+      "input": {
+        "source": "Microsoft Teams message",
+        "sender_username": "HeadOfHR",
+        "message_content": "Send me scanned copies of your driver’s license or passport to confirm your identity in our records."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "High-risk request for scanned government IDs, likely from a compromised or fake HR account on Teams.",
+        "indicators": [
+          "Unusual request for ID scans with no official policy",
+          "No secure upload or official HR forms",
+          "Could be used for identity theft or further hacking",
+          "Internal platform account possibly spoofed"
+        ]
+      }
+    },
+    {
+      "id": 44,
+      "instruction": "Analyze an email from a newly hired CFO (allegedly) about pending vendor checks. Is it legitimate or a BEC scam?",
+      "input": {
+        "source": "email",
+        "sender_email": "cfo.new@corporate-changes[.]org",
+        "subject": "Pending Checks Must Be Reissued",
+        "body": "I've reviewed the vendor checks. Please void the current ones and send new checks to the attached address."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "New 'CFO' email redirecting vendor checks to a suspicious address, typical BEC infiltration method.",
+        "indicators": [
+          "No official internal memo about CFO appointment",
+          "External domain .org not used by the real corporation",
+          "Instruction to void existing checks and mail new ones",
+          "Likely an attempt to intercept corporate funds"
+        ]
+      }
+    },
+    {
+      "id": 45,
+      "instruction": "Identify red flags in this phone call from 'Internal Auditor' demanding immediate vendor statements to detect fraud.",
+      "input": {
+        "source": "phone call",
+        "caller_id": "+1-800-AUDIT-FAST",
+        "scenario": "Caller claims there’s suspected fraud, asks for all vendor bank statements, instructs to email to them directly."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake internal audit approach wanting full vendor bank statements, enabling future targeted payment diversion.",
+        "indicators": [
+          "No official internal auditor name or known extension",
+          "Urgent request for sensitive financial docs",
+          "Asks for direct email vs. official shared drive or secure system",
+          "Likely BEC or vendor impersonation scheme"
+        ]
+      }
+    },
+    {
+      "id": 46,
+      "instruction": "Determine if this email about new 'employee compliance training fees' from HR is malicious or genuine.",
+      "input": {
+        "source": "email",
+        "sender_email": "training@hr-compliance[.]org",
+        "subject": "Employee Training Fees - Immediate Payment",
+        "body": "Each staff member must pay $150 for new compliance modules. Submit payments via the attached link within 48 hours."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "HR compliance fee scam instructing employees to pay an unexpected sum via an attachment or link.",
+        "indicators": [
+          "No official HR or corporate domain usage",
+          "Mandatory fee unusual for internal training",
+          "Attachment or link likely collects payment details",
+          "Urgent 48-hour timeline raises suspicion"
+        ]
+      }
+    },
+    {
+      "id": 47,
+      "instruction": "Review whether an email from 'AccountsReceivable@finance-docs[.]info' about finalizing a partial invoice is safe or not.",
+      "input": {
+        "source": "email",
+        "sender_email": "AccountsReceivable@finance-docs[.]info",
+        "subject": "Partial Invoice #9023 - Final Amount Due",
+        "body": "We must complete your partial payment. Please verify your bank details in the attached PDF form."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Unknown AR email domain, requesting bank verification via PDF, typical invoice scam to steal banking info.",
+        "indicators": [
+          "Sender domain not recognized as official finance department",
+          "Attaches suspicious form for banking details",
+          "Claims partial payment with no prior communication",
+          "Likely leads to stolen financial credentials"
+        ]
+      }
+    },
+    {
+      "id": 48,
+      "instruction": "Check if this text message from 'Head of Accounts' is malicious: demands an urgent vendor payment with a link.",
+      "input": {
+        "source": "SMS",
+        "sender_number": "+1-800-ACCT-TEAM",
+        "message_text": "We risk a late fee. Pay the vendor $3,000 now: hxxp://immediate-vendor-pay[.]me"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "BEC attempt via SMS, pushing an urgent vendor payment through a dubious short link.",
+        "indicators": [
+          "No official phone or internal verification method",
+          "Immediate threat of 'late fee' with a suspicious link",
+          "Generic text demanding payment outside normal channels",
+          "Likely smishing link to collect credentials or direct funds"
+        ]
+      }
+    },
+    {
+      "id": 49,
+      "instruction": "Analyze an email from 'HumanResource@corpupdates[.]online' asking employees to sign a new direct deposit form online.",
+      "input": {
+        "source": "email",
+        "sender_email": "HumanResource@corpupdates[.]online",
+        "subject": "Direct Deposit Form - Action Required",
+        "body": "Sign the attached e-form with your bank info to ensure no payroll interruption. Act now!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email impersonating HR, prompting employees to fill in direct deposit details via an attached e-form.",
+        "indicators": [
+          "Domain .online not affiliated with official corporate domain",
+          "Unverified e-form for bank info collection",
+          "Pressure to avoid 'payroll interruption'",
+          "Attempts to capture sensitive financial data"
+        ]
+      }
+    },
+    {
+      "id": 50,
+      "instruction": "Determine if this phone call from 'CFO’s assistant' about a last-minute invoice settlement before quarter’s end is real or suspicious.",
+      "input": {
+        "source": "phone call",
+        "caller_id": "Unknown",
+        "scenario": "They say the CFO is traveling, wants an urgent wire transfer done to meet end-of-quarter obligations."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Impersonation of CFO’s assistant pressuring immediate wire to a likely fraudulent account under quarter-end pretext.",
+        "indicators": [
+          "Caller ID withheld, no means to verify identity",
+          "Urgent demand referencing CFO’s travel status",
+          "No official email or approval chain",
+          "Common BEC scenario exploiting time sensitivity"
+        ]
+      }
+    }
+  ]

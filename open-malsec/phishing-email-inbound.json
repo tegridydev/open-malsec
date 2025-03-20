@@ -1,0 +1,1002 @@
+[
+    {
+      "id": 1,
+      "instruction": "Analyze this inbound email for phishing indicators. Provide classification and the key red flags.",
+      "input": {
+        "source": "email",
+        "sender_email": "alerts@secure-paypal-check.com",
+        "subject": "Your PayPal Account Has Been Limited",
+        "body": "Dear user, unusual activity has been detected. Click the link below to restore full access to your account: hxxp://secure-paypal-check.com/login"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Email impersonates PayPal, urging the recipient to follow a phishing link for account verification.",
+        "indicators": [
+          "Sender domain does not match official PayPal domain",
+          "Urgent tone claiming account limitation",
+          "Link to a fraudulent site mimicking PayPal login page",
+          "Generic greeting ('Dear user') instead of name"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "instruction": "Review this email claiming to offer an unclaimed tax refund. Classify and describe red flags.",
+      "input": {
+        "source": "email",
+        "sender_email": "refund@irs-taxes-update.net",
+        "subject": "IMPORTANT: Unclaimed Tax Refund",
+        "body": "Hello, you have an unclaimed tax refund of $1,280.30. Complete verification at hxxp://irs-taxes-update.net/verify"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email masquerading as an IRS notification about a tax refund.",
+        "indicators": [
+          "Domain not associated with IRS (.gov)",
+          "Claim of a specific refund amount to lure clicks",
+          "Call to action requiring immediate verification",
+          "Likely attempts to gather personal/financial info"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "instruction": "Determine if this email from a 'webmail admin' requesting password updates is legitimate or phishing.",
+      "input": {
+        "source": "email",
+        "sender_email": "webmaster@companymail-support.co",
+        "subject": "Your Password Will Expire Soon",
+        "body": "Attention user, your mailbox password expires in 24 hours. Renew now: hxxp://companymail-support.co/reset"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Email impersonates a webmail administrator to obtain the user’s login credentials.",
+        "indicators": [
+          "Sender domain not matching official company domain",
+          "Urgent expiration claim",
+          "Link to a non-SSL or suspicious URL",
+          "Generic salutation with no personalization"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "instruction": "Identify the nature of this email about an undelivered package. Provide indicators of phishing.",
+      "input": {
+        "source": "email",
+        "sender_email": "no-reply@postdelivery-failed.com",
+        "subject": "Delivery Failed: Package #331205",
+        "body": "We could not deliver your package. Please click here to arrange redelivery: hxxp://postdelivery-failed.com/schedule"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email pretending to be a postal service with a link to reschedule a fake delivery.",
+        "indicators": [
+          "Random domain (postdelivery-failed.com)",
+          "Generic 'we could not deliver' claim",
+          "No legitimate tracking details",
+          "Likely requests personal or payment info"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "instruction": "Assess this email offering a loan pre-approval. Is it phishing or legitimate marketing?",
+      "input": {
+        "source": "email",
+        "sender_email": "offers@loanpreapproved-instant.info",
+        "subject": "You Are Pre-Approved for $50,000",
+        "body": "Congratulations! Get your loan by entering your details here: hxxp://loanpreapproved-instant.info/form"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing disguised as a pre-approved loan offer, seeking personal/financial details.",
+        "indicators": [
+          "High loan amount with no checks",
+          "Suspicious domain with no brand recognition",
+          "Immediate request for sensitive data",
+          "Likely identity theft attempt"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "instruction": "Classify this email about a 'System Update' requiring user credentials.",
+      "input": {
+        "source": "email",
+        "sender_email": "it.support@comp-secureupdates.io",
+        "subject": "Important System Update: Action Required",
+        "body": "Dear Employee, log in with your username and password at the link below to complete mandatory security updates."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email targeting employees, asking for credentials under the guise of a security update.",
+        "indicators": [
+          "Unrecognized domain (comp-secureupdates.io)",
+          "Lack of official corporate signature or branding",
+          "Mandatory login request without context",
+          "Likely credential-stealing link"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "instruction": "Determine if this email claiming a 'locked bank account' is real or phishing. Highlight reasons.",
+      "input": {
+        "source": "email",
+        "sender_email": "alert@banknotice-verify.com",
+        "subject": "Action Required: Bank Account Locked",
+        "body": "We noticed suspicious transactions. Verify your identity now: hxxp://banknotice-verify.com/login"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Email impersonates a bank, claiming suspicious activity to panic users into clicking a phishing link.",
+        "indicators": [
+          "Non-official domain (banknotice-verify.com)",
+          "Threat of account lockout",
+          "Redirect to a login page collecting credentials",
+          "No mention of specific transaction details"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "instruction": "Review this email from an unknown domain offering a software update. Is it a safe download?",
+      "input": {
+        "source": "email",
+        "sender_email": "updates@system-patch-download.net",
+        "subject": "Critical Software Patch Available",
+        "body": "Install the attached file immediately to fix critical vulnerabilities. Failure to install may cause data loss."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Email urging recipients to open an attachment for a fake software update, likely containing malware.",
+        "indicators": [
+          "Sender domain unrelated to known software vendor",
+          "Attachment to execute a 'patch'",
+          "High-pressure language about critical vulnerability",
+          "Potential malicious file disguised as an update"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "instruction": "Analyze this 'Yahoo! Prize' email for phishing tactics. Provide the classification.",
+      "input": {
+        "source": "email",
+        "sender_email": "promo@yahoowinner-announcement.co",
+        "subject": "Final Notice: You’ve Won $100,000!",
+        "body": "Congratulations! You are a winner in our Yahoo promotion. Provide personal details to claim your prize now."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Lottery-style phishing email claiming a large prize from Yahoo, but from an unverified domain.",
+        "indicators": [
+          "Unsolicited prize announcement",
+          "Sender domain not affiliated with Yahoo",
+          "Request for personal data",
+          "Likely 419 or sweepstakes scam variant"
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "instruction": "Classify this email about a 'new friend request' from a social network. Is it legitimate?",
+      "input": {
+        "source": "email",
+        "sender_email": "notification@connect-request.net",
+        "subject": "New Friend Request Waiting",
+        "body": "Someone sent you a friend request. Sign in now: hxxp://connect-request.net/account"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email feigning a social network friend request, redirecting to a credential-harvesting page.",
+        "indicators": [
+          "Generic subject with no specific platform name",
+          "Link to an unknown domain (connect-request.net)",
+          "No mention of the friend’s name or profile",
+          "Immediate sign-in required"
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "instruction": "Examine this email about an auto-renewing antivirus subscription. Determine if it's phishing.",
+      "input": {
+        "source": "email",
+        "sender_email": "billing@nort0n-secure.com",
+        "subject": "Subscription Renewal Confirmation",
+        "body": "Your antivirus will auto-renew for $299. Click here to cancel or manage your subscription: hxxp://nort0n-secure.com"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Email uses a fake Norton billing scenario, urging recipients to click a fraudulent cancellation link.",
+        "indicators": [
+          "Misspelled domain (nort0n-secure.com)",
+          "High renewal cost to incite panic",
+          "Link for cancellation that leads to phishing page",
+          "Likely scam to steal payment or personal info"
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "instruction": "Assess whether this email from 'Netflix' requesting account details is genuine or not.",
+      "input": {
+        "source": "email",
+        "sender_email": "support@netfl1x-update.com",
+        "subject": "Problem with Your Last Payment",
+        "body": "We couldn’t process your latest payment. Update your billing info to avoid service suspension: hxxp://netfl1x-update.com/verify"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email impersonating Netflix, using a domain with a '1' in place of 'i' to trick recipients.",
+        "indicators": [
+          "Domain spoofing (netfl1x-update.com)",
+          "Claim of payment failure with urgent fix",
+          "Link to a fake billing page",
+          "Likely card data theft attempt"
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "instruction": "Check this email claiming to be from 'HR Dept' about a bonus payout. Malicious or legitimate?",
+      "input": {
+        "source": "email",
+        "sender_email": "hr@bonuses-corp.net",
+        "subject": "Your Special Year-End Bonus",
+        "body": "You qualify for an extra bonus. Please submit your employee ID and banking details here: hxxp://bonuses-corp.net/form"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email targeting employees with fake bonus promises to collect sensitive info.",
+        "indicators": [
+          "Domain not matching official company HR",
+          "Requesting banking details in a suspicious form",
+          "Generic approach instead of personalized HR message",
+          "Likely data harvesting attempt"
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "instruction": "Identify if this email about 'successful iTunes purchase' is a receipt or phishing attempt.",
+      "input": {
+        "source": "email",
+        "sender_email": "purchase@apple-billing.io",
+        "subject": "Your iTunes Purchase Receipt",
+        "body": "Thank you for your purchase of $49.99. If you did not authorize this, cancel here: hxxp://apple-billing.io/cancel"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Email claims a purchase was made, tricking recipients into clicking a cancellation link to steal info.",
+        "indicators": [
+          "Unrecognized domain (apple-billing.io)",
+          "Unexpected purchase alert causing alarm",
+          "Link to 'cancel' that leads to phishing site",
+          "Likely card or Apple ID credential theft"
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "instruction": "Determine if this inbound email from 'Microsoft' about OneDrive storage is authentic.",
+      "input": {
+        "source": "email",
+        "sender_email": "update@m1cro-soft-support.info",
+        "subject": "OneDrive Storage Exceeded",
+        "body": "Your OneDrive storage is over the limit. Resolve now to avoid data loss: hxxp://m1cro-soft-support.info/OneDrive"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email impersonating Microsoft, using a domain with a letter replaced by a number.",
+        "indicators": [
+          "Domain mismatch (m1cro-soft-support.info)",
+          "Immediate threat of data loss",
+          "URL not associated with official Microsoft domains",
+          "Generic 'update' or 'resolve now' link"
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "instruction": "Examine this email that includes an HTML attachment for 'payment details.' Is it safe?",
+      "input": {
+        "source": "email",
+        "sender_email": "finance@company-paybill.org",
+        "subject": "Payment Confirmation Required",
+        "attachment": "Payment_Details.html"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing attempt delivering an HTML file that opens a fake payment form in the browser.",
+        "indicators": [
+          "Unsolicited payment confirmation request",
+          "HTML attachment (common phishing tactic)",
+          "Domain not related to official finance or billing channels",
+          "Likely form collecting sensitive data"
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "instruction": "Analyze this email claiming 'Facebook security check' is needed. Real or phishing?",
+      "input": {
+        "source": "email",
+        "sender_email": "security@facebook-alerts.com",
+        "subject": "Security Check: Suspicious Login Attempt",
+        "body": "We noticed a login from a new device. Verify your account now: hxxp://facebook-alerts.com/secure"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email impersonating Facebook with a suspicious domain to collect credentials.",
+        "indicators": [
+          "Domain not official (facebook-alerts.com instead of facebook.com)",
+          "Urgent login verification request",
+          "No mention of device details or location",
+          "Likely leads to credential-stealing page"
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "instruction": "Check if this email about unlocking a secret investment opportunity is phishing.",
+      "input": {
+        "source": "email",
+        "sender_email": "info@privateshare-buyin.net",
+        "subject": "Exclusive Shares for VIP Only",
+        "body": "Buy shares now at a 90% discount! Enter your details: hxxp://privateshare-buyin.net/account"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email promising exclusive investment, linking to a site that harvests financial data.",
+        "indicators": [
+          "Unsolicited high-return investment opportunity",
+          "Unverified domain with no official financial registration",
+          "Asks for personal or banking info to 'buy shares'",
+          "Too-good-to-be-true discount"
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "instruction": "Decide if this inbound email threatening account closure for software licensing is legitimate.",
+      "input": {
+        "source": "email",
+        "sender_email": "support@license-expired-check.com",
+        "subject": "Software License Expiration Warning",
+        "body": "Your software license will be revoked in 24 hours. Click here to renew and avoid termination."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email claims software license expiration, pressuring the user to click a renewal link.",
+        "indicators": [
+          "Unknown domain for software licensing (license-expired-check.com)",
+          "Threat of immediate license termination",
+          "No mention of specific software or key details",
+          "Likely directs to payment or credential form"
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "instruction": "Evaluate if this email about 'Amazon suspicious order' is real or phishing. Provide red flags.",
+      "input": {
+        "source": "email",
+        "sender_email": "no-reply@amzn-check-orders.net",
+        "subject": "Suspicious Order #AMZ-534213",
+        "body": "We detected unauthorized activity on your account. Cancel the order here: hxxp://amzn-check-orders.net/cancel"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email impersonating Amazon, forcing the recipient to 'cancel' a fake suspicious order.",
+        "indicators": [
+          "Domain mismatch (amzn-check-orders.net)",
+          "Fake order number with no order details",
+          "Link to cancel leading to a phishing page",
+          "Urgency about unauthorized charge"
+        ]
+      }
+    },
+    {
+      "id": 21,
+      "instruction": "Classify this inbound email posing as a 'feedback request' with a suspicious link.",
+      "input": {
+        "source": "email",
+        "sender_email": "survey@customerreview-center.info",
+        "subject": "Urgent Survey: Win a Free Gift Card",
+        "body": "Help us improve our services. Complete this short survey for a chance to win a $500 gift card: hxxp://customerreview-center.info/survey"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Email falsely offering gift card for survey participation, likely collecting personal info or injecting malware.",
+        "indicators": [
+          "Generic 'urgent survey' with high-value gift card reward",
+          "Unknown domain not linked to a known brand",
+          "Immediate request to click a link with personal questions",
+          "Likely phishing or data-harvesting tactic"
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "instruction": "Identify the legitimacy of this email about a 'Bitcoin reward' for loyal customers.",
+      "input": {
+        "source": "email",
+        "sender_email": "rewards@cryptopromo.biz",
+        "subject": "You’ve Earned 0.5 BTC!",
+        "body": "Congratulations on your loyalty! Claim your Bitcoin reward instantly: hxxp://cryptopromo.biz/claim"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email pretending to reward the recipient with cryptocurrency for unknown 'loyalty.'",
+        "indicators": [
+          "Unsolicited crypto reward offer",
+          "Suspicious domain (cryptopromo.biz)",
+          "Immediate claim link with no context",
+          "Likely attempt to collect wallet credentials"
+        ]
+      }
+    },
+    {
+      "id": 23,
+      "instruction": "Analyze this email from 'DocuSign' requiring immediate signature. Could it be phishing?",
+      "input": {
+        "source": "email",
+        "sender_email": "no-reply@docs-sign-urgent.com",
+        "subject": "Document Awaiting Your Signature",
+        "body": "An important document is ready for your signature. Please review: hxxp://docs-sign-urgent.com/view"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Email masquerades as DocuSign, directing to a fake page for capturing login or personal details.",
+        "indicators": [
+          "Domain not affiliated with official DocuSign",
+          "Urgent language requiring immediate signature",
+          "No reference to what the document is about",
+          "Likely credential-stealing or malware-laden link"
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "instruction": "Check if this email about an SSL certificate expiry is legitimate or a phishing attempt.",
+      "input": {
+        "source": "email",
+        "sender_email": "ssl@certificate-renew.info",
+        "subject": "SSL Certificate Expiring Soon",
+        "body": "Please renew your certificate to avoid site downtime. Complete payment at hxxp://certificate-renew.info/pay"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email claiming an SSL certificate expiry, instructing payment via a suspicious link.",
+        "indicators": [
+          "Unknown domain not tied to a known certificate authority",
+          "Immediate payment request",
+          "Vague reference to 'your site' with no details",
+          "Likely to steal payment info"
+        ]
+      }
+    },
+    {
+      "id": 25,
+      "instruction": "Determine if this inbound email about a 'membership auto-renewal' is genuine or phishing.",
+      "input": {
+        "source": "email",
+        "sender_email": "renewal@unknown-member-service.org",
+        "subject": "Auto-Renewal Notice - $199 Charge",
+        "body": "Your membership is set to renew. If you did not authorize this, click here to cancel: hxxp://unknown-member-service.org/cancel"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email impersonating a membership service, pushing recipients to a cancel link for data theft.",
+        "indicators": [
+          "No mention of membership details or service name",
+          "Urgent cancellation link to an unknown domain",
+          "High renewal fee to alarm user",
+          "Likely phishing for financial info"
+        ]
+      }
+    },
+    {
+      "id": 26,
+      "instruction": "Identify red flags in this unsolicited email claiming a credit card promotion.",
+      "input": {
+        "source": "email",
+        "sender_email": "promo@exclusive-creditcard-apply.net",
+        "subject": "Your Pre-Approved Platinum Card",
+        "body": "Enjoy a $10,000 limit instantly. Just fill out our secure form: hxxp://exclusive-creditcard-apply.net/form"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email offering high-limit credit card pre-approval through an unverified link.",
+        "indicators": [
+          "Unsolicited credit offer with unrealistic terms",
+          "Suspicious domain with no official bank reference",
+          "Asks for personal or financial details upfront",
+          "Likely identity theft scam"
+        ]
+      }
+    },
+    {
+      "id": 27,
+      "instruction": "Review this inbound email about 'account inactivity' for a streaming service. Phishing or real?",
+      "input": {
+        "source": "email",
+        "sender_email": "support@hulu-update.info",
+        "subject": "Account Inactive - Immediate Action Needed",
+        "body": "We noticed no recent activity. Reactivate now or lose your saved shows: hxxp://hulu-update.info/reactivate"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email impersonating Hulu, using an unofficial domain to harvest user login credentials.",
+        "indicators": [
+          "Sender domain not affiliated with Hulu",
+          "Threat of losing saved shows to spur quick action",
+          "Generic wording, no personal user details",
+          "Link likely leads to false login page"
+        ]
+      }
+    },
+    {
+      "id": 28,
+      "instruction": "Classify this email urging to 'update security questions' at a suspicious link.",
+      "input": {
+        "source": "email",
+        "sender_email": "verify@account-recovery-center.com",
+        "subject": "Security Questions Update Required",
+        "body": "To enhance your account security, please update your secret questions here: hxxp://account-recovery-center.com/secure"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email requesting secret question updates, possibly for password reset exploitation.",
+        "indicators": [
+          "Generic domain unrelated to actual provider",
+          "No brand context for which account is being secured",
+          "Direct link to 'update' security info",
+          "Likely tactic to gather info for account takeover"
+        ]
+      }
+    },
+    {
+      "id": 29,
+      "instruction": "Analyze this email about an 'overcharged invoice' and identify phishing signals.",
+      "input": {
+        "source": "email",
+        "sender_email": "billing@acc-billingalerts.org",
+        "subject": "Overcharged Invoice Refund",
+        "body": "We have identified an overcharge on your last invoice. Click here to apply for a refund."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email using a refund claim to entice users to click a suspicious link.",
+        "indicators": [
+          "No specific invoice number or details",
+          "Domain not matching known billing entities",
+          "Immediate refund promise with no verification",
+          "Likely request for personal or financial info"
+        ]
+      }
+    },
+    {
+      "id": 30,
+      "instruction": "Decide if this email from an unknown shipping company about a 'lost package' is phishing.",
+      "input": {
+        "source": "email",
+        "sender_email": "tracking@parcel-finder.xyz",
+        "subject": "Urgent: Lost Package Notification",
+        "body": "Our records show we lost your package. Confirm your delivery address: hxxp://parcel-finder.xyz/confirm"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email claiming a lost package from an unknown shipping firm, seeking address or personal data.",
+        "indicators": [
+          "Unrecognized shipping brand (parcel-finder.xyz)",
+          "Alarmist approach to confirm address",
+          "Likely data-harvesting link",
+          "No official tracking ID or prior communication"
+        ]
+      }
+    },
+    {
+      "id": 31,
+      "instruction": "Evaluate if this email about 'LinkedIn password reset' is authentic or a phishing trap.",
+      "input": {
+        "source": "email",
+        "sender_email": "no-reply@l1nked-in-reset.com",
+        "subject": "LinkedIn Password Reset",
+        "body": "Someone requested a password change. If this wasn’t you, please verify now: hxxp://l1nked-in-reset.com/verify"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email impersonating LinkedIn, using a lookalike domain to capture login credentials.",
+        "indicators": [
+          "Domain variation (l1nked-in-reset.com) with a digit replacing 'i'",
+          "Immediate call to verify or reset password",
+          "Generic 'someone requested' claim",
+          "Likely credential-harvesting page"
+        ]
+      }
+   ,
+    {
+      "id": 32,
+      "instruction": "Classify this email from a 'gaming platform' about a reward code. Is it phishing?",
+      "input": {
+        "source": "email",
+        "sender_email": "rewards@game-bonus-portal.info",
+        "subject": "You’ve Earned a Special Gaming Reward!",
+        "body": "Redeem your code now to unlock exclusive in-game items: hxxp://game-bonus-portal.info/redeem"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing message feigning a gaming reward, redirecting to a fraudulent redemption page.",
+        "indicators": [
+          "Sender domain not matching an official gaming platform",
+          "Generic language about 'special reward'",
+          "Urgent redemption link with no details",
+          "Likely attempts to steal account credentials"
+        ]
+      }
+    },
+    {
+      "id": 33,
+      "instruction": "Determine if this inbound email about a job interview scheduling link is phishing.",
+      "input": {
+        "source": "email",
+        "sender_email": "hr@jobs-opportunity-pro.com",
+        "subject": "Interview Schedule Confirmation",
+        "body": "Please confirm your availability and fill out this form with personal details: hxxp://jobs-opportunity-pro.com/apply"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email disguised as HR scheduling an interview, requesting personal data via a dubious link.",
+        "indicators": [
+          "Sender domain not matching any known company",
+          "Vague job description or position name",
+          "Form asks for sensitive personal details",
+          "Likely a data collection scam"
+        ]
+      }
+    },
+    {
+      "id": 34,
+      "instruction": "Inspect this email about 'student loan consolidation' for phishing signs.",
+      "input": {
+        "source": "email",
+        "sender_email": "help@loanconsolidate-express.org",
+        "subject": "Act Now: Lower Your Student Loan Payments",
+        "body": "Qualify for a special interest rate. Provide your SSN and loan details at hxxp://loanconsolidate-express.org/app"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Email claims special loan rates, demanding SSN and other sensitive data on a suspicious site.",
+        "indicators": [
+          "Generic domain not linked to real loan servicers",
+          "Request for SSN in an unsecured manner",
+          "No official disclaimers or references",
+          "Likely identity theft or data-scraping attempt"
+        ]
+      }
+    },
+    {
+      "id": 35,
+      "instruction": "Analyze this email about an 'urgent domain transfer request.' Is it phishing?",
+      "input": {
+        "source": "email",
+        "sender_email": "registry@domain-transfer-service.co",
+        "subject": "Alert: Domain Transfer Initiated",
+        "body": "A request to transfer your domain has been submitted. Cancel if unauthorized: hxxp://domain-transfer-service.co/cancel"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email pretending a domain transfer was requested, prompting the user to click a cancel link.",
+        "indicators": [
+          "Unrecognized domain registrar details",
+          "Immediate fear tactic about losing domain",
+          "Suspicious cancel link with no official domain registry references",
+          "Likely a scam to harvest login or payment info"
+        ]
+      }
+    },
+    {
+      "id": 36,
+      "instruction": "Check if this inbound email claiming an 'eFax document' is safe.",
+      "input": {
+        "source": "email",
+        "sender_email": "no-reply@efax-scan-report.me",
+        "subject": "New eFax Received",
+        "body": "You have 1 new eFax. View the document at hxxp://efax-scan-report.me/download"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Email claiming a new eFax with a link to download a file from a suspicious domain.",
+        "indicators": [
+          "Domain not linked to official eFax service",
+          "No direct fax details (sender, time, pages)",
+          "Likely attempts to distribute malware or phishing page",
+          "Urgent tone to view document"
+        ]
+      }
+    },
+    {
+      "id": 37,
+      "instruction": "Identify phishing cues in this email about a 'Google account violation.'",
+      "input": {
+        "source": "email",
+        "sender_email": "alert@google-violation-check.com",
+        "subject": "Violation Detected in Your Google Account",
+        "body": "We found a policy breach. Verify now or your account may be suspended: hxxp://google-violation-check.com/verify"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email pretending to be from Google, referencing a policy breach that requires immediate verification.",
+        "indicators": [
+          "Domain mismatch (google-violation-check.com)",
+          "Threat of suspension if not verified",
+          "Generic policy breach claim with no specifics",
+          "Likely credential-stealing link"
+        ]
+      }
+    },
+    {
+      "id": 38,
+      "instruction": "Assess whether this email offering a 'work-from-home kit' is phishing or genuine.",
+      "input": {
+        "source": "email",
+        "sender_email": "kit@home-jobs-official.net",
+        "subject": "Earn $5,000 Weekly from Home!",
+        "body": "Get your starter kit now. Submit your personal info: hxxp://home-jobs-official.net/apply"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email with unrealistic earnings, requesting personal data to 'apply' for a home job kit.",
+        "indicators": [
+          "Unrealistic income claims",
+          "Suspicious domain, not a known job platform",
+          "No specifics on the job role or company",
+          "Likely harvests personal/financial details"
+        ]
+      }
+    },
+    {
+      "id": 39,
+      "instruction": "Analyze this inbound email claiming a 'Dropbox file share.' Real or phishing?",
+      "input": {
+        "source": "email",
+        "sender_email": "file-share@dropbx-portal.com",
+        "subject": "New File Shared with You",
+        "body": "A colleague has shared an important document. Access it now: hxxp://dropbx-portal.com/view"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Email impersonating Dropbox with a domain that includes a misspelling ('dropbx'), leading to a phishing page.",
+        "indicators": [
+          "Misspelled brand name in URL or sender",
+          "No mention of the colleague’s name or context",
+          "Calls for immediate action to view a doc",
+          "Likely credential-stealing link"
+        ]
+      }
+    },
+    {
+      "id": 40,
+      "instruction": "Determine if this email about a suspicious login attempt is genuine or phishing.",
+      "input": {
+        "source": "email",
+        "sender_email": "alerts@accountlogin-security.info",
+        "subject": "Suspicious Login Attempt on Your Account",
+        "body": "We detected a login from Russia. If this wasn’t you, secure your account now: hxxp://accountlogin-security.info/check"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email claiming a foreign login attempt, directing the recipient to a fake security link.",
+        "indicators": [
+          "Domain not affiliated with an official provider",
+          "Threat of unauthorized foreign login",
+          "Immediate request to 'secure your account'",
+          "Potentially harvests credentials or personal info"
+        ]
+      }
+    },
+    {
+      "id": 41,
+      "instruction": "Inspect this email about a mobile bill error. Decide if it's phishing.",
+      "input": {
+        "source": "email",
+        "sender_email": "billing@mobile-net-verify.org",
+        "subject": "Billing Error Detected",
+        "body": "We have overcharged your mobile bill by $45. Click to initiate refund: hxxp://mobile-net-verify.org/refund"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email feigning a billing error to lure the user into clicking a refund link.",
+        "indicators": [
+          "Unsolicited claim of an overcharge",
+          "Suspicious domain not tied to an actual carrier",
+          "No account number or verification method",
+          "Likely a malicious or phishing link"
+        ]
+      }
+    },
+    {
+      "id": 42,
+      "instruction": "Assess if this email from 'Apple Support' about an iCloud storage problem is phishing.",
+      "input": {
+        "source": "email",
+        "sender_email": "icloud-support@appleidhelp-support.pro",
+        "subject": "iCloud Storage Issue Detected",
+        "body": "We noticed an error syncing your data. Verify your account details now to restore full functionality."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Email impersonating Apple iCloud support, urging immediate account verification on a suspicious domain.",
+        "indicators": [
+          "Sender domain not an official Apple domain",
+          "Vague mention of a 'sync error' with no specifics",
+          "Immediate verification request for account details",
+          "Likely credential-stealing tactic"
+        ]
+      }
+    },
+    {
+      "id": 43,
+      "instruction": "Identify potential phishing traits in this email about a 'Discord Nitro subscription.'",
+      "input": {
+        "source": "email",
+        "sender_email": "support@d1sc0rd-gift.com",
+        "subject": "Your Discord Nitro Gift Subscription",
+        "body": "A friend gifted you Nitro. Claim now: hxxp://d1sc0rd-gift.com/claim"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email posing as Discord gift link, using a domain with numeral substitutions to trick users.",
+        "indicators": [
+          "Modified brand name in domain (d1sc0rd-gift.com)",
+          "Unsolicited gift subscription offer",
+          "Immediate call to click for free Nitro",
+          "Likely attempts to steal Discord credentials"
+        ]
+      }
+    },
+    {
+      "id": 44,
+      "instruction": "Decide if this inbound email about an Adobe Creative Cloud 'upgrade needed' is phishing.",
+      "input": {
+        "source": "email",
+        "sender_email": "update@creativecloud-srv.com",
+        "subject": "Upgrade Required: Adobe Creative Cloud",
+        "body": "Your Creative Cloud version is outdated. Upgrade now to continue using premium features: hxxp://creativecloud-srv.com/upgrade"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Email impersonating Adobe, urging an immediate upgrade on a non-official domain.",
+        "indicators": [
+          "Domain not recognized as Adobe property",
+          "Urgent upgrade request with no official link",
+          "No mention of actual plan or user subscription details",
+          "Likely leads to credential or payment theft"
+        ]
+      }
+    },
+    {
+      "id": 45,
+      "instruction": "Classify this email about a 'claimable airline voucher' for a canceled flight. Is it phishing?",
+      "input": {
+        "source": "email",
+        "sender_email": "refund@airvoucher-claims.org",
+        "subject": "Unclaimed Flight Voucher - Act Now",
+        "body": "We have a $250 airline voucher waiting. Verify your details to claim immediately!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email promising a free voucher for an unspecified canceled flight, urging quick info submission.",
+        "indicators": [
+          "Unsolicited airline voucher offer",
+          "No flight reference or PNR code",
+          "Suspicious domain unrelated to any airline",
+          "Likely data harvesting or malicious link"
+        ]
+      }
+    },
+    {
+      "id": 46,
+      "instruction": "Evaluate this email from an unknown domain about a 'Payoneer payment freeze.' Phishing or real?",
+      "input": {
+        "source": "email",
+        "sender_email": "support@payoneer-auth-check.co",
+        "subject": "Payment Frozen - Verify Account",
+        "body": "A recent transaction has been put on hold. Verify your Payoneer account now to release funds."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email impersonating Payoneer, claiming account freeze to prompt immediate verification.",
+        "indicators": [
+          "Domain mismatch (payoneer-auth-check.co)",
+          "Urgent language about withheld funds",
+          "No official transaction reference or ID",
+          "Likely credential or financial theft scheme"
+        ]
+      }
+    },
+    {
+      "id": 47,
+      "instruction": "Analyze this inbound 'Google Forms' link email. Could it be phishing?",
+      "input": {
+        "source": "email",
+        "sender_email": "forms@googlelink-verify.net",
+        "subject": "Please Update Your Personal Information",
+        "body": "We need updated records. Fill out the Google Form here: hxxp://googlelink-verify.net/forms"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email linking to a fake Google Form page to collect personal info.",
+        "indicators": [
+          "Domain not associated with actual Google services",
+          "Generic request for 'updated records'",
+          "Link to an external site rather than official forms.google.com",
+          "Likely data-harvesting attempt"
+        ]
+      }
+    },
+    {
+      "id": 48,
+      "instruction": "Check if this 'Zelle payment request' email is legitimate or a phishing attempt.",
+      "input": {
+        "source": "email",
+        "sender_email": "payments@zelle-check-approve.net",
+        "subject": "Pending Zelle Transfer",
+        "body": "A payment of $200 is pending. Approve or cancel now: hxxp://zelle-check-approve.net/secure"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email impersonating Zelle with a link to 'approve' or 'cancel' a non-existent transfer.",
+        "indicators": [
+          "Sender domain not an official bank or Zelle domain",
+          "Unsolicited payment request",
+          "False sense of urgency to click a link",
+          "Likely leads to phishing page for financial info"
+        ]
+      }
+    },
+    {
+      "id": 49,
+      "instruction": "Identify if this email about a 'Pinterest policy violation' is phishing. List red flags.",
+      "input": {
+        "source": "email",
+        "sender_email": "policy@pin-notify-check.com",
+        "subject": "Violation of Pinterest Community Guidelines",
+        "body": "Your account has been flagged. Log in now to review the violation: hxxp://pin-notify-check.com/login"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email claiming Pinterest guideline violation, directing user to a fake login page.",
+        "indicators": [
+          "Domain not associated with Pinterest",
+          "Generic violation claim with no specifics",
+          "Immediate login request to 'fix' the issue",
+          "Likely credential-stealing website"
+        ]
+      }
+    },
+    {
+      "id": 50,
+      "instruction": "Examine this inbound email about a security alert from 'Your Cloud Backup.' Phishing or real?",
+      "input": {
+        "source": "email",
+        "sender_email": "alert@cloudsafe-protect.info",
+        "subject": "Security Alert: Unauthorized Backup Access",
+        "body": "We detected unusual activity in your backup files. Verify your account to secure them: hxxp://cloudsafe-protect.info/verify"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email pretending to be a cloud backup service, urging an immediate verification to secure files.",
+        "indicators": [
+          "Unrecognized service name or domain (cloudsafe-protect.info)",
+          "Vague mention of 'unusual activity'",
+          "No specific user or file references",
+          "Likely credential-harvesting link"
+        ]
+      }
+    }
+  ]

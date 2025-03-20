@@ -1,0 +1,962 @@
+[
+    {
+      "id": 1,
+      "instruction": "Analyze this Twitter DM offering a free subscription to an OnlyFans creator. Is it legitimate or a scam?",
+      "input": {
+        "source": "Twitter DM",
+        "sender_handle": "@FreeOFPromo",
+        "message_content": "Congrats! You've been chosen for a FREE 1-year OnlyFans subscription to @RealStarName. Just click here: hxxp://onlyfans-promo-free[.]co"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "A scam DM claiming free long-term subscription to a popular OnlyFans creator, directing to a phishing domain.",
+        "indicators": [
+          "Unverified or generic promotional account",
+          "Unrealistic offer of a year-long free subscription",
+          "Suspicious third-party link (not official OnlyFans URL)",
+          "Likely phishing or credit card data capture attempt"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "instruction": "Determine if this email saying you were 'gifted' an OnlyFans subscription from a friend is safe or not.",
+      "input": {
+        "source": "email",
+        "sender_email": "gift@onlyfans-sub.co",
+        "subject": "Your Friend Sent You an OnlyFans Gift!",
+        "body": "Click below to accept your FREE subscription. Provide card details to verify your age."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Email claims someone 'gifted' an OnlyFans sub, requiring card details on a suspicious domain.",
+        "indicators": [
+          "Sender domain not associated with the real OnlyFans site",
+          "Asking for card info to 'verify' age in an unsecure manner",
+          "No legitimate gift notification or redemption code",
+          "Likely phishing or card-fraud scheme"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "instruction": "Identify red flags in a Telegram group announcing discounted OnlyFans subscriptions for multiple creators at once.",
+      "input": {
+        "source": "Telegram group",
+        "group_name": "OnlyFansDeals",
+        "message_content": "Pay $15 in crypto here and unlock 10 top creators' premium content for a month—exclusive bundle!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Telegram group selling 'discounted bundle' access, demanding crypto payment, typical scam with no real creator involvement.",
+        "indicators": [
+          "Unverified or unofficial aggregator group",
+          "Bulk subscription offer not endorsed by official creators",
+          "Crypto payment demanded with no refund guarantees",
+          "Likely no real access after payment"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "instruction": "Assess if this Instagram message from a 'promoter' guaranteeing you free OnlyFans content is legitimate.",
+      "input": {
+        "source": "Instagram DM",
+        "sender_profile": "OnlyFansPromotionHQ",
+        "message_content": "Swipe up to get free VIP content from multiple creators. No fees, we just need your card to confirm 18+!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Instagram user claims to provide free VIP content, demanding credit card for 'age verification'—classic phishing ploy.",
+        "indicators": [
+          "No official link to OnlyFans or verified profiles",
+          "Requests credit card info under the guise of age check",
+          "Promises 'multiple creators' content at once for free",
+          "Likely credit card harvesting attempt"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "instruction": "Decide if a link posted on Reddit claiming a 50% discount on OnlyFans subscriptions is real or scam.",
+      "input": {
+        "source": "Reddit post",
+        "subreddit": "r/FreeOFDeals",
+        "post_content": "Get 50% OFF any OnlyFans account! Just use code: SUPERFAN at hxxp://onlyfan-discount[.]info"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Suspicious Reddit post linking to a non-official domain offering universal discount codes for OnlyFans.",
+        "indicators": [
+          "Website not affiliated with OnlyFans official domain",
+          "Promises a universal discount on 'any' account (impossible)",
+          "Potential phishing or payment card theft site",
+          "No verification or partnership info"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "instruction": "Analyze this text message stating your OnlyFans account has been compromised and urging you to update payment info.",
+      "input": {
+        "source": "SMS",
+        "sender_number": "+1-800-OF-ALERTS",
+        "message_text": "URGENT: Your OnlyFans account is locked. Update credit card now to restore access: hxxp://onlyfans-security-check[.]com"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake OnlyFans security alert via SMS, linking to a phishing domain to collect payment details.",
+        "indicators": [
+          "Unofficial short code or vanity number",
+          "URL not matching official onlyfans.com domain",
+          "Claims account lock, pushing immediate card update",
+          "Likely smishing for financial or personal info"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "instruction": "Identify whether this Twitter account offering 'lifetime subscription' to a top model for a onetime fee is suspect.",
+      "input": {
+        "source": "Twitter",
+        "sender_handle": "@TopModelOF_Fans",
+        "tweet_content": "Pay me $100 once via PayPal and get lifetime access to @FamousModel’s OnlyFans content—DM me for details!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "An unverified handle claims to sell 'lifetime access' to a famous creator's content. Likely impersonation or scam.",
+        "indicators": [
+          "No affiliation with the actual model’s verified account",
+          "Uses a one-time PayPal payment to a personal address",
+          "Promises indefinite content access outside OnlyFans platform",
+          "Likely no real access after payment"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "instruction": "Evaluate an Instagram Story mentioning a link for 'official OnlyFans free trial' that doesn't match the creator’s link in bio.",
+      "input": {
+        "source": "Instagram Story",
+        "profile_name": "ModelName_Updates",
+        "story_text": "Swipe up for my new OnlyFans free trial! Hurry, limited slots: hxxp://ofreedeal[.]store"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Story claims a free OnlyFans trial but links to an unrelated domain not matching the creator's official link. Likely a scam.",
+        "indicators": [
+          "URL not consistent with typical OnlyFans link or Linktree",
+          "Claims of 'limited slots' to create urgency",
+          "Profile possibly impersonating the real model or brand",
+          "Scam site likely capturing payment or personal info"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "instruction": "Assess if a Facebook post offering discounted OnlyFans group subscriptions using crypto payment is legitimate.",
+      "input": {
+        "source": "Facebook post",
+        "page_name": "OFDealsWorldwide",
+        "post_content": "Exclusive: Pay 0.01 BTC for 3 months of multiple OnlyFans creators! DM us for instructions."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Unverified page pushing a 'group subscription' deal in exchange for Bitcoin, typical of OnlyFans scam bundles.",
+        "indicators": [
+          "No direct link or official OnlyFans aggregator partnership",
+          "High-cost crypto payment for intangible or improbable service",
+          "No legitimate method to group multiple creator subscriptions under one fee",
+          "Likely no product delivered after payment"
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "instruction": "Analyze this email claiming a refund on your OnlyFans subscription, but requires card re-verification on a third-party site.",
+      "input": {
+        "source": "email",
+        "sender_email": "refund@onlyfans-cs[.]net",
+        "subject": "OnlyFans Refund Notification",
+        "body": "We have initiated a refund of $29.99. Please verify your card details here: hxxp://verify-onlyfans-refund[.]net"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email offering a fake refund, redirecting to a fraudulent card verification form.",
+        "indicators": [
+          "Domain not matching official OnlyFans domain",
+          "Unsolicited refund with no transaction details",
+          "Link to a suspicious website for card info",
+          "Likely credit card harvesting"
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "instruction": "Check if this link posted on an adult forum promising 'premium OnlyFans gallery' for free is a scam.",
+      "input": {
+        "source": "adult forum post",
+        "poster_username": "FreeOFLeaks",
+        "post_content": "Access all premium OnlyFans pics from top creators for free: hxxp://of-leak-galleries[.]info"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Forum link claims free access to 'premium OnlyFans' content, which is typically stolen or nonexistent. Likely malicious site.",
+        "indicators": [
+          "Promotion of leaked/stolen content, violating terms and laws",
+          "Suspicious domain offering free access to paid creators",
+          "High risk of malware or forced sign-up for spam/scams",
+          "No legitimate proof it has real content"
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "instruction": "Determine if a direct message from someone offering an OnlyFans content swap is legitimate or suspicious.",
+      "input": {
+        "source": "DM (any platform)",
+        "sender_username": "OF_SwapperPro",
+        "message_content": "Trade your OnlyFans login with mine! We share each other’s subscriptions. It's 100% safe."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Invitation to swap logins for shared subscription access—violates TOS and likely intended to steal accounts.",
+        "indicators": [
+          "Encourages account sharing (against platform rules)",
+          "No safe method or official feature for content swap",
+          "Likely attempts to hijack your OnlyFans or payment info",
+          "Exploitative approach to bypass subscription fees"
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "instruction": "Analyze if a phone call from 'OnlyFans Verification Department' requesting personal data is genuine.",
+      "input": {
+        "source": "phone call",
+        "caller_id": "Unknown",
+        "scenario": "Caller claims they need your ID and credit card info to reactivate a suspended OnlyFans subscription."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "No official phone-based OnlyFans verification process. Caller demands ID and credit card info—typical phone phishing.",
+        "indicators": [
+          "Unknown or blocked caller ID",
+          "Requests confidential ID and payment data verbally",
+          "OnlyFans does not handle account reactivation via phone calls",
+          "Likely identity and credit card theft attempt"
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "instruction": "Classify a WhatsApp broadcast about a 'limited-time OnlyFans pass' for a flat monthly rate, external to the platform.",
+      "input": {
+        "source": "WhatsApp broadcast",
+        "sender_number": "+1-202-OFDEAL",
+        "message_text": "Pay only $9.99 via PayPal and get a universal pass to all OnlyFans creators—limited time only!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "WhatsApp broadcast claiming a universal pass across OnlyFans creators for a single payment, which is impossible.",
+        "indicators": [
+          "Universal pass is not an official OnlyFans product",
+          "External pay method (PayPal) unconnected to the platform",
+          "Mass broadcast indicating spam or scam intent",
+          "No official link or legit mention of how access is provided"
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "instruction": "Evaluate an email that claims your OnlyFans subscription auto-renewal failed, linking to a suspicious payment portal.",
+      "input": {
+        "source": "email",
+        "sender_email": "no-reply@onlyfans-update[.]tv",
+        "subject": "Subscription Renewal Failed",
+        "body": "Please update your payment information now: hxxp://onlyfans-renewal[.]tv. Failure to do so cancels your subscription."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email stating auto-renewal failure, urging a click on a suspicious .tv domain to 'update' payment info.",
+        "indicators": [
+          "Non-standard domain extension (.tv) not tied to official OnlyFans",
+          "Threat of cancellation to create urgency",
+          "Direct link to a third-party payment portal",
+          "Likely card info phishing scheme"
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "instruction": "Analyze a tweet from an unverified account claiming to be a known OnlyFans creator, sharing a 'special discount link.'",
+      "input": {
+        "source": "Twitter",
+        "sender_handle": "@ModelNamePromo",
+        "message_content": "50% discount on my OnlyFans for the next 24 hours! Sign up here: hxxp://mymodel-ofdiscount[.]link"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Likely an impersonation account offering a discount link that doesn't match the creator’s official OnlyFans or link aggregator.",
+        "indicators": [
+          "Unverified handle mimicking a known model’s username",
+          "No mention of official OnlyFans URL or linktree",
+          "Time-limited discount to push immediate click",
+          "Potential phishing or credit card theft attempt"
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "instruction": "Determine if this private message on a dating app from someone claiming to have 'free OnlyFans invites' is a scam.",
+      "input": {
+        "source": "dating app DM",
+        "sender_username": "OFInvites4All",
+        "message_content": "I have exclusive free invites to top OnlyFans pages. Just give me your email and card details to set it up."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Offer for free invites on a dating app is suspicious, especially asking for card details—classic phishing move.",
+        "indicators": [
+          "Combining a dating app approach with OnlyFans freebies",
+          "Asks for email and payment card in DM",
+          "No official OnlyFans-based link or verification",
+          "Likely identity or financial theft"
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "instruction": "Review an Instagram ad featuring a big influencer's name, claiming a 90% discount code for their OnlyFans. Is it valid?",
+      "input": {
+        "source": "Instagram Sponsored Ad",
+        "account_name": "FamousModelDeals",
+        "ad_text": "FLASH SALE: 90% OFF @FamousModel OnlyFans using code SUPERFLASH at hxxp://onlyfans-promo9[.]com."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake sponsored ad impersonating a big influencer, with a questionable domain offering an extreme discount code.",
+        "indicators": [
+          "Domain not pointing to the official OnlyFans link",
+          "Extreme discount (90%) rarely offered spontaneously",
+          "Account using brand or influencer name in suspicious way",
+          "Likely credit card harvesting or redirect scam"
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "instruction": "Examine a mass email claiming to provide a list of leaked OnlyFans credentials for a small fee.",
+      "input": {
+        "source": "email",
+        "sender_email": "leaks@ofdatabase[.]club",
+        "subject": "Exclusive OnlyFans Credentials Leak",
+        "body": "Pay $20 to receive a CSV of 500+ logins. Hurry, limited supply!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Spam promoting stolen or fake OnlyFans logins for sale, typical of data breach or scam list peddlers.",
+        "indicators": [
+          "Offer of stolen credentials or 'leak' data",
+          "Request for direct payment with no secure platform",
+          "Spammer domain .club with no legitimacy",
+          "Likely a scam with fake or invalid data"
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "instruction": "Assess a Telegram DM from someone claiming to be an official OnlyFans agent offering a verified badge for a fee.",
+      "input": {
+        "source": "Telegram DM",
+        "sender_username": "OnlyFansAgent#Official",
+        "message_content": "Pay $50, and I’ll get your profile verified with a badge instantly. No documents needed!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Imposter posing as an OnlyFans agent, claiming to provide verification badges for a direct fee.",
+        "indicators": [
+          "No official OnlyFans staff ID or email domain",
+          "Verification typically requires official process, not a paid fee via Telegram",
+          "No mention of identity documents or real guidelines",
+          "Likely collects money without providing any real badge"
+        ]
+      }
+    },
+    {
+      "id": 21,
+      "instruction": "Analyze if this comment under a creator’s OnlyFans post, offering a free premium link, is suspicious.",
+      "input": {
+        "source": "OnlyFans post comment",
+        "commenter_username": "OF_BotDeals",
+        "comment_text": "Click my profile for a free link to all premium content—no payment needed!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User comment on OnlyFans luring subscribers to a 'free premium content' link, likely a scam or phishing tactic.",
+        "indicators": [
+          "Comment from unknown user on official OnlyFans platform",
+          "Claims universal free access contrary to paywall nature",
+          "Prompts users to leave the official site for free content",
+          "High risk of phishing or malware site"
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "instruction": "Check if a Discord server link promising group discounts for top OnlyFans creators is valid or a scam.",
+      "input": {
+        "source": "Discord invite",
+        "sender_username": "GroupSubMaster",
+        "message_content": "Join our server for 70% off all top creators’ monthly fees. hxxp://discord.gg/OnlyFansDealsX"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Discord invite claims to manage mass subscription discounts, a known hustle. Likely no real affiliation with creators.",
+        "indicators": [
+          "Unverified Discord server offering blanket discounts",
+          "No official partnership proof with any creators",
+          "Generic or suspicious approach to handle payments",
+          "Possible advanced fee or phishing scam"
+        ]
+      }
+    },
+    {
+      "id": 23,
+      "instruction": "Determine if a tweet about 'OnlyFans content aggregator' granting one-time access for a Bitcoin payment is genuine.",
+      "input": {
+        "source": "Twitter",
+        "sender_handle": "@OFContentAgg",
+        "message_content": "Send 0.005 BTC to this address and get a private link to all OnlyFans content. 100% guaranteed!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Scammer offering alleged aggregated OnlyFans content for a BTC payment, typical no-delivery scam or stolen content claim.",
+        "indicators": [
+          "No legitimate aggregator recognized by OnlyFans",
+          "One-time crypto payment with zero buyer protection",
+          "Grand promise of 'all content' in one package",
+          "Likely no valid content or link is provided"
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "instruction": "Analyze an OnlyFans 'subscriber support' email requesting re-verification of your billing address on a suspicious domain.",
+      "input": {
+        "source": "email",
+        "sender_email": "support@onlyfans-help[.]vip",
+        "subject": "Billing Address Confirmation Needed",
+        "body": "Please confirm your address and card info here: hxxp://onlyfansverify[.]vip to continue your subscription."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email impersonating OnlyFans support, using a .vip domain to harvest user address and card details.",
+        "indicators": [
+          "Domain onlyfans-help[.]vip not matching official site",
+          "Requests sensitive info via unsecure link",
+          "Urgent or forced re-verification approach",
+          "Likely identity theft or payment card scam"
+        ]
+      }
+    },
+    {
+      "id": 25,
+      "instruction": "Decide if an Instagram post from a big influencer’s 'backup account' offering free OnlyFans codes is real or fake.",
+      "input": {
+        "source": "Instagram post",
+        "account_name": "Influencer_Official_Backup",
+        "post_content": "Everyone! Use code FREE30 for my entire OnlyFans. This is my only backup account. Link in bio!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Likely a fake or backup-impersonation account promising a free code. No official mention from the real influencer.",
+        "indicators": [
+          "Name suggests a 'backup' often used by scammers",
+          "Promise of free subscription code not confirmed on main channel",
+          "No verified badge or official reference",
+          "Potential phishing link in bio"
+        ]
+      }
+    },
+    {
+      "id": 26,
+      "instruction": "Evaluate if a direct message offering a joint OnlyFans subscription with multiple top creators for half price is authentic.",
+      "input": {
+        "source": "DM on Twitter",
+        "sender_handle": "BundleOF_Deals",
+        "message_content": "Get 3 top creator accounts for just $15 monthly. I'll give you shared logins after you pay me on CashApp."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Joint subscription offer with suspicious shared logins, typical black-market or scam method for personal profit.",
+        "indicators": [
+          "Requests payment via CashApp with no official OnlyFans process",
+          "Shared login approach violates TOS and likely fake",
+          "Entices with big discount across multiple creators",
+          "No guarantee or official arrangement with creators"
+        ]
+      }
+    },
+    {
+      "id": 27,
+      "instruction": "Check if an email about a 'giveaway contest' from OnlyFans is genuine or a phishing attempt for personal data.",
+      "input": {
+        "source": "email",
+        "sender_email": "contest@onlyfans-event[.]org",
+        "subject": "You've Won Our OnlyFans Contest!",
+        "body": "Claim your prize by verifying identity: fill the attached form with your name, address, and card details."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake OnlyFans 'contest' email, pushing recipients to fill out a form with personal and card details.",
+        "indicators": [
+          "Domain onlyfans-event[.]org not official",
+          "No legitimate OnlyFans-run contests collecting card data via email",
+          "Attachment or form request for sensitive info",
+          "Phishing approach under a 'prize' guise"
+        ]
+      }
+    },
+    {
+      "id": 28,
+      "instruction": "Analyze a text message claiming you’ll receive exclusive OnlyFans content if you confirm your phone number by clicking a link.",
+      "input": {
+        "source": "SMS",
+        "sender_number": "+1-900-OF-SUBS",
+        "message_text": "Click hxxp://onlyfans-phone-verify[.]info to unlock exclusive content from top creators. Confirm your number now!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "SMS using 'exclusive content' lure, directing users to a suspicious domain for 'phone verification.'",
+        "indicators": [
+          "Unsolicited text with a strange domain (.info)",
+          "Encourages immediate click for exclusive content",
+          "Likely a smishing attempt to gather personal data",
+          "No legitimate OnlyFans phone verification method via random SMS"
+        ]
+      }
+    },
+    {
+      "id": 29,
+      "instruction": "Identify if this Kickstarter-like campaign for a 'new OnlyFans aggregator platform' is real or a scam.",
+      "input": {
+        "source": "Crowdfunding site",
+        "project_title": "OF Aggregator - All-in-One Access",
+        "description": "We’re building a platform that merges all OnlyFans content into one place. Back us for $50 to unlock lifetime usage!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Impossible aggregator concept promising lifetime usage of all OnlyFans content, collecting upfront funds from backers.",
+        "indicators": [
+          "Claims to unify all creators' content illegally or without partnership",
+          "Exorbitant 'lifetime' promise for a single pledge",
+          "No real business plan or licensing from OnlyFans",
+          "Likely never delivers on promised aggregator"
+        ]
+      }
+    },
+    {
+      "id": 30,
+      "instruction": "Examine a random DM from a user guaranteeing an 'OnlyFans monetization method' if you buy their eBook. Scam or legit?",
+      "input": {
+        "source": "Instagram DM",
+        "sender_profile": "OF_Biz_Guru",
+        "message_content": "My eBook reveals a secret glitch to monetize OnlyFans instantly. Just $39 PayPal. Guaranteed success!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Claims a 'secret glitch' for guaranteed monetization on OnlyFans—likely snake oil eBook or worthless info.",
+        "indicators": [
+          "Exaggerated claims of guaranteed success or glitch",
+          "Direct payment to personal PayPal or other method",
+          "Unverified or random 'guru' user with no proven track record",
+          "Likely worthless or non-existent product"
+        ]
+      }
+    },
+    {
+      "id": 31,
+      "instruction": "Decide if this email from a self-proclaimed OnlyFans model manager offering free promotion is suspicious or real.",
+      "input": {
+        "source": "email",
+        "sender_email": "modelmanager@of-boost[.]world",
+        "subject": "Boost Your OnlyFans For Free",
+        "body": "Let us manage your account to multiply your subscribers. We just need your login details—completely free!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User claims to be a 'model manager' requiring direct login to manage an OnlyFans account—common account takeover approach.",
+        "indicators": [
+          "No references or official agency affiliation",
+          "Requesting actual OnlyFans credentials",
+          "Free 'boost' with unrealistic promises of subscriber gains",
+          "Likely aims to hijack or exploit the creator’s account"
+        ]
+      }
+    },
+    {
+      "id": 32,
+      "instruction": "Check if a site claiming to remove the OnlyFans paywall for free is malicious or legitimate.",
+      "input": {
+        "source": "website",
+        "url": "hxxp://nofanspaywall[.]com",
+        "site_content": "Access any OnlyFans account for free—just enter the profile link and your email."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Site purports to bypass OnlyFans paywalls, an illegal concept likely used to phish user emails or spread malware.",
+        "indicators": [
+          "Claims to hack or bypass paywalls (illegitimate service)",
+          "Prompts user to enter personal info or profile link",
+          "No official or legal method to skip subscription fees",
+          "Potential phishing or exploit attempt"
+        ]
+      }
+    },
+    {
+      "id": 33,
+      "instruction": "Analyze a text message from 'OnlyFans Billing' requesting to input your card details to keep subscription active.",
+      "input": {
+        "source": "SMS",
+        "sender_number": "+1-999-OF-BILLING",
+        "message_text": "Your OnlyFans subscription is expiring. Update card at hxxp://billing-onlyfans[.]support now!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phony 'OnlyFans Billing' SMS linking to a .support domain. Common smishing tactic for payment data theft.",
+        "indicators": [
+          "Unauthorized or suspicious domain extension (.support)",
+          "Urges immediate update to avoid service disruption",
+          "Likely smishing aimed at credit card details",
+          "No direct correlation with real OnlyFans billing methods"
+        ]
+      }
+    },
+    {
+      "id": 34,
+      "instruction": "Identify red flags in a direct message on a forum claiming to have a 'complete database' of OnlyFans content for a onetime cost.",
+      "input": {
+        "source": "online forum DM",
+        "sender_username": "OFDataBank",
+        "message_content": "Buy the entire OnlyFans library for $200 BTC. Instant download link for unlimited content!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User claims to hold the entire OnlyFans library for a onetime cost in Bitcoin—impossible and indicative of a scam.",
+        "indicators": [
+          "Promise of comprehensive library not feasible legally or technically",
+          "Crypto payment demanded with no protection",
+          "High risk of no actual content or malware-laden files",
+          "Likely a typical 'all content' scam"
+        ]
+      }
+    },
+    {
+      "id": 35,
+      "instruction": "Evaluate this unsolicited email about a 'premium OnlyFans compilation' sold on a suspicious Google Drive link.",
+      "input": {
+        "source": "email",
+        "sender_email": "premiumcomp@ofexclusive[.]one",
+        "subject": "Access Our Premium OnlyFans Compilation",
+        "body": "Pay $15 via PayPal, and we’ll share the Google Drive link with thousands of premium videos."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Email peddling a questionable 'premium compilation' stored on Google Drive, collecting money with no official licensing.",
+        "indicators": [
+          "Unverified sender and domain (.one)",
+          "Claims thousands of premium videos in a single link",
+          "Demands PayPal payment with no formal transaction process",
+          "Likely pirated or nonexistent content scam"
+        ]
+      }
+    },
+    {
+      "id": 36,
+      "instruction": "Decide if a random phone call from someone offering 'OnlyFans subscription management services' is legitimate.",
+      "input": {
+        "source": "phone call",
+        "caller_id": "Unknown",
+        "scenario": "Caller claims to handle all subscriptions at discounted rates, needs your credit card info for autopay."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "No official OnlyFans telemarketing. Caller insists on CC info for 'discount subscription management.'",
+        "indicators": [
+          "No official proof of partnership with OnlyFans",
+          "Phone call out of nowhere offering discount bundling",
+          "Immediate request for credit card details over phone",
+          "Likely financial theft scheme"
+        ]
+      }
+    },
+    {
+      "id": 37,
+      "instruction": "Analyze a pop-up ad on an adult site that claims you can watch OnlyFans live streams free, only needing your card to sign up.",
+      "input": {
+        "source": "web pop-up on adult site",
+        "url": "hxxp://freeofstreams[.]xyz",
+        "popup_message": "Access live OnlyFans streams for free—just confirm you’re 18+ with your credit card!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Pop-up ad claiming free OnlyFans live streams, requesting credit card 'for age verification.' Common phishing tactic.",
+        "indicators": [
+          "Suspicious domain offering free access to a paid service",
+          "Credit card request for 'age check' is typical scam approach",
+          "Appears on an adult site as an intrusive pop-up",
+          "Likely leads to fraudulent billing or identity theft"
+        ]
+      }
+    },
+    {
+      "id": 38,
+      "instruction": "Identify if a user selling a 'premium OnlyFans PDF bundle' on eBay is a scam or legitimate content sale.",
+      "input": {
+        "source": "eBay listing",
+        "seller_name": "OFBundleSeller",
+        "listing_description": "Instant PDF download with links to 100+ OnlyFans creators. Guaranteed premium content access!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Suspicious eBay listing providing PDFs with 'premium content links,' likely unauthorized or nonfunctional.",
+        "indicators": [
+          "eBay listing for intangible OnlyFans content is against TOS",
+          "No official partnership or verification from creators",
+          "Likely no genuine or updated links after purchase",
+          "High chance of worthless or outdated PDF"
+        ]
+      }
+    },
+    {
+      "id": 39,
+      "instruction": "Evaluate an email about a new 'OnlyFans partner program' offering creators immediate 50% referral bonuses if they click a link.",
+      "input": {
+        "source": "email",
+        "sender_email": "partner@onlyfans-biz[.]co",
+        "subject": "OnlyFans Partner Program Invitation",
+        "body": "Join now for 50% referral bonus. Just click hxxp://onlyfans-partner[.]co to fill in your account credentials."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Email claiming an official partner program with extremely high referral bonus, linking to a non-official domain.",
+        "indicators": [
+          "Domain onlyfans-biz[.]co or onlyfans-partner[.]co not official",
+          "Promises abnormally high referral rate (50%)",
+          "Collecting existing account credentials via external link",
+          "Likely phishing or account hijacking scheme"
+        ]
+      }
+    },
+    {
+      "id": 40,
+      "instruction": "Analyze a Reddit DM from a brand-new account offering 'secret OnlyFans discount codes' for $5 each.",
+      "input": {
+        "source": "Reddit DM",
+        "sender_username": "OFSecretCodes",
+        "message_content": "Got unique discount codes for top OnlyFans pages. $5 per code, PayPal me to get them instantly!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User claims to sell 'secret discount codes' for multiple creators, strongly indicating a scam for quick profit.",
+        "indicators": [
+          "Brand-new or low-karma Reddit account pushing deals",
+          "No official link to creators or OnlyFans system",
+          "Payment demanded with no proof codes work",
+          "Likely a hustle for $5 each with no real codes"
+        ]
+      }
+    },
+    {
+      "id": 41,
+      "instruction": "Decide if a website claiming to host an 'OnlyFans Rewards Program' with free subscription after survey is valid.",
+      "input": {
+        "source": "web link shared on forum",
+        "url": "hxxp://onlyfans-rewards[.]top",
+        "site_content": "Complete this survey and share your email, phone, and card details to claim 1 free month on OnlyFans!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fake 'rewards program' survey requiring card and personal info, not affiliated with official OnlyFans promos.",
+        "indicators": [
+          "No official mention from OnlyFans about any 'rewards program'",
+          "Requests sensitive data after a random 'survey'",
+          "Domain not matching official OnlyFans site",
+          "Likely a data-harvesting or payment scam"
+        ]
+      }
+    },
+    {
+      "id": 42,
+      "instruction": "Review a TikTok comment from a user offering to send an OnlyFans discount link via DM if you message them.",
+      "input": {
+        "source": "TikTok comment",
+        "commenter_username": "OFDiscountQueen",
+        "comment_text": "Message me for a 75% discount link to your favorite OnlyFans star’s profile—limited codes available!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Promising a steep discount link in exchange for DM, likely a ploy to redirect users to a phishing or scam site.",
+        "indicators": [
+          "Comment from unknown user not verified by the creator",
+          "Excessive discount with no official mention",
+          "Pushes users to DM for 'limited codes'",
+          "Typical social platform lure for phishing"
+        ]
+      }
+    },
+    {
+      "id": 43,
+      "instruction": "Analyze a phone call from 'OnlyFans Customer Support' claiming you won a free subscription upgrade, requiring address & card info.",
+      "input": {
+        "source": "phone call",
+        "caller_id": "+1-855-OF-SUPPORT",
+        "scenario": "Caller states you’re chosen for a special upgrade, needs physical address and card details to finalize."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "No official phone-based upgrade process. Caller tries to gather personal + financial data under 'free upgrade' pretense.",
+        "indicators": [
+          "Impersonates support with unsolicited upgrade offer",
+          "Requests address and card details verbally",
+          "OnlyFans rarely does random phone promotions",
+          "Likely identity theft or card fraud attempt"
+        ]
+      }
+    },
+    {
+      "id": 44,
+      "instruction": "Evaluate an in-person flyer at a college campus advertising 'OnlyFans sign-up discount codes' at a local kiosk. Real or scam?",
+      "input": {
+        "source": "physical flyer",
+        "location": "College campus bulletin board",
+        "flyer_text": "Visit us at the Student Union kiosk to redeem 50% off codes for top OnlyFans creators—just bring your credit card!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "A suspicious kiosk claiming to provide discount codes with no official affiliation, seeking direct credit card usage on-site.",
+        "indicators": [
+          "Offline approach (flyer + kiosk) for a digital subscription service",
+          "No official brand or recognized partnership with OnlyFans",
+          "Encourages physically bringing credit card to an unknown kiosk",
+          "High risk of scam or card skimming"
+        ]
+      }
+    },
+    {
+      "id": 45,
+      "instruction": "Determine if a user on a job board offering 'OnlyFans sign-up referrals' for a commission is legitimate.",
+      "input": {
+        "source": "job board listing",
+        "poster_username": "OFReferralAgent",
+        "listing_text": "Earn money by signing up for new OnlyFans accounts using my referral link. Just provide your ID and card to me first."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Job listing claims to pay for using a referral link but requires personal ID and card info—red flags for identity theft.",
+        "indicators": [
+          "Unusual 'job' asking for ID and card details directly",
+          "Involves questionable OnlyFans referral setup",
+          "Potential identity theft under the guise of earning commissions",
+          "No official contract or platform involvement"
+        ]
+      }
+    },
+    {
+      "id": 46,
+      "instruction": "Identify whether a Slack message from a coworker offering free OnlyFans subscriptions if you fill in your card details is a scam.",
+      "input": {
+        "source": "Slack message",
+        "sender_username": "CoworkerJane",
+        "message_content": "I found a hack for free OnlyFans! Fill in your credit card here: hxxp://of-freemonth[.]site to claim."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Suspicious Slack message from a coworker or an impersonated account, linking to a site that demands card info for 'free' subscriptions.",
+        "indicators": [
+          "Improbable 'hack' for free subscription",
+          "Site not official or authorized by OnlyFans",
+          "Coworker message may be compromised or spoofed",
+          "Likely phishing for credit card data"
+        ]
+      }
+    },
+    {
+      "id": 47,
+      "instruction": "Analyze if a Craigslist post selling 'access codes to OnlyFans accounts' is legitimate or malicious.",
+      "input": {
+        "source": "Craigslist ad",
+        "poster_username": "OFAccessForCheap",
+        "post_content": "I have codes for top OnlyFans creators—$10 each, guaranteed to work. Local meetups only, cash only."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Offline ad claiming to sell intangible access codes for OnlyFans. Highly likely a con with no real codes provided.",
+        "indicators": [
+          "Unconventional platform (Craigslist) for digital product",
+          "Demands cash in-person for intangible subscription codes",
+          "No official or verified distribution method",
+          "Likely fleecing unsuspecting buyers with nonexistent codes"
+        ]
+      }
+    },
+    {
+      "id": 48,
+      "instruction": "Check if this direct email from a purported OnlyFans manager stating 'EU privacy compliance' is a scam tactic.",
+      "input": {
+        "source": "email",
+        "sender_email": "privacy@onlyf-eu[.]co",
+        "subject": "GDPR Update: Account Verification Required",
+        "body": "Due to EU law changes, confirm your payment details at hxxp://onlyf-verify[.]co to keep your account."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Phishing email referencing GDPR updates to trick users into re-verifying payment info on a non-official domain.",
+        "indicators": [
+          "Domain onlyf-eu[.]co not matching onlyfans.com",
+          "Vague reference to GDPR as a scare tactic",
+          "Requests immediate credit card re-verification",
+          "Likely a data-harvesting or payment info scam"
+        ]
+      }
+    },
+    {
+      "id": 49,
+      "instruction": "Determine if this text offering a guaranteed 25% monthly OnlyFans discount is suspicious.",
+      "input": {
+        "source": "SMS",
+        "sender_number": "OF-SAVE25",
+        "message_text": "Lock in 25% off your OnlyFans monthly fees forever! Sign up here: hxxp://my-onlyfansdiscount[.]top"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Unsolicited text guaranteeing a perpetual discount, linking to a shady domain, typical discount scam approach.",
+        "indicators": [
+          "No official OnlyFans discount program like this",
+          "Suspicious domain (.top) with no brand credentials",
+          "Promises indefinite discount if you sign up externally",
+          "Likely smishing or card theft attempt"
+        ]
+      }
+    },
+    {
+      "id": 50,
+      "instruction": "Analyze this 'official OnlyFans influencer' DM on Twitter claiming free custom content if you provide your card to 'verify age.'",
+      "input": {
+        "source": "Twitter DM",
+        "sender_handle": "@OnlyFansCustomContent",
+        "message_content": "Hey babe, want free custom pics? Just link your card for an age check: hxxp://free-custom-of[.]fun"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Imposter promising 'free custom OnlyFans content' in exchange for card entry on a suspicious site claiming 'age verification.'",
+        "indicators": [
+          "Unverified handle and suspicious domain (.fun)",
+          "Common ruse to harvest credit card details",
+          "No official link to the actual OnlyFans platform",
+          "Likely phishing or fraudulent payment capture"
+        ]
+      }
+    }
+  ]

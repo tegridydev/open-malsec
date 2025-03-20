@@ -1,0 +1,964 @@
+[
+    {
+      "id": 1,
+      "instruction": "Analyze this Facebook message from an unfamiliar account claiming romantic interest. Identify red flags.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "Andrea_LoveLife",
+        "message": "Hey handsome, I saw your profile picture and I feel a deep connection already. Can we chat more in private?"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User exhibits immediate and intense romantic interest in a complete stranger, a frequent ploy in romance scams.",
+        "indicators": [
+          "Unsolicited message from a stranger",
+          "Overly affectionate tone from the start",
+          "Generic or vague personal details",
+          "Attempts to move conversation to private quickly"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "instruction": "Determine if this message request from a new Facebook friend is part of a romance scam.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "Soldier_of_Love_88",
+        "message": "Hi dear, I'm currently deployed overseas, but I'd love to get to know you. I'm looking for true love."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Sender claims to be a deployed soldier, a common romance scam scenario, seeking emotional connection quickly.",
+        "indicators": [
+          "Military deployment storyline",
+          "Instant emotional language (calling user 'dear')",
+          "No mutual friends or prior context",
+          "Likely to escalate into financial requests"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "instruction": "Assess whether this Facebook post from an unknown admirer might signal a romance scam approach.",
+      "input": {
+        "source": "Facebook timeline post",
+        "poster_name": "Jane_BlossomHeart",
+        "post_text": "I’ve never felt a connection like this before, even though we’ve never met. You seem so kind and generous!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Overly affectionate public post from a stranger, setting up an emotional dynamic quickly—a romance scam tactic.",
+        "indicators": [
+          "Expressions of strong emotion without prior relationship",
+          "No real personal details provided",
+          "Public flattery to draw the user into private messaging",
+          "Possible lead-up to financial or personal requests"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "instruction": "Evaluate this new friend request from a profile with few photos and immediate romantic intentions.",
+      "input": {
+        "source": "Facebook friend request",
+        "sender_profile": "Rose_Smiles4U",
+        "profile_details": "Only 2 photos, created last month, no mutual friends",
+        "message": "Hello sweetie, I'm sure we are meant to be!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Sparse Facebook profile with minimal history plus immediate romantic approach—classic sign of a romance scammer.",
+        "indicators": [
+          "Profile recently created",
+          "Very few photos or personal info",
+          "Exaggerated romantic language from the outset",
+          "No shared connections"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "instruction": "Identify scam signals in this Facebook Messenger chat about traveling and needing financial help.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "TrueHeartTravels",
+        "message": "I'm stranded at the airport without my wallet. Can you help me with $200 so I can book my flight home?"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "A new online friend requests money for sudden travel trouble, a hallmark of romance or friendship scams.",
+        "indicators": [
+          "Immediate money request after short acquaintance",
+          "Travel emergency scenario typical of scams",
+          "Vague details about the trip",
+          "Pressure to act quickly"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "instruction": "Determine if this Facebook user’s request to wire money for hospital bills signals a romance scam.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "Caring_Heart_101",
+        "message": "My mother is seriously ill, and I'm short on hospital bills. You’re my only hope. Please help."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "A sudden plea for financial assistance due to a family emergency is a frequent storyline used by romance scammers.",
+        "indicators": [
+          "Quick jump to emotional crises",
+          "No credible proof of the situation",
+          "Target singled out for financial rescue",
+          "Likely repeated or copy-paste narrative"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "instruction": "Analyze this user’s profile showing glamorous photos and immediate declarations of love on Facebook. Scam or not?",
+      "input": {
+        "source": "Facebook profile",
+        "profile_name": "Glam_Barbie21",
+        "profile_description": "All pictures are posed in exotic locations, joined Facebook 2 weeks ago",
+        "recent_post": "I feel a strong bond with you already, my darling!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Profile loaded with glamorous photos (possibly stolen), recently created, using lavish language of love immediately.",
+        "indicators": [
+          "Allure of exotic photos that might be stock or stolen",
+          "Recent creation date with few real interactions",
+          "Insta-love or strong bond statements",
+          "Likely a catfish or romance scam persona"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "instruction": "Assess if this Facebook friend’s claim of having a wealthy inheritance is part of a romance scam scenario.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "WealthyHeir_Adam",
+        "message": "I have a large inheritance in my home country, but I need a trusted partner to help transfer the funds."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User boasting about a significant inheritance and seeking a partner for fund transfers—common variation of romance/advance fee fraud.",
+        "indicators": [
+          "Grandiose claims of wealth/inheritance",
+          "Request for personal or financial help to move money",
+          "No legitimate documentation or details",
+          "Likely part of a 419 or romance scam hybrid"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "instruction": "Analyze this sudden Facebook engagement announcement to see if it’s a possible romance scam tactic.",
+      "input": {
+        "source": "Facebook timeline post",
+        "poster_name": "LoveForever_2022",
+        "post_text": "I’m so happy to announce my engagement to [User], even though we haven’t met in person yet!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Instant 'engagement' or serious relationship claim with no real-life meeting—a strong sign of romance scam manipulation.",
+        "indicators": [
+          "Sudden escalated commitment online",
+          "Public declarations for emotional pressure",
+          "No in-person meeting or established real relationship",
+          "Likely sets stage for future financial demands"
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "instruction": "Determine if this user’s mention of ‘we need a shared bank account’ on Facebook is suspicious.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "HeartBondForever",
+        "message": "We are so close now, I think we should open a joint bank account to plan our future together."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Suggesting a joint bank account with someone barely known online is a major red flag for financial exploitation in romance scams.",
+        "indicators": [
+          "Rapid move into shared financial arrangements",
+          "No real trust foundation or in-person relationship",
+          "Likely aims to gain unauthorized access to funds",
+          "Pressure to unite finances prematurely"
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "instruction": "Inspect this Facebook profile for romance scam elements: numerous love quotes, few personal details.",
+      "input": {
+        "source": "Facebook profile",
+        "profile_name": "RomanticSoul2023",
+        "profile_content": "Mostly stock images, countless romantic quotes, no real personal info, friend list hidden"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Profile built around generic romance quotes with zero personal detail, hiding friend list—typical façade for romance scammers.",
+        "indicators": [
+          "Unrealistically curated romantic content",
+          "Lack of verifiable personal info or real-life photos",
+          "Concealed friend list (avoids cross-checking)",
+          "Likely a fake persona focusing on emotional hooks"
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "instruction": "Analyze this Facebook user’s request for gift cards as a sign of romance scam or genuine need.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "Cynthia_LoveBridge",
+        "message": "Could you send me some Amazon gift cards to fix my phone so we can video chat properly?"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Use of gift cards for a personal expense signals typical scam payment method—no legitimate reason to not use standard means.",
+        "indicators": [
+          "Gift card request (hard to trace/refund)",
+          "Excuse about phone repair to manipulate emotional contact",
+          "No direct conversation about alternatives",
+          "Classic romance scam payment tactic"
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "instruction": "Evaluate this complaint from a user claiming to be stuck abroad and requesting Facebook help from a new friend.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "MiaFarAway",
+        "message": "My passport got stolen while traveling, and the embassy can’t help me. I need $300 to get back."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Traveler-in-distress scenario commonly used to tug at sympathies and elicit quick financial aid from an online contact.",
+        "indicators": [
+          "Urgent crisis abroad with stolen passport story",
+          "No official channels or documentation",
+          "Relies on emotional pressure and short timeline",
+          "Likely repeated script used by romance fraudsters"
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "instruction": "Check if this new relationship status update from a Facebook user you barely know might be a scam ploy.",
+      "input": {
+        "source": "Facebook timeline",
+        "poster_name": "Prince_CharmingX",
+        "post_text": "I’m in a relationship with [User]. I can’t wait to start our life together next week!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Publicly changing relationship status abruptly to pressure the target into acknowledging a relationship that doesn’t exist offline.",
+        "indicators": [
+          "Instant official relationship with minimal real contact",
+          "Public declarations to push emotional involvement",
+          "No actual in-person or long-term interaction",
+          "Potential lead-up to financial manipulation"
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "instruction": "Identify if this Facebook post about meeting the user in person (with a catch) is suspicious.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "LoveConquest2023",
+        "message": "I’ll visit you next month, but I need money for the flight ticket right now. I promise to pay you back!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User demands flight funds in advance to see the target, typical romance scam scenario; repayment rarely occurs.",
+        "indicators": [
+          "Request for travel expenses from a new or shallow relationship",
+          "Promise of reimbursement with no credible means",
+          "No evidence of actual travel arrangement",
+          "Likely never arrives or disappears after payment"
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "instruction": "Analyze this profile claiming to be a widow, asking for sympathy and financial help on Facebook. Is it legitimate?",
+      "input": {
+        "source": "Facebook profile",
+        "profile_name": "LonelyWidow_InNeed",
+        "bio": "Recently lost my husband. Struggling emotionally and financially. Seeking a genuine soul mate to support me."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Sob story in the bio focusing on financial struggles and emotional vulnerability, typical of romance scam approach.",
+        "indicators": [
+          "Immediate mention of tragic backstory and financial distress",
+          "No normal social history or real friends verifying claims",
+          "Open invitation for monetary support from strangers",
+          "Scam pattern of emotional exploitation"
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "instruction": "Assess if these messages about sending personal pictures are part of a romance scam strategy.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "Desire_4U",
+        "message": "I’ll send you some private photos if you help me with a little money. My camera is broken."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User offers personal/intimate photos in exchange for money, leveraging sexual or emotional appeal—a romance scam hallmark.",
+        "indicators": [
+          "Pay-for-photos proposition to a new contact",
+          "Alleged technical or financial difficulty (broken camera)",
+          "Emotional or sexual leverage for monetary gain",
+          "Likely extortion or continuing demands once paid"
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "instruction": "Determine if this user’s claim of being a single parent in urgent need is a romance scam approach on Facebook.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "SingleDadHope",
+        "message": "My child can’t eat if I don’t pay our rent tomorrow. I feel we have a bond; could you please help?"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Leveraging sympathy for a child’s wellbeing to request immediate financial assistance from an online acquaintance.",
+        "indicators": [
+          "Emotional appeal involving a child’s dire circumstances",
+          "Immediate financial request to a near stranger",
+          "Claims of strong bond despite limited interaction",
+          "Likely repeated script targeting empathetic users"
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "instruction": "Analyze this friend request note about ‘working in an orphanage’ and seeking love on Facebook. Signs of a scam?",
+      "input": {
+        "source": "Facebook friend request note",
+        "sender_profile": "Loving_Angel_Cares",
+        "note": "I work with orphans in a remote area. I need a caring partner to help me continue this mission financially."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Romance angle combined with a charitable cause, aiming to manipulate finances from empathetic people.",
+        "indicators": [
+          "Charitable or philanthropic claim without proof",
+          "Immediate suggestion of partnership (financial) with a stranger",
+          "No third-party validation or legitimate NGO references",
+          "Likely fabricated backstory to gain funds"
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "instruction": "Assess this user’s request to handle their shipping business while they’re away as a potential romance scam.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "GlobalTrader_John",
+        "message": "I trust you more than anyone else. Could you accept shipments of my goods while I’m abroad? I'll compensate you well."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Trick to involve the target in shipping or money-laundering activities under the guise of romance and trust.",
+        "indicators": [
+          "Sudden large logistical request from an online 'partner'",
+          "No official arrangement or contract details",
+          "Promises of high compensation, reminiscent of money mule tactic",
+          "Likely illegal or scam-laundering involvement"
+        ]
+      }
+    },
+    {
+      "id": 21,
+      "instruction": "Evaluate the authenticity of a ‘charity wedding fundraiser’ posted by a new romantic interest on Facebook.",
+      "input": {
+        "source": "Facebook post",
+        "poster_name": "Julia_Cares",
+        "post_text": "Planning our dream wedding but short on funds for the ceremony! Please donate so we can have our big day soon."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Post solicits donations for a wedding with a newly found ‘partner,’ typical of romance scam harnessing social pressure for money.",
+        "indicators": [
+          "Public fundraiser for personal event with no real relationship timeline",
+          "No evidence of an actual fiancé or real planning details",
+          "Involves emotional pull of a wedding",
+          "Likely never leads to a real ceremony"
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "instruction": "Analyze if this quickly formed Facebook relationship profile update might be a romance scam tactic.",
+      "input": {
+        "source": "Facebook profile update",
+        "profile_name": "Prince_OfHearts",
+        "new_relationship_status": "In a relationship with [User]",
+        "profile_post": "We just met, but my heart already belongs to you."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Instant relationship status update to create public commitment, often used in romance scams to accelerate trust and potential monetary requests.",
+        "indicators": [
+          "Very short acquaintance period",
+          "Overly dramatic declarations of love",
+          "Public relationship for social pressure",
+          "Sets stage for manipulative behavior"
+        ]
+      }
+    },
+    {
+      "id": 23,
+      "instruction": "Identify potential romance scam elements in this Facebook Messenger story about needing a visa.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "SummerSunlady",
+        "message": "I’m so excited to come visit you. I just need $150 for my visa application to see you next month!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Frequent scam ploy: claiming to visit the target soon but needing visa fees or travel funds first.",
+        "indicators": [
+          "Unexpected travel plan with minimal prior conversation",
+          "Immediate financial request for visa",
+          "Likely repeated story used with multiple targets",
+          "Lack of official visa documentation"
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "instruction": "Determine if this Facebook user’s constant love-bombing and eventual request for rent money is a scam.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "HeavenlyTouch_45",
+        "message": "I can’t stop thinking about you. By the way, my rent is overdue. Could you help me pay this month?"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User employs love-bombing technique to build emotional dependency, then shifts to financial demands.",
+        "indicators": [
+          "Excessive flattery early in conversation (love-bombing)",
+          "Sudden pivot to money troubles",
+          "Pressures emotional tie for financial gain",
+          "Often repeated or cyclical request pattern"
+        ]
+      }
+    },
+    {
+      "id": 25,
+      "instruction": "Evaluate the authenticity of a user asking for personal bank details to ‘send a gift’ on Facebook.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "RomanticGiver",
+        "message": "I want to send you some money as a surprise gift. Just give me your bank account number and routing info."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Scammer feigns generosity, requesting bank details to potentially drain the account or commit fraud.",
+        "indicators": [
+          "Unsolicited offer of cash gift",
+          "Direct request for sensitive financial details",
+          "No secure payment method (like PayPal) suggested",
+          "Likely identity theft or account takeover attempt"
+        ]
+      }
+    },
+    {
+      "id": 26,
+      "instruction": "Check if this new Facebook friend praising your photos and asking personal questions is part of a scam approach.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "Life_Changer_Kelly",
+        "message": "Your photos are gorgeous! Where do you live? Do you live alone? I'd love to know more!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Intense flattery combined with probing personal questions about living situation—common in romance scamming social engineering.",
+        "indicators": [
+          "Over-friendly approach from a stranger",
+          "Personal and potentially risky questions early on",
+          "Possible attempt to gather sensitive info (location, living alone)",
+          "Stage-setting for financial or personal exploitation"
+        ]
+      }
+    },
+    {
+      "id": 27,
+      "instruction": "Analyze if this user’s invitation to move from Facebook to a private chat app suggests romance scam behavior.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "BeautyAbroad_2021",
+        "message": "Facebook can’t contain our love. Let’s talk on WhatsApp or Telegram so we can share more intimate things."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Scammer tries to shift conversation to less regulated platform for deeper manipulation and avoiding Facebook’s detection.",
+        "indicators": [
+          "Wants to move off Facebook quickly",
+          "Presents it as a romantic necessity",
+          "Private messaging apps facilitate stealthy scamming",
+          "Common tactic to circumvent moderation"
+        ]
+      }
+    },
+    {
+      "id": 28,
+      "instruction": "Determine if sharing emotional stories of past heartbreak to gain sympathy on Facebook might be a scam tactic.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "HopelessRomanticSam",
+        "message": "I’ve been cheated on so many times. It’s rare to find someone as kind as you. I know you can help me heal."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Over-sharing a tragic romantic past to quickly create emotional intimacy, preluding further manipulation typical of romance scams.",
+        "indicators": [
+          "Highly personal sob story early on",
+          "Seeking emotional rescue from the new target",
+          "Establishes trust/vulnerability for future financial or personal exploitation",
+          "Classic grooming technique in romance fraud"
+        ]
+      }
+    },
+    {
+      "id": 29,
+      "instruction": "Evaluate this Facebook user’s claim of sudden health crisis as a possible romance scam twist.",
+      "input": {
+        "source": "Facebook post",
+        "poster_name": "SweetAngel_Love",
+        "post_text": "My doctor says I need urgent surgery. I feel so alone, except for you, my dear. I hope you can help me."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Another crisis scenario (urgent medical procedure) used to emotionally blackmail the target into paying for expensive surgery.",
+        "indicators": [
+          "Unexpected serious health emergency",
+          "Heavy emotional pressure on the new love interest",
+          "Generic or suspicious medical details",
+          "Likely aim to extract large sums of money quickly"
+        ]
+      }
+    },
+    {
+      "id": 30,
+      "instruction": "Analyze if compliments about your career and attempts to rush marriage on Facebook indicate a scam.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "DocWants2Marry",
+        "message": "You’re so talented at your job! I want to marry you and settle in your country right away. Let’s start planning."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Rushing marriage proposals to someone’s country after minimal conversation, common in romance scam for immigration or financial motives.",
+        "indicators": [
+          "Rapid escalation to marriage plans",
+          "No genuine knowledge of your personal life beyond basic info",
+          "Potential interest in visa or financial benefit",
+          "Unrealistic timeframe for a major life decision"
+        ]
+      }
+    },
+    {
+      "id": 31,
+      "instruction": "Assess whether a sudden job loss confession on Facebook aimed at a new romantic prospect is genuine or a scam sign.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "HardLuckTom",
+        "message": "I just lost my job. You're the only one I can count on to help me get through this. Can you support me financially for a bit?"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "A quick pivot to financial dependency in the context of a budding romance is a well-known scam pattern.",
+        "indicators": [
+          "Immediate request for financial support post 'job loss'",
+          "Romantic interest apparently the only solution",
+          "Possibility of indefinite or escalating demands",
+          "No real proof or official documentation"
+        ]
+      }
+    },
+    {
+      "id": 32,
+      "instruction": "Determine if linking to a fake 'engagement ring' fundraiser on Facebook is a romance scam approach.",
+      "input": {
+        "source": "Facebook post",
+        "poster_name": "ForeverYours_Enzo",
+        "post_text": "Help me buy the perfect ring for my beloved. Please contribute to my GoFundMe: hxxp://gofundme.com/f/fakeRingFund"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Soliciting donations for an engagement ring from a newly established online partner suggests a manipulative romance scam angle.",
+        "indicators": [
+          "Seeking public donations for personal romantic matter",
+          "No real justification for why public must fund it",
+          "Likely no actual engagement or ring purchase",
+          "Emotional manipulation to gain money"
+        ]
+      }
+    },
+    {
+      "id": 33,
+      "instruction": "Identify if this insistence on secrecy about your conversations hints at a Facebook romance scam.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "DeepLove_Silence",
+        "message": "Let’s keep our relationship private for now. Don’t tell your friends or family about our plans. They might not understand."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Scammer urges secrecy, isolating the target from friends/family who might recognize the scam.",
+        "indicators": [
+          "Push for secrecy to avoid outside input",
+          "Common tactic to prevent victims from seeking advice",
+          "Positions family/friends as potential 'interference'",
+          "Emotional blackmail under guise of 'they won’t understand'"
+        ]
+      }
+    },
+    {
+      "id": 34,
+      "instruction": "Evaluate if a user offering ‘military leave paperwork fees’ on Facebook is part of a romance scam.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "CaptainRon_Official",
+        "message": "My commander says I need to pay for special leave forms to come visit you. Could you send $500 for that?"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Military personnel requesting money for leave forms is a known romance scam scenario; the U.S. military doesn’t charge for leave.",
+        "indicators": [
+          "Claims a fee for military leave or paperwork",
+          "Known scam narrative (military impersonation)",
+          "No official channels or references provided",
+          "Pressures romantic partner to cover ‘costs’"
+        ]
+      }
+    },
+    {
+      "id": 35,
+      "instruction": "Analyze this user’s attempt to connect on Facebook with limited personal info but repeated romantic messages. Potential scam?",
+      "input": {
+        "source": "Facebook profile",
+        "profile_name": "MoonlightGentleman",
+        "profile_overview": "Only 1 profile picture, no personal posts, repeatedly comments 'My Love' on your timeline"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Almost no genuine personal details plus intense romantic commentary strongly indicates a scam or fake persona.",
+        "indicators": [
+          "Sparse profile with minimal real content",
+          "Overly romantic or clingy comments on user’s posts",
+          "No traceable personal history or friends",
+          "Likely a throwaway account for scamming"
+        ]
+      }
+    },
+    {
+      "id": 36,
+      "instruction": "Determine if giving elaborate gifts in exchange for your personal details on Facebook is suspicious.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "Gift4Love",
+        "message": "I want to send you an expensive smartphone. Just give me your full name, address, phone number, and ID copy."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Scammer promises a lavish gift but demands personal info, possibly for identity theft or further extortion.",
+        "indicators": [
+          "Exorbitant gift offer from unknown contact",
+          "Requests ID copy and personal data (potential identity theft)",
+          "Unnecessary level of detail for shipping a package",
+          "Likely no real gift, just data harvesting"
+        ]
+      }
+    },
+    {
+      "id": 37,
+      "instruction": "Assess if ongoing declarations of loyalty and immediate need for bills payment show a romance scam tactic on Facebook.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "EternalFaith_29",
+        "message": "You’re the only one for me, babe. My electricity is about to be cut off—can you help me quickly?"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Rapid emotional investment combined with an urgent financial request is a classic hallmark of romance scamming.",
+        "indicators": [
+          "Sudden crisis involving basic utilities",
+          "Strong emotional bond claimed with minimal time together",
+          "Immediate urgency for money to solve a problem",
+          "Exploits the user’s sympathy or sense of responsibility"
+        ]
+      }
+    },
+    {
+      "id": 38,
+      "instruction": "Analyze if an older Facebook user’s profile repeatedly contacting younger strangers suggests a romance scam approach.",
+      "input": {
+        "source": "Facebook friend requests",
+        "profile_name": "WiseLover_InSearch",
+        "behavior": "Sending requests mostly to much younger individuals, quickly referencing romantic interest in direct messages"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Targeting a different demographic en masse with romantic interest is common in romance scamming efforts to find vulnerable victims.",
+        "indicators": [
+          "Focused pattern on younger, possibly more naive audience",
+          "Quick romantic messaging to strangers",
+          "Likely uses a single template for all new contacts",
+          "Suggests broad attempt at scamming multiple users"
+        ]
+      }
+    },
+    {
+      "id": 39,
+      "instruction": "Evaluate if a new acquaintance’s Facebook message about Bitcoin investment on your behalf might be a romance scam spin.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "CryptoSweetheart",
+        "message": "I can invest your money in Bitcoin and double it quickly because I love you. Just send me what you can spare."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Combines romance elements with get-rich-quick crypto claims, seeking the user’s funds for supposed ‘investment.’",
+        "indicators": [
+          "Love-based justification for financial management",
+          "Guaranteed returns or doubling money quickly",
+          "User not providing licensed investment background",
+          "Romance used as a trust factor for financial access"
+        ]
+      }
+    },
+    {
+      "id": 40,
+      "instruction": "Determine if a Facebook user’s repeated 'I love you' and incomplete details about their life is a scam indicator.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "SunshineEve",
+        "message": "I love you so much, you’re my soulmate. I grew up... well, it's a long story, I'll tell you later."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Using romantic language excessively but vague about personal history—lack of transparency is typical in romance scams.",
+        "indicators": [
+          "No real background info, deflects inquiries",
+          "Excessive terms of endearment early on",
+          "Avoids or postpones specific life details",
+          "Likely a generic script or catfishing approach"
+        ]
+      }
+    },
+    {
+      "id": 41,
+      "instruction": "Analyze if an invitation to manage the user’s finances or property from a new Facebook romance is a scam attempt.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "EstateOwner_Love",
+        "message": "I own a property I can’t manage alone. Let me add you as a co-owner, but first, I need your personal info."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Scammer pretends to share property or assets, hooking the victim’s greed/trust, then seeks personal data or money.",
+        "indicators": [
+          "Sudden large asset involvement with a stranger",
+          "No legal channels or verifiable documentation",
+          "Exploits romantic angle for trust",
+          "Likely a ruse to gather personal/financial info"
+        ]
+      }
+    },
+    {
+      "id": 42,
+      "instruction": "Check if posting a sad personal story on your Facebook wall while tagging you signals a romance scam tactic.",
+      "input": {
+        "source": "Facebook timeline post",
+        "poster_name": "GenuineLove_Lost",
+        "post_text": "I’m heartbroken. My finances are destroyed, and I have no one else but [User]. Please help me stand again!"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Publicly lamenting financial ruin and tagging the target to gain sympathy and possibly shame them into helping.",
+        "indicators": [
+          "Public shaming or emotional pressure tactic",
+          "Direct tag to a new romantic interest with pleas for help",
+          "Exaggerated victim narrative with no specifics",
+          "Coercive approach to force user into action"
+        ]
+      }
+    },
+    {
+      "id": 43,
+      "instruction": "Identify romance scam signals in this user’s abrupt claim to want to relocate to your city via Facebook.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "Moving4Love",
+        "message": "I’ve decided to move to your city so we can be together. All I need is some money for shipping my belongings."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "User sets up an unrealistic relocation plan, demanding shipping fees—a typical romance scam trick.",
+        "indicators": [
+          "Drastic life change for a short-term online fling",
+          "Immediate request for moving expenses",
+          "No stable details about actual shipping or logistics",
+          "Likely to vanish after receiving funds"
+        ]
+      }
+    },
+    {
+      "id": 44,
+      "instruction": "Determine if a surprise tag in a love poem on Facebook from a near-stranger could be part of a romance scam.",
+      "input": {
+        "source": "Facebook post",
+        "poster_name": "PoeticSoul_99",
+        "post_text": "Roses are red, violets are blue, you stole my heart, now I need you. @User"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Overly sweet, public demonstration of affection from someone with no prior real-world connection, laying emotional groundwork for future demands.",
+        "indicators": [
+          "Unsolicited romantic poem tagging the victim",
+          "No established relationship or mutual acquaintances",
+          "Excessive flattery that escalates quickly",
+          "Common emotional hook tactic in romance scams"
+        ]
+      }
+    },
+    {
+      "id": 45,
+      "instruction": "Assess if referencing an overseas inheritance and requesting your account for transfer on Facebook is suspicious.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "GracefulHeiress",
+        "message": "I have a $500k inheritance abroad, but I trust only you. Can I use your bank account to receive it?"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Offers a share of an inheritance or large sum, wanting to use the victim’s account—a classic romance/advance fee scam hybrid.",
+        "indicators": [
+          "Claims large inheritance requiring external help",
+          "Offers unspecified reward or share of money",
+          "Requests personal bank account details for transfer",
+          "Likely illegal or non-existent funds"
+        ]
+      }
+    },
+    {
+      "id": 46,
+      "instruction": "Analyze if a user’s push to have multiple video calls but each canceled at the last minute is romance scam behavior.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "LovingSpirit_86",
+        "message_sequence": [
+          "Let’s do a video call tomorrow!",
+          "Sorry, camera broken!",
+          "Let’s reschedule next week!",
+          "Need new phone first—can you help with $150?"
+        ]
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Repeated canceled video calls with eventual request for phone money is a typical catfishing pattern to avoid real-time proof of identity.",
+        "indicators": [
+          "Consistent excuses preventing genuine face-to-face call",
+          "Gradual lead-up to requesting money for ‘camera/phone repair’",
+          "No real proof of identity or existence",
+          "Likely catfish strategy to stall until payment"
+        ]
+      }
+    },
+    {
+      "id": 47,
+      "instruction": "Decide if complaining about scam allegations while still requesting money on Facebook is a technique used by scammers.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "RealLove_NotAScam",
+        "message": "Some people say I'm a scammer, but I'm just misunderstood. Could you prove them wrong by sending $100 to show trust?"
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Scammer preemptively addresses scam accusations, demands money to ‘prove’ trust—reverse psychology to guilt the victim.",
+        "indicators": [
+          "References to scam allegations but no tangible proof otherwise",
+          "Asks for money as demonstration of trust",
+          "Manipulative approach to disclaim or deflect scam suspicion",
+          "Classic advanced intimidation or guilt tactic"
+        ]
+      }
+    },
+    {
+      "id": 48,
+      "instruction": "Analyze if switching from casual Facebook small talk to immediate financial help request is a romance scam pattern.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "CareOneAnother",
+        "message_sequence": [
+          "How’s your day?",
+          "What do you like to do for fun?",
+          "BTW, I’m behind on car payments. Could you loan me a bit?"
+        ]
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Minimal conversation before a direct financial plea is a standard pivot in romance scams once basic rapport is established.",
+        "indicators": [
+          "Abrupt shift from trivial chat to money request",
+          "Lack of deeper relationship foundation",
+          "Loan request to an almost-stranger",
+          "Likely repeated or cyclical approach with multiple targets"
+        ]
+      }
+    },
+    {
+      "id": 49,
+      "instruction": "Evaluate whether a user on Facebook offering to repay any ‘loan’ with gold or jewelry is a romance scam technique.",
+      "input": {
+        "source": "Facebook Messenger",
+        "sender_profile": "GoldHearted_Soul",
+        "message": "If you send me $500, I'll repay you with gold bars from my late father’s estate. Let's do it quickly, no time to waste."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Fantastic claim of repaying with gold bars is unrealistic, using romance to sweeten an impossible deal typical of advanced fee or romance scams.",
+        "indicators": [
+          "Grandiose promise of gold or jewelry as repayment",
+          "Urgency and mention of inheritance or estate",
+          "No verifiable legal or logistical details",
+          "Likely no actual gold or method of repayment"
+        ]
+      }
+    },
+    {
+      "id": 50,
+      "instruction": "Identify scam signals in this user’s tearful video message posted on your Facebook timeline, begging for money.",
+      "input": {
+        "source": "Facebook timeline post",
+        "poster_name": "TearsOfLove",
+        "video_message_summary": "Crying about losing everything, claiming unwavering devotion, asking the user for immediate PayPal donation."
+      },
+      "output": {
+        "classification": "malicious",
+        "description": "Public emotional display to pressure the target, typical of romance scams that use dramatic appeals for money.",
+        "indicators": [
+          "Overtly emotional or theatrical appeal",
+          "Publicly directed at a single user for monetary help",
+          "Exploits guilt or pity from the user’s social circle",
+          "Immediate donation link (PayPal, etc.) with no accountability"
+        ]
+      }
+    }
+  ]
