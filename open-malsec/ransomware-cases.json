@@ -1,0 +1,1313 @@
+[
+    {
+      "Instruction": "Identify the ransomware variant from the provided ransom note and suggest immediate response steps.",
+      "Input": "All your important files have been encrypted! Pay 0.5 BTC to 1Mz4abc... or your data will be leaked.",
+      "Output": "This appears to be a variant of generic ransomware demanding Bitcoin. Immediate steps: isolate the infected machines, consider restoring from backups, and notify security teams.",
+      "Sentiment": "Negative",
+      "Score": 0.97,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0040: Impact",
+          "T1486: Data Encrypted for Impact"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 8.5,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Financial Services"],
+        "IoCs": {
+          "btc_wallets": ["1Mz4abc987xyz45ef"],
+          "file_extensions": [".enc", ".locked"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine the encryption pattern used by the malware and recommend remediation measures.",
+      "Input": "Encrypted files have a .LOCK extension. Analyzed code snippet shows AES-256 routine with a generated key stored on remote server.",
+      "Output": "The malware utilizes AES-256 encryption. Remediation includes offline backups and potential key recovery by contacting the vendor if a known decryptor exists.",
+      "Sentiment": "Negative",
+      "Score": 0.94,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0003: Persistence",
+          "T1486: Data Encrypted for Impact"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 9.0,
+        "Threat_Actor": "LockBit (suspected)",
+        "Sector_Impact": ["Healthcare"],
+        "IoCs": {
+          "file_extensions": [".LOCK"],
+          "hashes": ["fd5e6c4d...f9ab"],
+          "domains": ["remotekeyserver.ru"]
+        }
+      }
+    },
+    {
+      "Instruction": "Classify the ransomware message that references a Tor payment site and suggest next steps.",
+      "Input": "Your files are locked. To retrieve them, visit our Tor portal at onionpayabc.onion and follow instructions. Payment is 1 BTC.",
+      "Output": "This is ransomware with a Tor-based payment method. Next steps: disconnect affected hosts, contact incident response, and evaluate backups for restoration.",
+      "Sentiment": "Negative",
+      "Score": 0.96,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0040: Impact",
+          "T1489: Service Stop"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 8.7,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Enterprise"],
+        "IoCs": {
+          "btc_wallets": ["1TorAbCxyz789"],
+          "onion_addresses": ["onionpayabc.onion"]
+        }
+      }
+    },
+    {
+      "Instruction": "Identify whether the files with a .wannacry extension are part of a known ransomware strain.",
+      "Input": "Multiple user endpoints show documents renamed to .wannacry. Ransom notes direct victims to pay 300 USD in BTC.",
+      "Output": "Likely a variation of WannaCry ransomware. Immediately isolate infected systems, update patches, and check for known decryptors.",
+      "Sentiment": "Negative",
+      "Score": 0.93,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0002: Execution",
+          "T1486: Data Encrypted for Impact"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 9.3,
+        "Threat_Actor": "WannaCry (copycat)",
+        "Sector_Impact": ["Public Sector", "SMB Enterprises"],
+        "IoCs": {
+          "file_extensions": [".wannacry"],
+          "ports": ["445"]
+        }
+      }
+    },
+    {
+      "Instruction": "Evaluate the ransom note containing partial encryption of database files and request for Monero payment.",
+      "Input": "All database records are locked. Send 10 XMR to address 46NH7X... or lose your data permanently.",
+      "Output": "Confirmed ransomware targeting database. Advise isolating servers, verifying offline backups, and considering not paying the ransom if backups are viable.",
+      "Sentiment": "Negative",
+      "Score": 0.92,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0040: Impact"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 8.0,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Finance", "E-commerce"],
+        "IoCs": {
+          "monero_wallets": ["46NH7X9xyz..."],
+          "file_extensions": [".db", ".dbx"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if the mention of a DDoS threat along with a ransom note is a typical double extortion tactic.",
+      "Input": "Ransom note says: 'Pay 2 BTC or we will release your data AND launch a DDoS on your public website.'",
+      "Output": "This is a double extortion technique combining data leak threats with DDoS. Advise implementing DDoS mitigation and verifying offline backups.",
+      "Sentiment": "Negative",
+      "Score": 0.91,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0040: Impact",
+          "T1499: Endpoint Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 8.9,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Retail", "Online Services"],
+        "IoCs": {
+          "btc_wallets": ["1DdosRansomAbc123"],
+          "domains": []
+        }
+      }
+    },
+    {
+      "Instruction": "Assess the ransom note with references to stolen personal data for a potential triple extortion scenario.",
+      "Input": "We have exfiltrated your employees' SSNs. Pay 5 BTC or we leak them, plus your backups remain encrypted.",
+      "Output": "Triple extortion: encryption, data leak, and personal data theft. Immediate forensics and legal counsel recommended, along with identity protection measures.",
+      "Sentiment": "Negative",
+      "Score": 0.95,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0040: Impact",
+          "T1490: Inhibit System Recovery"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 9.1,
+        "Threat_Actor": "REvil (suspected)",
+        "Sector_Impact": ["Corporate", "Public Institutions"],
+        "IoCs": {
+          "btc_wallets": ["1XYZleak123abc"],
+          "file_extensions": [".revil"],
+          "stolen_data_types": ["SSNs"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze a ransomware sample that specifically targets teacher lesson files at an educational institution.",
+      "Input": "Ransom note: 'Your lesson plans and grade sheets are locked. Pay 2 BTC to restore them before the next semester.'",
+      "Output": "Tailored attack on educational data. Urge immediate IT lockdown, offline backups retrieval, and consider notifying district or local authorities.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0002: Execution",
+          "T1486: Data Encrypted for Impact"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 7.8,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "btc_wallets": ["1EduRansom1234"],
+          "file_extensions": [".lesson", ".grades"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if the partial encryption of system DLLs on a Windows server indicates a known group’s tactic.",
+      "Input": "System logs show partial encryption of .dll files, with a note referencing the Maze group. Payment demanded in LTC.",
+      "Output": "Likely Maze or Maze-inspired. They often partially encrypt key files. Strengthen perimeter, isolate network segments, and patch known vulnerabilities.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0003: Persistence"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 8.4,
+        "Threat_Actor": "Maze (suspected)",
+        "Sector_Impact": ["Enterprise", "Manufacturing"],
+        "IoCs": {
+          "ltc_wallets": ["Labc123xyz8765"],
+          "file_extensions": [".dll"],
+          "threat_group": "Maze"
+        }
+      }
+    },
+    {
+      "Instruction": "Investigate if a new Linux-based ransomware is targeting campus servers for HPC research data.",
+      "Input": "Ransom note found on HPC cluster nodes: 'Your research data is encrypted. Pay 3 BTC within 72 hours.'",
+      "Output": "Linux-based ransomware specifically hitting HPC. Immediate steps: isolate HPC cluster, restore from HPC backups, possibly contact law enforcement.",
+      "Sentiment": "Negative",
+      "Score": 0.93,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1486: Data Encrypted for Impact"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 8.2,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Research Labs"],
+        "IoCs": {
+          "btc_wallets": ["1HPCclusterAbc"],
+          "file_extensions": [".encHPC"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if the .crysis extension on compromised teacher laptops is a known variant.",
+      "Input": "Our teacher laptops show files ending with .crysis, with a ransom note asking for contact via Tox chat.",
+      "Output": "Likely Crysis ransomware. Standard procedure: isolate, restore from backups, and check if an offline decryptor is available.",
+      "Sentiment": "Negative",
+      "Score": 0.92,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0040: Impact",
+          "T1490: Inhibit System Recovery"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 7.9,
+        "Threat_Actor": "Crysis Group (suspected)",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "file_extensions": [".crysis"],
+          "communication_channel": ["Tox"]
+        }
+      }
+    },
+    {
+      "Instruction": "Assess a scenario where the ransom note warns about publishing stolen staff credentials on a public forum.",
+      "Input": "We have your teacher portal login data. Pay 1.5 BTC or these credentials go live on hacking boards.",
+      "Output": "Data exfiltration with ransom. Immediately reset credentials, notify staff of potential compromise, and review logs for infiltration paths.",
+      "Sentiment": "Negative",
+      "Score": 0.89,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0040: Impact",
+          "T1531: Data from Information Repositories"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 8.1,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "btc_wallets": ["1TeacherCredAbc"],
+          "file_extensions": []
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if targeting backup servers first is indicative of a known ransomware tactic.",
+      "Input": "Attackers disabled backup services, then encrypted primary data. They mention in the note, 'We wiped your backups too.'",
+      "Output": "This matches a tactic used by many advanced ransomware groups. They sabotage backups first to force payment.",
+      "Sentiment": "Negative",
+      "Score": 0.96,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1490: Inhibit System Recovery",
+          "T1486: Data Encrypted for Impact"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 9.2,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Higher Education", "Enterprises"],
+        "IoCs": {
+          "btc_wallets": [],
+          "file_extensions": [".bkplock"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if an email containing 'school_ransom.exe' is a known attack vector for campus networks.",
+      "Input": "Email with subject 'Exam Scores Update' has an attachment named 'school_ransom.exe' that triggers encryption upon opening.",
+      "Output": "Classic phishing attack delivering ransomware. Quarantine email, block the sender, and train staff on safe attachment handling.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0001: Initial Access",
+          "T1059: Command and Scripting Interpreter"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 7.2,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "file_extensions": [".exe"],
+          "email_subjects": ["Exam Scores Update"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if the partial release of decrypted files indicates a threat actor's attempt to prove decryption capability.",
+      "Input": "Attacker provided 2 decrypted sample files in the note to show they can unlock data once ransom is paid.",
+      "Output": "Attackers often give a sample. Evaluate your backups and security posture before considering payment. Verify authenticity of decrypted samples.",
+      "Sentiment": "Negative",
+      "Score": 0.91,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0040: Impact"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 8.3,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Corporate"],
+        "IoCs": {
+          "proof_of_decryption": ["2 test files"],
+          "file_extensions": [".partialdecrypt"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if an old server running SMB v1 was exploited to deliver ransomware to the campus domain.",
+      "Input": "Logs show an exploit on SMB v1 shares, followed by mass file encryption across the domain. Ransom demanded in dash coin.",
+      "Output": "SMB v1 exploitation is a known vector. Patch or disable SMB v1, segment the network, and check backups before paying any ransom.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0002: Execution",
+          "T1210: Exploitation of Remote Services"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 9.1,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Legacy Systems"],
+        "IoCs": {
+          "dash_wallets": ["Xabc123DashCoin"],
+          "file_extensions": [".locked"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze the note referencing a discount if the ransom is paid within 48 hours for a compromised university website.",
+      "Input": "'Pay 4 BTC now or 6 BTC after 48 hours if you delay. We have your student records.'",
+      "Output": "Time-sensitive ransom typical of certain groups. Urge the university to review backups and incident response. Do not rush payment based on discount threats.",
+      "Sentiment": "Negative",
+      "Score": 0.89,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0040: Impact"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 8.8,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Higher Education"],
+        "IoCs": {
+          "btc_wallets": ["1DiscountRansomXyz"],
+          "file_extensions": [".db", ".csv"]
+        }
+      }
+    },
+    {
+      "Instruction": "Identify whether stolen teacher certificates used for code signing indicate a supply chain ransomware attack.",
+      "Input": "Malware signed with official teacher credentials forced distribution across school devices, then demanded ransoms for decryption.",
+      "Output": "Indicates a supply chain compromise using valid certificates. Revoke compromised certificates and investigate the origin of the breach.",
+      "Sentiment": "Negative",
+      "Score": 0.94,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1587.002: Code Signing Certificates",
+          "T1486: Data Encrypted for Impact"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 9.0,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "file_extensions": [".teachlock"],
+          "certificates": ["Compromised teacher cert #XYZ"]
+        }
+      }
+    },
+    {
+      "Instruction": "Examine the ransom note referencing Apple's macOS systems on teacher laptops.",
+      "Input": "'All .DMG and .DOCX files on your Mac are encrypted. Pay 2 BTC before finals week, or it's lost forever.'",
+      "Output": "Mac-centric ransomware. Although less common, certain strains do exist. Isolate Mac endpoints, restore from Time Machine backups if unaffected.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1486: Data Encrypted for Impact"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 8.3,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Mac Users"],
+        "IoCs": {
+          "btc_wallets": ["1Mac123Teacher"],
+          "file_extensions": [".DMG", ".DOCX"]
+        }
+      }
+    },
+    {
+      "Instruction": "Assess if a script-based attack using PowerShell led to partial encryption of shared drives at a technical institute.",
+      "Input": "PowerShell logs show malicious script executing, followed by hundreds of .encrypted files across shared student resources.",
+      "Output": "PowerShell-based ransomware. Disable or restrict PowerShell for non-admins, revert from backups, and investigate the initial phishing vector.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1059.001: PowerShell",
+          "T1486: Data Encrypted for Impact"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 8.1,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Technical Institutes"],
+        "IoCs": {
+          "file_extensions": [".encrypted"],
+          "scripts": ["malicious.ps1"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if an outdated RDP server in a school's IT lab was used to propagate ransomware.",
+      "Input": "Logs show repeated brute force attempts on RDP port 3389, culminating in mass file encryption across lab machines.",
+      "Output": "RDP brute force attack leading to ransomware. Require strong passwords, limit RDP exposure, and enable MFA if possible.",
+      "Sentiment": "Negative",
+      "Score": 0.93,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1133: External Remote Services"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 9.2,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "ports": ["3389"],
+          "file_extensions": [".rdplock"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if the mention of advanced encryption with ECDH keys indicates a novel ransomware approach.",
+      "Input": "Ransom note claims 'unbreakable ECDH encryption.' They demand payment in Ethereum to 0xAbC123..",
+      "Output": "ECDH-based encryption is complex. Evaluate if backups are intact and consult cryptography experts for potential partial workarounds.",
+      "Sentiment": "Negative",
+      "Score": 0.92,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1486: Data Encrypted for Impact"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 9.0,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Research Facilities"],
+        "IoCs": {
+          "eth_wallets": ["0xAbC1234Ransom"],
+          "file_extensions": [".ecdh"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if the detection of hidden scheduled tasks performing repeated file encryption indicates persistent ransomware.",
+      "Input": "Investigation found a hidden scheduled task named 'sys_update' re-encrypting files daily, demanding additional payments.",
+      "Output": "Persistent re-encryption tactic. Remove scheduled tasks, isolate hosts, and fully reimage if trust is lost.",
+      "Sentiment": "Negative",
+      "Score": 0.94,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0003: Persistence",
+          "T1053: Scheduled Task"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 8.6,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "SMB"],
+        "IoCs": {
+          "task_names": ["sys_update"],
+          "file_extensions": [".relock"]
+        }
+      }
+    },
+    {
+      "Instruction": "Identify if the attempt to extort a public K-12 school with automated phone calls threatening data leaks is part of a ransom scheme.",
+      "Input": "Parents received robocalls claiming 'Student data will be leaked if the school doesn’t pay 3 BTC.'",
+      "Output": "This is a socially engineered extortion method. Encourage the school to contact authorities and strengthen their network security posture.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0040: Impact",
+          "T1566: Phishing"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 7.5,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "phone_numbers": ["+1-555-RoboCall"],
+          "btc_wallets": ["1RobocallEduXYZ"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check whether the custom in-house grading system was compromised and replaced with a ransom note demanding LTC.",
+      "Input": "All teacher logins lead to a ransom screen: 'Pay 5 LTC to unlock the grading database.'",
+      "Output": "In-house system compromised. Shut down the server, attempt offline database restoration, consider forensic analysis of logs for infiltration paths.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1486: Data Encrypted for Impact"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 7.7,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "ltc_wallets": ["LtcEduGrade123"],
+          "file_extensions": []
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if an unpatched vulnerability in a library booking system triggered widespread file encryption demands.",
+      "Input": "The booking system had an old Apache Struts flaw. Attackers used it to deliver ransomware, locking the entire library’s digital catalog.",
+      "Output": "Exploitation of Apache Struts vulnerability. Patch systems immediately and restore from known clean backups.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1190: Exploit Public-Facing Application"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 8.8,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Public Library"],
+        "IoCs": {
+          "file_extensions": [".strutslock"],
+          "patch_reference": ["Apache Struts CVE-XXXX-YYYY"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if emails threatening to leak course materials and exam papers are part of a targeted ransomware attack at a university.",
+      "Input": "'We have your exam content. Pay 2 BTC or we release it online, undermining your entire assessment process.'",
+      "Output": "Targeted attack on intellectual property. Lock down systems storing exam data and investigate data exfiltration. Consider rotating exam content.",
+      "Sentiment": "Negative",
+      "Score": 0.89,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0040: Impact"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 8.1,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Higher Education"],
+        "IoCs": {
+          "btc_wallets": ["1ExamLeakEduXYZ"],
+          "file_extensions": []
+        }
+      }
+    },
+    {
+      "Instruction": "Identify if malicious MBR overwrite is part of a destructive ransomware aimed at campus computers.",
+      "Input": "Systems show a black screen with a ransom note on boot, referencing Master Boot Record overwrites. Payment requested in BTC.",
+      "Output": "Destructive MBR ransomware. Recovery is more complex; consider reimaging systems and thoroughly investigating the breach.",
+      "Sentiment": "Negative",
+      "Score": 0.94,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1490: Inhibit System Recovery",
+          "T1529: System Shutdown/Reboot"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 9.3,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Corporate"],
+        "IoCs": {
+          "btc_wallets": ["1MBRDest123Abc"],
+          "file_extensions": []
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if an email infiltration via compromised staff account distributed phishing links leading to ransomware across a school district.",
+      "Input": "A staff email was used to send links to 'grade updates' that launched encryption after opening an attached .zip.",
+      "Output": "Compromised account phishing campaign. Force password resets, notify recipients, and block the malicious domain hosting the .zip.",
+      "Sentiment": "Negative",
+      "Score": 0.87,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0001: Initial Access",
+          "T1566: Phishing"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 7.5,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "file_extensions": [".zip"],
+          "email_addresses": ["[email protected]"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if the ransom note referencing an ICS/SCADA system in a campus power management facility is valid.",
+      "Input": "'We have encrypted your power grid controllers. Pay 15 BTC or face permanent power outages.'",
+      "Output": "ICS-targeted ransomware is rare but severe. Isolate the ICS environment, restore controllers from known safe states, and alert relevant authorities.",
+      "Sentiment": "Negative",
+      "Score": 0.98,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1486: Data Encrypted for Impact"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 9.4,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education Infrastructure"],
+        "IoCs": {
+          "btc_wallets": ["1CampusGridAbc"],
+          "file_extensions": []
+        }
+      }
+    },
+    {
+      "Instruction": "Check if using an exploit kit on staff laptops led to a mass encryption event at a community college.",
+      "Input": "Logs show drive-by download from malicious ad, installing ransomware that spread through shared folders.",
+      "Output": "Exploit kit-based infection. Advised to block malicious ad domains, update browsers/OS, and isolate compromised shares immediately.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1203: Exploitation for Client Execution"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 8.2,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Community Colleges"],
+        "IoCs": {
+          "domains": ["maliciousadnetwork.com"],
+          "file_extensions": [".ransomed"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if a script disabling AV software on teachers’ systems is part of a known ransomware infiltration method.",
+      "Input": "Logs: 'Disable Windows Defender' commands followed by encryption. Ransom demand found on desktops.",
+      "Output": "Ransomware often disables AV to avoid detection. Re-enable security, investigate source of script, and remediate quickly.",
+      "Sentiment": "Negative",
+      "Score": 0.92,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0005: Defense Evasion",
+          "T1489: Service Stop"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 8.7,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "scripts": ["disableAV.ps1"],
+          "file_extensions": [".enc"]
+        }
+      }
+    },
+    {
+      "Instruction": "Assess if persistent re-infections from USB drives indicates a worm-like ransomware variant in a school's computer lab.",
+      "Input": "Encrypted files keep reappearing on lab PCs after cleanup, traced back to shared USB drives.",
+      "Output": "Worm-capable ransomware spread via USB. Quarantine all removable media, reformat or sanitize them, and enhance endpoint scanning.",
+      "Sentiment": "Negative",
+      "Score": 0.91,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1091: Replication Through Removable Media"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 8.5,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "file_extensions": [".usbenc"],
+          "removable_media": ["USBflash"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if the rename of files to .ryuk indicates involvement of the Ryuk ransomware group at a state university.",
+      "Input": "Victims found .ryuk appended to their documents, with a note instructing contact via an onion site for decryption steps.",
+      "Output": "Likely Ryuk. They are known for big-game hunting. Engage IR, consider law enforcement, and avoid contacting criminals unless necessary.",
+      "Sentiment": "Negative",
+      "Score": 0.93,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1486: Data Encrypted for Impact"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 9.1,
+        "Threat_Actor": "Ryuk",
+        "Sector_Impact": ["Education", "Large Organizations"],
+        "IoCs": {
+          "onion_addresses": ["ryukpayxyz.onion"],
+          "file_extensions": [".ryuk"]
+        }
+      }
+    },
+    {
+      "Instruction": "Identify if the repeated shutdown of antivirus in safe mode is a clue to advanced ransomware cleanup evasion.",
+      "Input": "Ransomware forcibly reboots the system into safe mode, disables AV, and continues encryption.",
+      "Output": "Advanced technique to bypass AV protections in safe mode. Re-enable security features from an offline environment, then remediate.",
+      "Sentiment": "Negative",
+      "Score": 0.94,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1490: Inhibit System Recovery",
+          "T1053: Scheduled Task"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 8.9,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "SMB Enterprises"],
+        "IoCs": {
+          "file_extensions": [".safelock"],
+          "scripts": []
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if the ransom note referencing stolen email archives suggests a data leak threat for an academic department.",
+      "Input": "We have your research email archives. Pay 1.2 BTC or it's published. Also, your files remain locked.",
+      "Output": "Ransomware combined with email data exfiltration. Institute incident response, possibly contact legal counsel, and consider external comms if data is sensitive.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1490: Inhibit System Recovery",
+          "T1531: Data from Information Repositories"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 8.0,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Academia"],
+        "IoCs": {
+          "btc_wallets": ["1EmailLeakBtcXYZ"],
+          "file_extensions": [".mailenc"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if forced logouts of staff and a pop-up demand to 'Enter Key' indicates a screen-locker style ransomware.",
+      "Input": "Instead of file encryption, staff see a locked screen requesting a key. Payment demanded to unlock sessions.",
+      "Output": "Screen-locker ransomware. Not as destructive as encryption-based but still disruptive. Attempt safe mode removal and code injection analysis.",
+      "Sentiment": "Negative",
+      "Score": 0.85,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1490: Inhibit System Recovery"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 6.9,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "file_extensions": [],
+          "malware_type": ["screen_locker"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if the mention of a partial decrypt key in the ransom note is social engineering to speed up payment.",
+      "Input": "'We already decrypted 10% of your files. Pay now or this offer expires.'",
+      "Output": "Likely social engineering to prompt immediate payment. Verify which files were restored, maintain a calm response, and assess backups.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0040: Impact"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 8.1,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "SMB"],
+        "IoCs": {
+          "btc_wallets": ["1PartialDecryptXYZ"],
+          "file_extensions": []
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if 'NoMoreRansom' references in the note indicate this group taunts victims about known decryption tools.",
+      "Input": "Ransom note: 'NoMoreRansom won't save you this time. Pay 3 BTC or lose your data forever.'",
+      "Output": "Threat actors taunting known public decryptor initiatives. Evaluate if a new variant bypasses known tools. Consult latest resources on NoMoreRansom.",
+      "Sentiment": "Negative",
+      "Score": 0.97,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1486: Data Encrypted for Impact"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 8.8,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "General Enterprise"],
+        "IoCs": {
+          "btc_wallets": ["1NoMoreRansomAbc"],
+          "file_extensions": [".noransom"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if a tool claiming to 'fix exam results encryption' is actually a second-stage ransomware infection.",
+      "Input": "Staff found a suspicious exe labeled 'ExamFixer.exe' on the network share. Running it re-encrypts everything.",
+      "Output": "Secondary infection disguised as a fix tool. Educate staff not to run unverified executables. Remove file, restore from known clean backup.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0001: Initial Access",
+          "T1486: Data Encrypted for Impact"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 8.3,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "file_extensions": [".exe"],
+          "malware_type": ["secondary_ransomware"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if the presence of a public GPG key in the ransom note suggests that encryption is handled via open-source libraries.",
+      "Input": "Ransom note references a GPG public key with instructions to send an encrypted message after payment.",
+      "Output": "Attackers are leveraging GPG. Thorough backup strategy or a recognized decryptor might be the only options. Examine communications carefully.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1486: Data Encrypted for Impact"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 7.9,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "NGO"],
+        "IoCs": {
+          "gpg_key_ids": ["0xABC12345"],
+          "file_extensions": [".gpgenc"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if the infiltration via phishing emails to the procurement department in a university escalated to domain-wide ransomware.",
+      "Input": "Procurement staff clicked on a 'new vendor contract' PDF which triggered domain-wide encryption. Ransom note demands 8 BTC.",
+      "Output": "Phishing-based domain compromise. Evaluate email security measures, disable compromised accounts, and restore affected systems from backups.",
+      "Sentiment": "Negative",
+      "Score": 0.92,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1566: Phishing"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 8.5,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "file_extensions": [".pdf"],
+          "btc_wallets": ["1ProcurementSchoolXYZ"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if the reference to 'CLS' in the ransom note stands for a known CryptoLocker Spinoff strain.",
+      "Input": "Ransom note says: 'CLS encryption used. Your data is locked forever if you refuse to pay 2 BTC.'",
+      "Output": "CLS might be short for a CryptoLocker spinoff. Confirm by analyzing encryption routine. Usual steps: backups, IR, consider not paying ransom.",
+      "Sentiment": "Negative",
+      "Score": 0.89,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1486: Data Encrypted for Impact"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 8.3,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "SMB"],
+        "IoCs": {
+          "btc_wallets": ["1CLSabcXYZ"],
+          "file_extensions": [".clsenc"]
+        }
+      }
+    },
+    {
+      "Instruction": "Assess if an unrecognized admin account creation is part of a ransomware foothold in a high school network.",
+      "Input": "Domain logs show 'admin_temp' user created 2 days before encryption began. Ransom note posted in each user folder.",
+      "Output": "Threat actor created a backdoor admin for staging the attack. Remove the account, rotate passwords, and investigate other suspicious accounts.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1078: Valid Accounts"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 8.4,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "user_accounts": ["admin_temp"],
+          "file_extensions": [".locked"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if the mention of a new variant that forcibly uninstalls EDR solutions is consistent with a known strain targeting colleges.",
+      "Input": "EDR logs vanished prior to encryption. The ransom note says 'Your advanced protection is worthless.'",
+      "Output": "Likely advanced ransomware that terminates or removes EDR. Investigate alternative detection methods and strengthen endpoint policies.",
+      "Sentiment": "Negative",
+      "Score": 0.93,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0005: Defense Evasion"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 9.0,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "file_extensions": [".unprot"],
+          "malware_type": ["EDR_killer"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if the ransomed systems that show overlapping functionality with cryptojacking point to a hybrid malware approach.",
+      "Input": "After encryption, the system's CPU usage remains high, suggesting cryptomining while the ransom note demands payment in BTC.",
+      "Output": "Hybrid ransomware–cryptominer. Remove infection thoroughly. Attackers may attempt to profit from both ransom and mining.",
+      "Sentiment": "Negative",
+      "Score": 0.91,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1496: Resource Hijacking",
+          "T1486: Data Encrypted for Impact"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 8.5,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "btc_wallets": ["1HybridMineEncryptABC"],
+          "file_extensions": [".cryptolock"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if the partial system compromise on Chromebook devices is likely due to a ransomware strain or a lesser threat.",
+      "Input": "Chrome OS logs show attempts to mount partitions read/write, followed by a note in the Downloads folder demanding ETH.",
+      "Output": "Ransomware attempts on Chromebooks are less common due to sandboxing. Possibly a hoax or partial lock screen method. Investigate thoroughly.",
+      "Sentiment": "Negative",
+      "Score": 0.84,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0003: Persistence"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 6.1,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "eth_wallets": ["0xChromebookScam123"],
+          "file_extensions": []
+        }
+      }
+    },
+    {
+      "Instruction": "Identify if exfiltration of student loan documents is part of a newly discovered ransomware named 'BlackBoardLock.'",
+      "Input": "'BlackBoardLock' note found on financial aid office machines. Ransom: 4 BTC. 'Loan docs stolen' included in the threat.",
+      "Output": "Likely a new or renamed ransomware variant. They exfiltrated sensitive finance data. Full IR and data breach procedures needed.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1531: Data from Information Repositories"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 8.7,
+        "Threat_Actor": "BlackBoardLock",
+        "Sector_Impact": ["Education", "Finance Department"],
+        "IoCs": {
+          "btc_wallets": ["1BlackBoardLockPay"],
+          "file_extensions": [".bbldoc"]
+        }
+      }
+    },
+    {
+      "Instruction": "Evaluate if the presence of Emotet trojan preceded the ransomware incident in a university's staff computers.",
+      "Input": "Before encryption, AV flagged Emotet on multiple endpoints. Ransomware struck days after Emotet infection.",
+      "Output": "Emotet often leads to further payloads like ransomware. Clean Emotet thoroughly, then restore from backups. Investigate lateral movement.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1070: Indicator Removal on Host"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 8.4,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "malware_type": ["Emotet", "ransomware"],
+          "file_extensions": [".locked"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if a malicious extension in the Chrome browser on lab PCs triggered a mass encryption event.",
+      "Input": "The extension 'Doc2PDF Converter' was installed. Immediately after, user files across the network got encrypted.",
+      "Output": "Malicious browser extension distributing ransomware. Remove extension enterprise-wide, isolate compromised endpoints, and reset user credentials.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1176: Browser Extensions"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 7.6,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "extension_names": ["Doc2PDF Converter"],
+          "file_extensions": [".doc2enc"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if the use of a random hardware token is a social engineering lure to decrypt campus servers in an engineering department.",
+      "Input": "Attackers sent a hardware key via mail, claiming it’s needed to decrypt. They demand 1 BTC to activate it.",
+      "Output": "Social engineering ploy. Physical tokens from attackers are suspicious. Evaluate safe disposal or offline analysis. Do not trust unverified hardware.",
+      "Sentiment": "Negative",
+      "Score": 0.86,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1566: Phishing"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 7.0,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Engineering School"],
+        "IoCs": {
+          "physical_media": ["hardware token"],
+          "btc_wallets": ["1TokenDecryptXYZ"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if the extortion note referencing 'NFTs minted from your stolen data' is a new ransomware twist.",
+      "Input": "They claim they've minted student info as NFTs to be sold if ransom isn't paid. Payment demanded in ETH.",
+      "Output": "Novel extortion tactic. Evaluate legal recourse and thoroughly block data exfiltration. Confirm if data truly leaked onto NFT platforms.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1531: Data from Information Repositories"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 8.8,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "eth_wallets": ["0xNFTDataLeakXYZ"],
+          "file_extensions": [".nftenc"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if the infiltration via an old ColdFusion server contributed to campus-wide ransomware infection.",
+      "Input": "Attack logs show ColdFusion vulnerability exploit leading to web root encryption. Ransom note demands 4 BTC.",
+      "Output": "Unpatched ColdFusion server used as entry point for ransomware. Patch immediately, restore data, and do a full environment sweep for backdoors.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1190: Exploit Public-Facing Application"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 8.7,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "file_extensions": [".cfenc"],
+          "domains": []
+        }
+      }
+    },
+    {
+      "Instruction": "Check if 'Sodinokibi' references in the note clarify the group behind a major campus IT lockdown.",
+      "Input": "Ransom note states: 'Sodinokibi took your data. Pay or see it leaked on our blog.'",
+      "Output": "Sodinokibi (REvil) group known for data leaks. Immediately isolate infected systems, consult legal, and consider negotiation carefully if needed.",
+      "Sentiment": "Negative",
+      "Score": 0.94,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0040: Impact",
+          "T1490: Inhibit System Recovery"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 9.1,
+        "Threat_Actor": "Sodinokibi/REvil",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "btc_wallets": ["1SodinRevilXYZ"],
+          "file_extensions": [".sodinokibi"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if the second wave of encryption after partial restoration is a sign of incomplete remediation in the university environment.",
+      "Input": "IT restored from backups, but a day later, files got re-encrypted by the same note. Possibly a persistent foothold.",
+      "Output": "Malware was never fully removed. Possibly leftover backdoors or admin accounts. Conduct thorough hunts for persistence mechanisms.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0003: Persistence",
+          "T1486: Data Encrypted for Impact"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 8.9,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "file_extensions": [".reenc"],
+          "scripts": []
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if a cloud-based document repository was encrypted due to stolen admin credentials from a university's remote staff.",
+      "Input": "Attackers used admin credentials to remove version histories and apply encryption to entire cloud library. Ransom demands 3 BTC.",
+      "Output": "Cloud-based ransom scenario. Immediately revoke compromised credentials, attempt version rollback if available, and contact the cloud provider.",
+      "Sentiment": "Negative",
+      "Score": 0.95,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1078: Valid Accounts",
+          "T1490: Inhibit System Recovery"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 8.2,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "btc_wallets": ["1CloudDocEduXYZ"],
+          "file_extensions": [".cloudenc"]
+        }
+      }
+    },
+    {
+      "Instruction": "Identify if the extension .pysa seen in a teacher's system is a sign of the Mespinoza/Pysa ransomware group.",
+      "Input": "Files renamed with .pysa. Ransom note references 'Pysa Group' demanding Bitcoin to decrypt.",
+      "Output": "Likely Mespinoza/Pysa ransomware. Standard practice: isolate, check backups, consider contacting law enforcement or IR specialists.",
+      "Sentiment": "Negative",
+      "Score": 0.92,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1486: Data Encrypted for Impact"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 8.8,
+        "Threat_Actor": "Pysa",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "btc_wallets": ["1PysaRansomXYZ"],
+          "file_extensions": [".pysa"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if the demand for a pay-safe gift card is a new or unorthodox payment method in a small private academy's ransom note.",
+      "Input": "Attackers claim they only accept PaySafe gift cards, equating them to $2000 each for decryption keys.",
+      "Output": "Unusual payment approach. Possibly lower sophistication or a niche group. Still treat as serious: isolate, restore, and examine backups.",
+      "Sentiment": "Negative",
+      "Score": 0.86,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0040: Impact"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 6.9,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Private Academies"],
+        "IoCs": {
+          "gift_cards": ["PaySafe Cards"],
+          "file_extensions": [".ransom"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if the cameo message from 'Fancy Bear' is a smokescreen or genuine state-sponsored activity within campus servers.",
+      "Input": "Ransom note claims 'Fancy Bear' affiliation, but encryption pattern is typical of common criminal groups. Payment in BTC demanded.",
+      "Output": "Likely false flag to intimidate victims. Treat as standard ransomware. No evidence of actual state-sponsored TTPs beyond the name.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0040: Impact"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 8.0,
+        "Threat_Actor": "Impersonating Fancy Bear",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "btc_wallets": ["1FancyBearPretender"],
+          "file_extensions": []
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if the wipe of system logs prior to encryption indicates a planned, targeted ransomware attack on an educational network.",
+      "Input": "No logs for the past week. Immediately after logs vanish, a ransom note demanded 3 BTC for data decryption.",
+      "Output": "Attacker likely covered tracks, indicating a targeted intrusion. Deep forensic analysis recommended to find infiltration vectors.",
+      "Sentiment": "Negative",
+      "Score": 0.94,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "T1070: Indicator Removal on Host"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 8.5,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "btc_wallets": ["1WipeLogsEduXYZ"],
+          "file_extensions": []
+        }
+      }
+    },
+    {
+      "Instruction": "Check if the note referencing 'virtual machine detection' to skip encryption on honeypots is a sign of advanced group tactics.",
+      "Input": "Code checks for virtualization environment. If found, it halts encryption to avoid detection in sandbox/honeypots.",
+      "Output": "Advanced evasion tactic. Ransomware is sandbox-aware. Strengthen detection with real endpoint monitoring and better isolation.",
+      "Sentiment": "Negative",
+      "Score": 0.93,
+      "Metadata": {
+        "threat_type": "ransomware",
+        "TTP": [
+          "TA0005: Defense Evasion",
+          "T1497.001: Virtualization/Sandbox Evasion"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 8.9,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "file_extensions": [".vmaware"]
+        }
+      }
+    }
+  ]
+  

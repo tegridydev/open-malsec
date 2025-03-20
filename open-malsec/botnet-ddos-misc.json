@@ -1,0 +1,1281 @@
+[
+    {
+      "Instruction": "Analyze the server logs to confirm if the spike in network requests indicates a DDoS attack.",
+      "Input": "Massive increase in inbound TCP SYN requests from multiple IP ranges over a 5-minute period.",
+      "Output": "Likely a SYN flood DDoS attack. Mitigation includes rate-limiting SYN packets, deploying WAF or intrusion prevention systems.",
+      "Sentiment": "Negative",
+      "Score": 0.90,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "TA0011: Command and Control",
+          "T1499: Endpoint Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.5,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["E-commerce"],
+        "IoCs": {
+          "ips": ["192.168.50.200", "192.168.50.201", "192.168.50.202"],
+          "ports": ["80", "443"]
+        }
+      }
+    },
+    {
+      "Instruction": "Examine the following infected host logs for potential botnet-related traffic.",
+      "Input": "Host repeatedly connects to suspicious domain `evil-c2.com` every 60 seconds on port 6667 (IRC).",
+      "Output": "Indicates a possible botnet infection using IRC for C2. Immediate action: block `evil-c2.com`, isolate the host, and run AV/malware scans.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "TA0011: Command and Control",
+          "T1071.001: Application Layer Protocol"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.2,
+        "Threat_Actor": "Mirai (suspected)",
+        "Sector_Impact": ["SMB", "Retail"],
+        "IoCs": {
+          "domains": ["evil-c2.com"],
+          "ips": ["10.0.0.99"],
+          "ports": ["6667"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if the flood of HTTP GET requests targeting a campus learning management system indicates a Layer 7 DDoS.",
+      "Input": "Monitoring shows thousands of GET requests per second on the /login endpoint from a wide range of IPs.",
+      "Output": "Likely Layer 7 (application-level) DDoS. Implement rate-limiting, reCAPTCHA on login, and consider geo-blocking suspicious traffic.",
+      "Sentiment": "Negative",
+      "Score": 0.92,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499: Endpoint Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.8,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "ips": ["198.51.100.1", "203.0.113.10", "203.0.113.11"],
+          "urls": ["/login"]
+        }
+      }
+    },
+    {
+      "Instruction": "Identify if repeated UDP packets targeting port 123 on campus time servers is part of an NTP amplification DDoS.",
+      "Input": "University NTP servers show abnormally large UDP traffic bursts, saturating network bandwidth.",
+      "Output": "Indicators of NTP amplification. Restrict NTP responses to known IP ranges, update configuration to prevent open NTP relay.",
+      "Sentiment": "Negative",
+      "Score": 0.89,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499.004: Network Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.4,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "ips": ["203.0.113.50", "203.0.113.51"],
+          "ports": ["123"]
+        }
+      }
+    },
+    {
+      "Instruction": "Examine suspicious traffic from student lab machines that might indicate a botnet forming within the campus network.",
+      "Input": "Multiple lab PCs are sending small encrypted payloads to an external IP every 10 seconds, using an unknown protocol.",
+      "Output": "Likely a botnet setup. Block outbound connections to that IP, isolate infected endpoints, and scan for trojans or backdoors.",
+      "Sentiment": "Negative",
+      "Score": 0.91,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "TA0011: Command and Control"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.2,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "ips": ["198.51.100.201"],
+          "protocols": ["custom-encrypted"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if the campaign to overload the e-learning portal with bogus sign-up requests is a DDoS or spam-based disruption.",
+      "Input": "Thousands of new account registrations per hour from random email addresses, crippling the server’s capacity.",
+      "Output": "Bot-driven spam attack effectively serving as a DDoS. Implement CAPTCHA, throttle new sign-ups, and block suspicious IP ranges.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499.002: Network Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 6.9,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "email_addresses": ["fakeuser@spam.com", "bot123@malicious.org"],
+          "domains": ["mass-signup.net"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if compromised IoT cameras in a campus dorm are being leveraged in a botnet for external DDoS attacks.",
+      "Input": "Dorm cameras found generating large UDP traffic spikes toward random external IPs, with repeated suspicious patterns.",
+      "Output": "Likely IoT-based botnet. Urgently patch or isolate the cameras, update firmware, and change default credentials.",
+      "Sentiment": "Negative",
+      "Score": 0.93,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "T1091: Replication Through Removable Media", 
+          "TA0011: Command and Control"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.5,
+        "Threat_Actor": "Mirai (suspected)",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "ips": ["10.10.0.50", "10.10.0.51"],
+          "ports": ["8000", "554"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if a surge of DNS queries from an on-campus DNS resolver is part of a reflection-based DDoS attack.",
+      "Input": "DNS logs indicate requests with spoofed source IP addresses, generating high outbound traffic to unsuspecting hosts.",
+      "Output": "DNS reflection/amplification attempt. Implement DNS response rate limiting, disable recursion where not needed, and block spoofed traffic.",
+      "Sentiment": "Negative",
+      "Score": 0.90,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499: Endpoint Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.3,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Public DNS Services"],
+        "IoCs": {
+          "domains": ["spoofed-attack.example"],
+          "ports": ["53"]
+        }
+      }
+    },
+    {
+      "Instruction": "Identify if repeated SSH login attempts from a university research lab indicate a botnet brute-force campaign.",
+      "Input": "Lab servers see thousands of SSH authentication failures from sequential IP addresses overnight.",
+      "Output": "Likely part of a global botnet brute-forcing SSH. Enforce strong credentials, apply fail2ban or similar, and consider IP blocklists.",
+      "Sentiment": "Negative",
+      "Score": 0.89,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "T1110: Brute Force"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 6.7,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Research Labs"],
+        "IoCs": {
+          "ips": ["192.0.2.10", "192.0.2.11", "192.0.2.12"],
+          "ports": ["22"]
+        }
+      }
+    },
+    {
+      "Instruction": "Examine if the campus web server logs show attempts at WordPress XML-RPC flooding consistent with a DDoS attack.",
+      "Input": "Server sees repeated POST requests to xmlrpc.php from hundreds of unique IPs, saturating CPU.",
+      "Output": "XML-RPC pingback DDoS. Mitigate by limiting or disabling XML-RPC, implementing WAF rules, and blocking known malicious IPs.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499.002: Network Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.0,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Web Hosting"],
+        "IoCs": {
+          "ips": ["198.51.100.2", "198.51.100.3"],
+          "urls": ["/xmlrpc.php"]
+        }
+      }
+    },
+    {
+      "Instruction": "Assess if a known DDoS script found on a student’s personal workstation suggests a planned campus network disruption.",
+      "Input": "Security scans reveal a LOIC-like tool in the student's downloads, configured to target the campus domain.",
+      "Output": "Student may be testing or planning a DDoS. Investigate motives, secure the campus network, and consider disciplinary or legal actions.",
+      "Sentiment": "Negative",
+      "Score": 0.92,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499: Endpoint Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Weaponization",
+        "CVSS": 6.5,
+        "Threat_Actor": "Insider Threat (Student)",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "tool_names": ["LOIC-like-tool"],
+          "domains": ["campus.edu"]
+        }
+      }
+    },
+    {
+      "Instruction": "Identify if random high-volume email traffic from campus user accounts is part of a spam botnet operation.",
+      "Input": "Users receiving bouncebacks for messages they never sent. Thousands of spam emails originated from compromised accounts.",
+      "Output": "Compromised credentials fueling a spam botnet. Reset passwords, enable MFA, and monitor for suspicious outgoing mail patterns.",
+      "Sentiment": "Negative",
+      "Score": 0.89,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "T1078: Valid Accounts"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 6.8,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Email Services"],
+        "IoCs": {
+          "email_addresses": ["compromised@campus.edu"],
+          "domains": ["spam-target.com"]
+        }
+      }
+    },
+    {
+      "Instruction": "Examine if repeated ICMP echo requests from multiple subnets are signs of a smurf-based DDoS in a university network.",
+      "Input": "Network logs show large volumes of ICMP pings with spoofed source addresses targeting broadcast IP ranges.",
+      "Output": "Indicates a smurf DDoS attack. Disable IP-directed broadcasts, block spoofed traffic, and monitor for unusual ICMP patterns.",
+      "Sentiment": "Negative",
+      "Score": 0.87,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499: Endpoint Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.1,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "ip_ranges": ["10.10.0.0/16", "10.20.0.0/16"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if the campus chat application’s slowdowns are a result of a DDoS or legitimate heavy usage.",
+      "Input": "Traffic peaks to the chat server coincide with suspicious repeated requests from random user agents.",
+      "Output": "Likely a volumetric DDoS disguised as normal usage. Implement application-level metrics, possibly require user authentication to reduce spam.",
+      "Sentiment": "Negative",
+      "Score": 0.86,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499.002: Network Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 6.4,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "user_agents": ["RandomUA/1.0", "FakeBrowser/2.1"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if multiple DNS servers across campus resolving suspicious domains are part of a coordinated botnet communication.",
+      "Input": "DNS logs show repeated lookups for subdomains of suspect-bot.com, from hundreds of local IPs.",
+      "Output": "Campus devices possibly infected with botnet malware. Block suspect-bot.com, investigate infected hosts, and enforce DNS logging.",
+      "Sentiment": "Negative",
+      "Score": 0.91,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "TA0011: Command and Control"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.3,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "domains": ["suspect-bot.com"],
+          "ip_addresses": []
+        }
+      }
+    },
+    {
+      "Instruction": "Check if large outbound traffic from a single departmental printer is part of a DDoS or misconfiguration.",
+      "Input": "Printer logs indicate ongoing connections to random external IPs on port 80, saturating network capacity.",
+      "Output": "Likely compromised printer used as part of a botnet. Update firmware, reset credentials, and isolate printer from external access.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "TA0011: Command and Control"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 6.5,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "ips": ["10.30.0.2"],
+          "ports": ["80"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if a wave of malicious UDP packets targeting the campus sports streaming service is a DDoS attempt.",
+      "Input": "Massive random UDP packets on port 8080, causing streaming lags during live sports events.",
+      "Output": "Likely DDoS against streaming service. Deploy traffic shaping, blackhole offending IPs, and consider a content delivery network for resiliency.",
+      "Sentiment": "Negative",
+      "Score": 0.89,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499.002: Network Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.2,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Sports"],
+        "IoCs": {
+          "ports": ["8080"],
+          "ips": ["203.0.113.200", "203.0.113.201"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze suspicious spikes in inbound TLS handshake failures on the campus admissions web portal.",
+      "Input": "Sudden increase in incomplete TLS handshakes from diverse IPs, leading to partial server resource exhaustion.",
+      "Output": "Likely TLS-based DDoS or 'TLS Renegotiation Attack.' Implement rate limits, session resumption, and possibly offload TLS to dedicated hardware.",
+      "Sentiment": "Negative",
+      "Score": 0.92,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499.003: Resource Hijacking"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.6,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "ips": ["203.0.113.44", "203.0.113.45"],
+          "ports": ["443"]
+        }
+      }
+    },
+    {
+      "Instruction": "Examine if repeated ARP spoofing attempts in the campus dorm network are part of a broader botnet infiltration tactic.",
+      "Input": "Dorm routers log ARP table conflicts for multiple MAC addresses. Students report intermittent connectivity issues.",
+      "Output": "ARP spoofing may indicate an attempt to redirect or sniff traffic, possibly for botnet recruitment. Strengthen dorm LAN security settings.",
+      "Sentiment": "Negative",
+      "Score": 0.86,
+      "Metadata": {
+        "threat_type": "misc",
+        "TTP": [
+          "T1557: Man-in-the-Middle"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 6.2,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "mac_addresses": ["00:11:22:33:44:55", "66:77:88:99:AA:BB"],
+          "ip_addresses": ["10.50.0.10", "10.50.0.11"]
+        }
+      }
+    },
+    {
+      "Instruction": "Identify if the presence of a 'ping of death' pattern is causing crashes on older campus routers.",
+      "Input": "ICMP packets larger than the normal MTU size arrive, triggering router restarts and downtime.",
+      "Output": "Classic 'ping of death' DDoS exploit on outdated routers. Update firmware, apply patches, or replace obsolete hardware.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499: Endpoint Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 6.8,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "packet_size": [">65535 bytes"],
+          "device_models": ["RouterXYZ-Old"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if multiple compromised Raspberry Pi devices in a robotics lab are scanning the internet for open ports as part of a botnet.",
+      "Input": "University logs show Pi devices performing port scans on random IP blocks, generating flagged traffic alerts.",
+      "Output": "Evidence suggests the lab devices are recruited into a botnet. Reimage them, secure credentials, and restrict outbound scanning.",
+      "Sentiment": "Negative",
+      "Score": 0.92,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "T1046: Network Service Scanning"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.1,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "IoT Labs"],
+        "IoCs": {
+          "ips": ["10.60.0.5", "10.60.0.6"],
+          "ports": ["all"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if a wave of TCP RST packets halting connectivity to the main campus website is a targeted DDoS tactic.",
+      "Input": "Session logs show an abnormally high number of TCP RST packets from a range of IPs, forcing connections to reset.",
+      "Output": "RST flood DDoS. Implement advanced firewall rules to ignore malicious resets, identify source, and limit connections from suspicious IPs.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499.002: Network Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.4,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "ips": ["203.0.113.55", "203.0.113.56"],
+          "ports": ["443"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if suspicious DNS queries for random subdomains aimed at the library server is a subdomain DDoS attack.",
+      "Input": "Library DNS logs show thousands of unique subdomain requests, e.g. xyz1.library.edu, xyz2.library.edu, saturating resources.",
+      "Output": "Subdomain DDoS attempt. Adjust DNS rate limits, possibly use DNS provider with protective features, and filter out suspicious queries.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499: Endpoint Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.2,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Libraries"],
+        "IoCs": {
+          "domains": ["xyz1.library.edu", "xyz2.library.edu"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if a DDoS extortion email targeting a college IT department is credible, demanding BTC for prevention.",
+      "Input": "Email states: 'Pay 2 BTC or your entire network gets DDoSed for 24 hours starting next Monday.'",
+      "Output": "This is a DDoS-for-Bitcoin extortion attempt. Prepare mitigations, inform law enforcement, and do not pay without thorough assessment.",
+      "Sentiment": "Negative",
+      "Score": 0.94,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "TA0011: Command and Control"
+        ],
+        "Kill_Chain_Stage": "Weaponization",
+        "CVSS": 6.8,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "btc_wallets": ["1DD0SCredibleThreatXYZ"],
+          "email_addresses": ["attacker@extortion.org"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if leftover 'Mirai-like' scripts on an old student Linux server suggest it was part of a prior botnet.",
+      "Input": "Server found with cron jobs pinging suspicious IP daily and referencing Mirai in comment lines.",
+      "Output": "Indicates a previous Mirai infection or variant. Remove malicious scripts, secure server, and monitor for re-infection attempts.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "TA0011: Command and Control",
+          "T1053: Scheduled Task"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 6.7,
+        "Threat_Actor": "Mirai (suspected)",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "scripts": ["mirai_init.sh"],
+          "ips": ["203.0.113.99"]
+        }
+      }
+    },
+    {
+      "Instruction": "Examine if high CPU usage on the campus firewall is due to a volumetric DDoS or firewall misconfiguration.",
+      "Input": "Firewall logs show constant inbound SYN floods saturating CPU. No sign of misconfiguration in rule sets.",
+      "Output": "Likely volumetric SYN flood. Consider hardware upgrades, optimized rules, or cloud-based scrubbing service to offload traffic.",
+      "Sentiment": "Negative",
+      "Score": 0.86,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499.002: Network Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.5,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "ports": ["443", "80"]
+        }
+      }
+    },
+    {
+      "Instruction": "Identify if a multi-vector DDoS combining UDP floods and HTTP GET floods is targeting the campus sports event ticket site.",
+      "Input": "Logs show large UDP volumes on port 8081 plus thousands of GET requests to /tickets, causing website slowdowns.",
+      "Output": "Multi-vector DDoS. Deploy layered mitigation: block UDP floods, filter suspicious GET patterns, and use a specialized DDoS protection service.",
+      "Sentiment": "Negative",
+      "Score": 0.95,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499: Endpoint Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 8.0,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Sports"],
+        "IoCs": {
+          "ports": ["8081"],
+          "urls": ["/tickets"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if campus domain controllers show inbound scanning from a known botnet IP range, indicating potential infiltration attempts.",
+      "Input": "SOC flagged repeated LDAP and Kerberos login attempts from an IP range associated with prior botnet activity.",
+      "Output": "Likely infiltration reconnaissance by a botnet. Lock down domain controllers, filter suspicious IP ranges, and enforce MFA.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "T1133: External Remote Services"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 7.2,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "ips": ["198.51.100.88/29"],
+          "ports": ["389", "88"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if the large spike in TCP FIN packets to the main campus forum is a specialized DDoS or normal session closure.",
+      "Input": "Forum logs: Surges of FIN packets from multiple IPs that do not match typical session patterns, causing resource exhaustion.",
+      "Output": "Likely a FIN flood DDoS variant. Implement session timeout tuning, drop abnormal FIN traffic, and monitor suspicious IP ranges.",
+      "Sentiment": "Negative",
+      "Score": 0.87,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499.002: Network Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 6.8,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "ports": ["443"],
+          "ips": ["203.0.113.157", "203.0.113.158"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if the campus gaming club’s server is part of a global botnet used for DDoS-for-hire services.",
+      "Input": "Investigators found ‘booter’ scripts on the gaming server, referencing attack targets outside the university.",
+      "Output": "Compromised gaming server or an inside threat using it as a booter platform. Remove malicious scripts and secure the system.",
+      "Sentiment": "Negative",
+      "Score": 0.92,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "T1587: Develop Capabilities"
+        ],
+        "Kill_Chain_Stage": "Weaponization",
+        "CVSS": 7.0,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Gaming Community"],
+        "IoCs": {
+          "scripts": ["booter.py", "attack.sh"],
+          "domains": []
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if continual DNS resolution failures on the campus library site are caused by a DNS-based DDoS or internal misconfiguration.",
+      "Input": "Frequent timeouts and 'SERVFAIL' responses appear for library.edu domain from external resolvers.",
+      "Output": "Likely DNS-based DDoS or zone misconfiguration. Verify DNS zone files, enable DNSSEC if possible, and monitor inbound query volume.",
+      "Sentiment": "Negative",
+      "Score": 0.86,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499: Endpoint Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 6.4,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "domains": ["library.edu"]
+        }
+      }
+    },
+    {
+      "Instruction": "Examine logs showing simultaneous inbound traffic from Tor exit nodes targeting the admissions portal with random queries.",
+      "Input": "High volume requests from known Tor IPs, each making random search queries that degrade site performance.",
+      "Output": "Likely Tor-driven DDoS or stress test. Implement rate-limiting or CAPTCHAs for suspicious traffic, consider blocking Tor exit nodes if feasible.",
+      "Sentiment": "Negative",
+      "Score": 0.91,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499.002: Network Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.3,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "tor_exit_nodes": ["1.1.1.1", "2.2.2.2"]
+        }
+      }
+    },
+    {
+      "Instruction": "Identify if an infiltration of multiple student web servers is leading to external DDoS traffic spikes from campus IP ranges.",
+      "Input": "External complaint: large traffic bursts from campus IP blocks hitting gaming servers overseas. Internal logs trace to student-hosted sites.",
+      "Output": "Compromised student servers used for DDoS. Shut down the infected hosts, reimage them, and enforce stricter hosting policies.",
+      "Sentiment": "Negative",
+      "Score": 0.89,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499: Endpoint Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 7.5,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "ips": ["10.70.0.45", "10.70.0.46"],
+          "domains": []
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if a small set of lab machines scanning random ports externally could be the start of a newly formed botnet command center.",
+      "Input": "Machines 10.80.0.10 and 10.80.0.11 are enumerating external IPs on ports 22, 3389, 5900 with no official reason.",
+      "Output": "Possible nascent botnet or scanning operation. Quarantine hosts, investigate root cause, and strengthen perimeter monitoring.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "T1046: Network Service Scanning"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 6.9,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "ips": ["10.80.0.10", "10.80.0.11"],
+          "ports": ["22", "3389", "5900"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if anomalous BGP route announcements from the university’s network are part of a route hijacking scenario enabling DDoS.",
+      "Input": "Monitoring sees unauthorized BGP advertisements for external IP prefixes, associated with high-volume traffic redirection.",
+      "Output": "Potential route hijack used for DDoS or man-in-the-middle. Immediately coordinate with ISP, revoke unauthorized BGP routes, and investigate.",
+      "Sentiment": "Negative",
+      "Score": 0.92,
+      "Metadata": {
+        "threat_type": "misc",
+        "TTP": [
+          "T1583.002: Acquire Infrastructure"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 8.0,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "bgp_prefixes": ["203.0.113.0/24", "198.51.100.0/24"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if a DNS proxy deployed by a student is inadvertently acting as an open resolver, fueling DNS amplification attacks.",
+      "Input": "A personal DNS proxy is responding to external queries, resulting in high outbound traffic to random IPs.",
+      "Output": "Open DNS resolver. Restrict external access or disable recursion. This can be exploited in DNS amplification DDoS attacks.",
+      "Sentiment": "Negative",
+      "Score": 0.87,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499.004: Network Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 6.6,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "domains": [],
+          "ports": ["53"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze abnormal CPU usage on campus mail servers linked to sudden spikes in email bounce traffic, possibly from a spam botnet.",
+      "Input": "Mail queue filled with undeliverable spam messages, CPU pegged at 100%, crowding out legitimate mail.",
+      "Output": "Spam botnet abusing campus mail servers. Implement rate-limiting, enable strict SPF/DKIM checks, and investigate compromised accounts or relays.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "T1071.003: Mail Protocols"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.0,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "email_addresses": [],
+          "ports": ["25"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if malicious TLS scanning tools running on a dorm PC is enumerating external servers for vulnerability exploitation in a future DDoS scenario.",
+      "Input": "Dorm PC discovered running an automated script scanning random IPs for SSL/TLS weaknesses, suspicious timing with known DDoS group activity.",
+      "Output": "Likely reconnaissance for a botnet or DDoS group. Remove the script, reimage the PC if needed, and enforce dorm network policies.",
+      "Sentiment": "Negative",
+      "Score": 0.86,
+      "Metadata": {
+        "threat_type": "misc",
+        "TTP": [
+          "T1046: Network Service Scanning"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 6.8,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Dorm Network"],
+        "IoCs": {
+          "scripts": ["tls_scan.py"],
+          "ips": []
+        }
+      }
+    },
+    {
+      "Instruction": "Identify if external complaints about malicious traffic from the campus IP range targeting gaming servers abroad indicate a DDoS emanation.",
+      "Input": "Gaming service providers report high-volume traffic from multiple campus subnets. Local netflow shows unusual bursts at night.",
+      "Output": "Campus subnets may be part of a DDoS botnet or compromised hosts. Investigate infected machines and block malicious outbound flows.",
+      "Sentiment": "Negative",
+      "Score": 0.92,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499.002: Network Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 7.4,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Gaming Community"],
+        "IoCs": {
+          "subnets": ["10.90.0.0/16"],
+          "ports": ["443", "80"]
+        }
+      }
+    },
+    {
+      "Instruction": "Examine if the repeated CPU overload on campus hypervisors is due to a cryptomining botnet or DDoS stress testing.",
+      "Input": "Hypervisor logs show VMs sending high-bandwidth outbound traffic, plus abnormal CPU usage. No direct cryptomining signatures found.",
+      "Output": "Likely a DDoS botnet leveraging VM resources. Isolate suspect VMs, check for malicious images, and tighten virtualization security.",
+      "Sentiment": "Negative",
+      "Score": 0.89,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "TA0011: Command and Control"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 7.1,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Virtualization"],
+        "IoCs": {
+          "vm_ids": ["vm-101", "vm-102"],
+          "ports": []
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if an on-campus job listing portal is under a credential-stuffing or DDoS attack after noticing repeated login attempts.",
+      "Input": "Portal logs show wave of login attempts from distinct IPs, each attempt tries multiple username-password combos quickly.",
+      "Output": "Likely credential-stuffing leading to partial DDoS. Implement strong rate-limiting, MFA, and block IPs after repeated failures.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "misc",
+        "TTP": [
+          "T1110: Brute Force"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 6.5,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "ips": ["198.51.100.210", "198.51.100.211"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if a newly discovered worm on the campus network is scanning ports and forcibly enrolling devices in a botnet.",
+      "Input": "Multiple endpoints run the same worm binary, scanning for open SMB shares and dropping additional payloads referencing C2 domain.",
+      "Output": "Active worm spreading a botnet agent. Immediately patch SMB vulnerabilities, isolate infected hosts, and block the C2 domain at the firewall.",
+      "Sentiment": "Negative",
+      "Score": 0.93,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "T1091: Replication Through Removable Media",
+          "T1105: Ingress Tool Transfer"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 8.0,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "domains": ["worm-c2.edu-attack.io"],
+          "ports": ["445"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if a massive spike in DNS-based 'TXT record' lookups for campus.edu is part of a new DDoS vector discovered by security researchers.",
+      "Input": "DNS logs show high-volume random queries for TXT records on campus.edu from thousands of IPs across multiple countries.",
+      "Output": "Likely an emergent DNS-based DDoS tactic. Throttle or restrict unusual TXT record queries, and coordinate with DNS providers for mitigation.",
+      "Sentiment": "Negative",
+      "Score": 0.92,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499.004: Network Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.7,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "domains": ["campus.edu"],
+          "dns_record_types": ["TXT"]
+        }
+      }
+    },
+    {
+      "Instruction": "Identify if the eSports club’s dedicated server is broadcasting malicious traffic as part of a broader DDoS campaign on competitor domains.",
+      "Input": "Traffic captures reveal high-volume pings to competitor eSports servers, correlating with match schedules.",
+      "Output": "Potential DDoS or sabotage from campus server. Suspend eSports server usage, investigate responsible parties, and enforce usage policy.",
+      "Sentiment": "Negative",
+      "Score": 0.91,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499.002: Network Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 6.9,
+        "Threat_Actor": "Insider or Rival Team",
+        "Sector_Impact": ["Education", "Gaming Community"],
+        "IoCs": {
+          "domains": ["competitor-esports.org"],
+          "ports": ["7"]
+        }
+      }
+    },
+    {
+      "Instruction": "Examine if repeated broadcast storms from a campus switch indicate a misconfiguration or a malicious attempt at local DoS.",
+      "Input": "Network logs reveal broadcast traffic loops saturating the VLAN, coinciding with an unknown device plugging into a trunk port.",
+      "Output": "Could be accidental loop or malicious broadcast storm. Check STP configurations, identify the unknown device, and isolate it if malicious.",
+      "Sentiment": "Negative",
+      "Score": 0.85,
+      "Metadata": {
+        "threat_type": "misc",
+        "TTP": [
+          "T1499.002: Network Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 6.2,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "device_mac": ["00:AA:BB:CC:DD:EE"],
+          "vlan_id": "101"
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if a wave of SMTP connection attempts from on-campus IPs to external mail servers is part of a spambot or an unprotected open relay scenario.",
+      "Input": "Unusually high outbound mail attempts on port 25 from random lab machines. Many are flagged as spam by external providers.",
+      "Output": "Likely spambot activity or open relay misconfiguration. Restrict outbound SMTP to authorized mail servers, isolate compromised lab devices.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "T1071.003: Mail Protocols"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.3,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "ports": ["25"],
+          "ips": ["10.90.0.100", "10.90.0.101"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if repeated attempts to saturate bandwidth on a campus e-book repository indicate a DDoS aimed at denying student access to course materials.",
+      "Input": "Traffic logs show surges of large file requests from multiple subnets targeting a single e-book PDF repeatedly.",
+      "Output": "Likely application-layer DDoS targeting e-book resources. Enable caching, set download limits, and identify malicious subnets to block them.",
+      "Sentiment": "Negative",
+      "Score": 0.89,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499.002: Network Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.1,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Online Learning"],
+        "IoCs": {
+          "file_paths": ["/ebooks/course101.pdf"],
+          "ips": ["192.168.100.50", "192.168.100.51"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if multiple campus devices continuously probing remote Telnet ports is an indicator of a botnet searching for IoT targets.",
+      "Input": "Network monitoring flags repeated Telnet connection attempts from a range of internal IPs to random external addresses on port 23.",
+      "Output": "Strong sign of an IoT botnet infiltration. Block outbound Telnet at the firewall, scan internal hosts, and patch or disable Telnet services.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "T1046: Network Service Scanning"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.4,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "ports": ["23"],
+          "ip_ranges": []
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if the unusual frequency of HEAD requests to a campus blog platform is part of a stealthy DDoS approach.",
+      "Input": "Apache logs reveal HEAD requests at an extremely high rate, but minimal data transferred, causing server overload.",
+      "Output": "Likely a low-bandwidth DDoS using HEAD requests to stress the server. Adjust resource limits, block excessive HEAD from suspicious IPs.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499.002: Network Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.0,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Blog Services"],
+        "IoCs": {
+          "request_methods": ["HEAD"],
+          "ips": ["203.0.113.210", "203.0.113.211"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if detected Trojan software on an administrative staff computer is calling out to a known C2 domain, potentially enrolling it in a botnet.",
+      "Input": "Endpoint security flagged repeated traffic to admin-c2.attack.net from the staff machine. Trojan signature recognized as Gootkit variant.",
+      "Output": "Trojan likely joined a botnet. Disconnect the staff machine, remove Trojan, rotate credentials, and monitor for further anomalies.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "T1105: Ingress Tool Transfer"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.8,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Administration"],
+        "IoCs": {
+          "domains": ["admin-c2.attack.net"],
+          "malware_family": ["Gootkit"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze the abnormal egress traffic from the computer science department’s HPC cluster that saturates the external link daily at 2 AM.",
+      "Input": "Netflow data: HPC cluster nodes each send 500 Mbps to random IPs at 2 AM, continuing for 30 minutes.",
+      "Output": "Likely a scheduled botnet DDoS window. Inspect HPC job schedules for malicious tasks, restrict outbound bandwidth, and enforce security checks.",
+      "Sentiment": "Negative",
+      "Score": 0.89,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499.002: Network Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 7.9,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Research Labs"],
+        "IoCs": {
+          "ports": [],
+          "ips": []
+        }
+      }
+    },
+    {
+      "Instruction": "Examine if root-level cron jobs on a professor's workstation that curl suspicious URLs indicate a script-based botnet membership.",
+      "Input": "Found a daily cron job: 'curl http://malicious-bot.org/ping' uploading system stats. Professor denies installing it.",
+      "Output": "System compromised, professor’s device part of a botnet. Remove cron job, patch the system, and investigate how it was installed.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "T1053: Scheduled Task"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 6.8,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "domains": ["malicious-bot.org"],
+          "scripts": []
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if traffic to a foreign IP from the campus e-sports lounge, exceeding 1 Gbps, is a booter service controlling a remote DDoS.",
+      "Input": "Logs reveal repeated API calls from lounge PCs to booter-service.xyz with parameters specifying target IP ranges.",
+      "Output": "Likely a booter service usage. Involve campus authorities, block the booter domain, discipline misuse, and secure e-sports lounge systems.",
+      "Sentiment": "Negative",
+      "Score": 0.93,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1587: Develop Capabilities"
+        ],
+        "Kill_Chain_Stage": "Weaponization",
+        "CVSS": 7.4,
+        "Threat_Actor": "Insider (Students)",
+        "Sector_Impact": ["Education", "Gaming Community"],
+        "IoCs": {
+          "domains": ["booter-service.xyz"],
+          "ports": []
+        }
+      }
+    },
+    {
+      "Instruction": "Identify if a custom-coded Python script run by a student is orchestrating a slowloris DDoS on the campus help desk site.",
+      "Input": "Help desk logs show numerous open HTTP connections with incomplete headers, each lasting minutes, from a single lab machine.",
+      "Output": "Slowloris DDoS technique. Terminate the script, warn or discipline the student, and consider implementing request timeouts and concurrency limits.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499.002: Network Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 6.7,
+        "Threat_Actor": "Insider Threat",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "scripts": ["slowloris.py"],
+          "ports": ["80", "443"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if multiple ICS/SCADA devices controlling campus HVAC are sending large outbound packets, possibly part of a botnet.",
+      "Input": "HVAC logs: consistent outbound connections to shady IP addresses on port 2000. Staff deny legitimate remote usage.",
+      "Output": "HVAC systems compromised, likely included in IoT botnet. Urgently patch ICS devices, segment them from general network, and block shady IPs.",
+      "Sentiment": "Negative",
+      "Score": 0.94,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "TA0011: Command and Control"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 8.2,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Facilities Management"],
+        "IoCs": {
+          "ips": ["203.0.113.201"],
+          "ports": ["2000"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if unexplained routing loops in the campus core network are a result of malicious misrouting for a potential DDoS or data capture.",
+      "Input": "Core routers show repeated route changes to the same next hop, creating loops that degrade performance.",
+      "Output": "Possible route manipulation. Validate routing protocols, look for config tampering, and ensure no rogue BGP updates are present.",
+      "Sentiment": "Negative",
+      "Score": 0.85,
+      "Metadata": {
+        "threat_type": "misc",
+        "TTP": [
+          "T1583.002: Acquire Infrastructure"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 7.1,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "router_ids": ["CoreRouter01", "CoreRouter02"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if a flurry of half-open TCP connections to the campus bookstore’s payment gateway is a DDoS meant to disrupt transactions.",
+      "Input": "Payment gateway logs show thousands of half-open sockets, each dropping before completion, causing timeout errors.",
+      "Output": "Likely a SYN flood or half-open TCP DDoS. Enable SYN cookies, reduce default TCP timeout, and consider a higher-capacity firewall solution.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499.002: Network Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.7,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "E-commerce"],
+        "IoCs": {
+          "ports": ["443"],
+          "ips": []
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if daily traffic surges at 11 PM on a departmental file server are due to a planned backup or a hidden DDoS operation from a botnet node.",
+      "Input": "Server usage logs show no official backups scheduled at 11 PM. Yet bandwidth spikes to 500 Mbps outbound.",
+      "Output": "Suspicious unaccounted traffic—possibly a hidden botnet DDoS or data exfiltration. Investigate processes, verify scheduling tasks, and block unknown targets.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "T1092: Communication Through Removable Media"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 7.4,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "timeframe": ["23:00 - 23:30"],
+          "ports": []
+        }
+      }
+    },
+    {
+      "Instruction": "Check if a wave of randomized HEAD, POST, and DELETE requests from unknown user agents are crippling the campus mobile app API.",
+      "Input": "Mobile API logs: thousands of requests from 'X-Bot/3.1' user agent, each request method unpredictable, leading to server queue backlog.",
+      "Output": "Multi-method DDoS. Filter by suspicious user agent, implement request rate-limiting, and possibly block offending IP ranges at the firewall.",
+      "Sentiment": "Negative",
+      "Score": 0.94,
+      "Metadata": {
+        "threat_type": "ddos",
+        "TTP": [
+          "T1499.002: Network Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 7.9,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education", "Mobile Services"],
+        "IoCs": {
+          "user_agents": ["X-Bot/3.1"],
+          "request_methods": ["HEAD", "POST", "DELETE"]
+        }
+      }
+    },
+    {
+      "Instruction": "Identify if repeated RDP attempts from compromised lab machines to external hosts are a sign they’re part of a remote-desktop botnet infiltration.",
+      "Input": "Lab PCs attempt RDP sessions to random IP addresses at frequent intervals, each attempt failing after a few seconds.",
+      "Output": "Suggests a botnet scanning or infiltration scheme. Block outbound RDP to unknown destinations, reimage infected lab PCs, and investigate logs thoroughly.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "botnet",
+        "TTP": [
+          "T1133: External Remote Services"
+        ],
+        "Kill_Chain_Stage": "Command & Control",
+        "CVSS": 6.9,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "ports": ["3389"],
+          "ips": []
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if email phishing targeting faculty with links to a booter service is inciting them to launch DDoS attacks on rival institutions.",
+      "Input": "Phishing email: 'Boost your departmental standings—take down competitor's site with our easy booter platform!'",
+      "Output": "This is malicious social engineering encouraging DDoS. Warn faculty, block booter domain, and remind them of ethical/legal issues.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "misc",
+        "TTP": [
+          "T1566: Phishing"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 5.9,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education"],
+        "IoCs": {
+          "domains": ["ezbooter.io"],
+          "email_addresses": ["phishing@scam.net"]
+        }
+      }
+    }
+  ]
+  

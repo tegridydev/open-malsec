@@ -1,0 +1,1244 @@
+[
+    {
+      "Instruction": "Check if the SMS link is phishing or a legitimate bank notification.",
+      "Input": "SMS: 'Urgent! Your account is locked. Click http://phishy-site.com to verify.'",
+      "Output": "Likely SMS-based phishing. Advise users not to click and to contact the bank through official channels.",
+      "Sentiment": "Negative",
+      "Score": 0.96,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "TA0001: Initial Access",
+          "T1566: Phishing"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 5.7,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Retail Banking"],
+        "IoCs": {
+          "domains": ["phishy-site.com"],
+          "phone_numbers": ["+1-555-123-4567"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze the APK to determine malicious behavior and recommend countermeasures.",
+      "Input": "The APK requests camera, microphone, SMS, and location permissions at install time. Code analysis reveals possible data exfiltration routines.",
+      "Output": "Suspicious permissions indicate malicious APK. Countermeasures: block installation, use MDM solutions, and check for known signatures in threat databases.",
+      "Sentiment": "Negative",
+      "Score": 0.92,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1056: Input Capture",
+          "T1412: Data from Local System (Mobile)"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 6.8,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "file_hashes": ["abcdef123456..."],
+          "package_names": ["com.example.malware"],
+          "permissions": ["CAMERA", "RECORD_AUDIO", "READ_SMS", "ACCESS_FINE_LOCATION"]
+        }
+      }
+    },
+    {
+      "Instruction": "Identify if this gaming application exhibits malicious adware behavior.",
+      "Input": "User complaints about excessive ads popping up and redirecting to unknown sites after installing a new mobile game.",
+      "Output": "Indicators suggest adware infiltration. Remove the app and run mobile antivirus to clear adware residues.",
+      "Sentiment": "Negative",
+      "Score": 0.89,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "TA0005: Defense Evasion",
+          "T1406: Obfuscated Files or Information"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 4.2,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Gaming Community"],
+        "IoCs": {
+          "package_names": ["com.fakegaming.adware"],
+          "domains": ["random-ads.site"],
+          "permissions": ["INTERNET", "READ_EXTERNAL_STORAGE"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if this mobile message claiming a lottery win is a scam.",
+      "Input": "SMS: 'Congratulations! You won $10,000. Click here to claim now: http://lotto-fraud.com.'",
+      "Output": "Likely a scam attempting to collect personal details or payment. Users should ignore and block sender.",
+      "Sentiment": "Negative",
+      "Score": 0.95,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "TA0001: Initial Access",
+          "T1566: Phishing"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 3.8,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "domains": ["lotto-fraud.com"],
+          "phone_numbers": ["+1-555-987-6543"]
+        }
+      }
+    },
+    {
+      "Instruction": "Assess whether an app requesting device admin rights is malicious.",
+      "Input": "User reports random app update demanding admin rights, claiming it's for 'enhanced security'.",
+      "Output": "Suspicious. Unless the app is trusted, requesting admin rights could indicate potential malware or ransomware attempts.",
+      "Sentiment": "Negative",
+      "Score": 0.91,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1472: Exploit via Charging Station or Adapter",
+          "T1406: Obfuscated Files or Information"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 5.1,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "package_names": ["com.suspicioussecurity.app"],
+          "permissions": ["DEVICE_ADMIN"]
+        }
+      }
+    },
+    {
+      "Instruction": "Detect if the attached PDF in a mobile email is malicious.",
+      "Input": "User received a PDF claiming to be an invoice, but scanning reveals embedded macros for data exfiltration.",
+      "Output": "Malicious PDF with hidden macros. Advise immediate deletion and scanning of the device.",
+      "Sentiment": "Negative",
+      "Score": 0.94,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1456: Malicious or Vulnerable Driver",
+          "T1417: Malicious Multimedia Message"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 6.2,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Small Business"],
+        "IoCs": {
+          "file_extensions": [".pdf"],
+          "email_addresses": ["invoice@fraudulent.com"],
+          "hashes": ["123abc567def..."]
+        }
+      }
+    },
+    {
+      "Instruction": "Investigate if a newly sideloaded iOS app exhibits Trojan behavior.",
+      "Input": "Enterprise-signed iOS app is collecting SMS logs and forwarding them to an unknown server.",
+      "Output": "This is indicative of a Trojan. The app should be removed, enterprise certificates revoked, and logs examined for exfiltrated data.",
+      "Sentiment": "Negative",
+      "Score": 0.93,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1407: Install Insecure or Malicious Configuration",
+          "T1414: Exploit OS Vulnerability"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 7.3,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Enterprise Mobility"],
+        "IoCs": {
+          "package_names": ["com.enterprise.trojanapp"],
+          "domains": ["unknown-server.net"],
+          "permissions": ["READ_SMS", "INTERNET"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check for signs of a malicious keyboard app installed on Android.",
+      "Input": "Keyboard app demands contact list and location data. Observed unusual network traffic while typing messages.",
+      "Output": "Highly suspicious. This keyboard app may be logging keystrokes and sending them to external servers. Uninstall immediately.",
+      "Sentiment": "Negative",
+      "Score": 0.96,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1056: Input Capture"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 7.1,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "package_names": ["com.keylogger.keyboard"],
+          "permissions": ["READ_CONTACTS", "ACCESS_FINE_LOCATION"],
+          "domains": ["malicious-keyboard.net"]
+        }
+      }
+    },
+    {
+      "Instruction": "Evaluate if the suspicious text from a government agency is authentic.",
+      "Input": "SMS claims: 'This is the IRS. Pay overdue taxes immediately at http://irs-gov-pay.com or face legal action.'",
+      "Output": "Scam. Official agencies rarely request payments via SMS or non-official domains.",
+      "Sentiment": "Negative",
+      "Score": 0.97,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1566: Phishing"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 3.7,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "domains": ["irs-gov-pay.com"],
+          "phone_numbers": ["+1-555-IRS-0000"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze an Android message containing an unusual link for job offers.",
+      "Input": "SMS: 'Get your dream job now: https://unknownjobs.net/apply. It's urgent!'",
+      "Output": "Likely phishing or scam. Unsolicited job offers requesting personal details are red flags for fraud.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1566: Phishing"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 4.0,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Job Seekers"],
+        "IoCs": {
+          "domains": ["unknownjobs.net"],
+          "phone_numbers": ["+1-555-243-9999"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if a newly discovered iOS bug allowing remote device restarts could be exploited.",
+      "Input": "The vulnerability triggers a crash via malformed Wi-Fi SSID names, forcing repeated restarts upon connection.",
+      "Output": "High potential for DoS. Patch recommended and avoid connecting to untrusted Wi-Fi networks until fix is deployed.",
+      "Sentiment": "Negative",
+      "Score": 0.89,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1499: Endpoint Denial of Service"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 7.5,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "wifi_ssid_patterns": ["%p%s%s%s%s%n"]
+        }
+      }
+    },
+    {
+      "Instruction": "Identify if the background push notifications are part of a fraudulent subscription scheme.",
+      "Input": "User found hidden charges after installing a free weather app. The app secretly subscribed them to premium SMS services.",
+      "Output": "This is a premium SMS fraud. Users should unsubscribe, contact carrier for refunds, and remove the app.",
+      "Sentiment": "Negative",
+      "Score": 0.94,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1486: Data Encrypted for Impact" 
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 5.5,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "package_names": ["com.weatherapp.scam"],
+          "permissions": ["SEND_SMS", "RECEIVE_SMS"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if repeated push alerts from a finance tracking app indicate malicious spam.",
+      "Input": "The finance app sends notifications with embedded links to unknown domains every hour.",
+      "Output": "Likely malicious spam. App potentially hijacked or updated with adware components. Uninstall or revert to a safe version.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1417: Malicious Multimedia Message"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 4.8,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Financial Apps"],
+        "IoCs": {
+          "package_names": ["com.finance.tracker"],
+          "domains": ["strange-alerts.biz"]
+        }
+      }
+    },
+    {
+      "Instruction": "Evaluate if location-based ads triggered by a suspicious background process are a threat.",
+      "Input": "Device is sending GPS data to a foreign server without user consent, resulting in targeted location-based popups.",
+      "Output": "Malware or spyware collecting location data. Recommend removing the offending app, restricting location services, and scanning for other threats.",
+      "Sentiment": "Negative",
+      "Score": 0.95,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1406: Obfuscated Files or Information",
+          "T1424: Disguise Root/Jailbreak Indicators"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 6.0,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Marketing Surveillance"],
+        "IoCs": {
+          "domains": ["unverified-ads.com"],
+          "permissions": ["ACCESS_FINE_LOCATION"],
+          "ip_addresses": ["203.0.113.45"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if suspicious code in a social media app update could harvest user credentials.",
+      "Input": "Recent update forcibly logs users out and requests credentials via an in-app web form not matching the official domain.",
+      "Output": "Phishing technique embedded in the app. Credentials are likely redirected to a malicious server. Users should uninstall and reset passwords.",
+      "Sentiment": "Negative",
+      "Score": 0.93,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1566.001: Spearphishing Attachment"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 7.4,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Social Media Users"],
+        "IoCs": {
+          "package_names": ["com.socialmedia.update"],
+          "domains": ["fake-login.page"],
+          "permissions": ["INTERNET"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if a newly discovered side-loading exploit on Android devices is a security threat.",
+      "Input": "Exploit uses debug mode on certain OEM devices to install malicious system apps without user authorization.",
+      "Output": "Serious threat. Update firmware immediately, disable debug mode, and only install apps from official stores.",
+      "Sentiment": "Negative",
+      "Score": 0.91,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1407: Install Insecure or Malicious Configuration"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 8.1,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["OEM Android Vendors"],
+        "IoCs": {
+          "file_hashes": ["1234abcd5678efgh"],
+          "permissions": ["INSTALL_PACKAGES"]
+        }
+      }
+    },
+    {
+      "Instruction": "Identify if a rogue VPN app is harvesting user browsing data.",
+      "Input": "Free VPN for mobile requests extensive permissions and logs all visited URLs, sending them to an unknown server.",
+      "Output": "Likely data-harvesting malware disguised as a VPN. Remove the app and switch to a reputable provider.",
+      "Sentiment": "Negative",
+      "Score": 0.95,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1412: Data from Local System (Mobile)"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 6.9,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "domains": ["unknown-vpn.net"],
+          "permissions": ["BIND_VPN_SERVICE", "READ_HISTORY_BOOKMARKS"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if a FaceTime bug can be exploited for eavesdropping.",
+      "Input": "A bug triggers a call that auto-answers before the recipient accepts, broadcasting audio in real time.",
+      "Output": "Severe privacy issue. Users should update iOS immediately to patch. Temporary workaround: disable FaceTime.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1414: Exploit OS Vulnerability"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 7.8,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "system_component": ["FaceTime Module"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze spam texts with .apk links claiming to be security updates.",
+      "Input": "SMS: 'Download this update to secure your phone: http://malicious-update.com/app.apk'",
+      "Output": "Fake security update distributing malware. Do not install; remove any downloaded files immediately.",
+      "Sentiment": "Negative",
+      "Score": 0.96,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1566: Phishing"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 6.2,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "domains": ["malicious-update.com"],
+          "file_extensions": [".apk"]
+        }
+      }
+    },
+    {
+      "Instruction": "Assess if an Android library used by popular apps is leaking user data.",
+      "Input": "Security researchers found an unencrypted analytics library sending user PII to external servers.",
+      "Output": "Data leakage risk. Urgent patch needed for all apps using the library; notify users and enforce encryption.",
+      "Sentiment": "Negative",
+      "Score": 0.92,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1412: Data from Local System (Mobile)"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 5.9,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Mobile App Ecosystem"],
+        "IoCs": {
+          "library_name": ["com.analytics.exposed"],
+          "domains": ["analytics-leak.io"]
+        }
+      }
+    },
+    {
+      "Instruction": "Investigate if a malicious wallpaper app escalates privileges to install more payloads.",
+      "Input": "The wallpaper app includes code to root the device silently and then download additional malicious modules.",
+      "Output": "This is a root exploit in disguise. Remove the app, re-flash the device if compromised, and run thorough scans.",
+      "Sentiment": "Negative",
+      "Score": 0.93,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1404: Exploitation for Privilege Escalation"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 8.6,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "package_names": ["com.wallpaper.rootexploit"],
+          "permissions": ["ROOT_ACCESS", "READ_WRITE_STORAGE"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if a wearable companion app is siphoning user health data.",
+      "Input": "Data packets from the companion app show unencrypted heart rate and sleep data sent to external domains.",
+      "Output": "This is a privacy breach. Immediate steps: uninstall or revoke permissions, contact vendor for official fix.",
+      "Sentiment": "Negative",
+      "Score": 0.91,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1412: Data from Local System (Mobile)"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 5.8,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Wearables Market"],
+        "IoCs": {
+          "domains": ["health-data-logger.com"],
+          "permissions": ["BLUETOOTH", "BODY_SENSORS"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze an iOS bug that breaks sandbox restrictions for certain apps.",
+      "Input": "Apps can read system logs, including other app data, bypassing normal sandbox isolation.",
+      "Output": "Severe vulnerability. Apple patch recommended. Restrict app installations until the OS is updated.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1414: Exploit OS Vulnerability"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 8.2,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers", "Corporate BYOD"],
+        "IoCs": {
+          "system_component": ["iOS Sandbox"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check for cryptomining malware in a mobile budgeting app.",
+      "Input": "Users notice high CPU usage and battery drain after app launch. Code reveals hidden cryptomining scripts.",
+      "Output": "Cryptomining malware. Remove the app to conserve device resources and avoid unauthorized usage of hardware.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1496: Resource Hijacking"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 6.5,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "package_names": ["com.budgeting.miner"],
+          "permissions": ["WAKE_LOCK"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if an iMessage exploit can install spyware on an iPhone without user interaction.",
+      "Input": "A zero-click exploit in iMessage allows silent installation of spyware, granting camera and mic access.",
+      "Output": "Extremely dangerous zero-click exploit. Immediate OS update critical. Potentially an APT-level threat.",
+      "Sentiment": "Negative",
+      "Score": 0.99,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1414: Exploit OS Vulnerability"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 9.3,
+        "Threat_Actor": "Advanced Persistent Threat (APT)",
+        "Sector_Impact": ["High-Profile Individuals", "Government Officials"],
+        "IoCs": {
+          "system_component": ["iMessage"],
+          "file_hashes": ["spyware-implant-123..."]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if this text from a known contact but with a different phone number is suspicious.",
+      "Input": "'Hey, I changed my number. Can you send me your bank details again?'",
+      "Output": "Likely impersonation scam. Confirm contact's identity via other channels before sharing any information.",
+      "Sentiment": "Negative",
+      "Score": 0.87,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1566: Phishing"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 3.4,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "phone_numbers": ["+1-555-000-1234"]
+        }
+      }
+    },
+    {
+      "Instruction": "Identify potential man-in-the-middle (MitM) attacks on a public Wi-Fi connection used by a mobile device.",
+      "Input": "Unencrypted traffic logs show suspicious redirects and SSL errors when using public Wi-Fi.",
+      "Output": "Possible MitM. Users should avoid transmitting sensitive data on unencrypted connections. Use VPN or secured Wi-Fi.",
+      "Sentiment": "Negative",
+      "Score": 0.93,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1557: Man-in-the-Middle"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 6.3,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "domains": ["fake-certificate.authority"],
+          "wifi_ssid_patterns": ["Free_Public_WiFi"]
+        }
+      }
+    },
+    {
+      "Instruction": "Examine if a new firmware update from a lesser-known vendor includes hidden backdoors.",
+      "Input": "Analysis of the update shows an unknown service listening on port 5555, granting root shell access remotely.",
+      "Output": "Potential vendor backdoor. Immediately block network access, contact vendor for verification, or revert firmware.",
+      "Sentiment": "Negative",
+      "Score": 0.94,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1407: Install Insecure or Malicious Configuration"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 7.9,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["OEM Vendors"],
+        "IoCs": {
+          "ports": ["5555"],
+          "permissions": ["ROOT_ACCESS"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if location-based dating apps might be used for stalking or personal data exploitation.",
+      "Input": "An app exposes user GPS coordinates in near real-time without masking or user consent.",
+      "Output": "High risk for stalking or malicious use. Advise removing the app or restricting location sharing features.",
+      "Sentiment": "Negative",
+      "Score": 0.89,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1412: Data from Local System (Mobile)"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 5.2,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Social Networking"],
+        "IoCs": {
+          "permissions": ["ACCESS_FINE_LOCATION"]
+        }
+      }
+    },
+    {
+      "Instruction": "Evaluate an in-app purchase system that might be leaking credit card details.",
+      "Input": "Payment logs captured in plaintext via an unsecured channel, storing full credit card info on a third-party server.",
+      "Output": "Payment data leak. Users at high financial risk. Shut down the in-app purchase feature and force encryption.",
+      "Sentiment": "Negative",
+      "Score": 0.95,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1412: Data from Local System (Mobile)"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 8.0,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["E-commerce Apps"],
+        "IoCs": {
+          "domains": ["insecure-payment.com"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if a new rootkit discovered in the vendor's firmware can compromise OS security on Android devices.",
+      "Input": "Researchers found hidden system binaries with root privileges installed by default on certain phone models.",
+      "Output": "Likely a rootkit at the firmware level. Patch or firmware replacement required; consider vendor recall if widespread.",
+      "Sentiment": "Negative",
+      "Score": 0.97,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1404: Exploitation for Privilege Escalation"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 9.1,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["OEM Android Vendors"],
+        "IoCs": {
+          "system_component": ["default-privileged-binary"],
+          "ports": []
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if a malicious .ipa file was distributed via TestFlight for iOS.",
+      "Input": "Beta testers report unauthorized camera usage and microphone activation in the background.",
+      "Output": "Malicious .ipa likely designed for spyware. Remove from TestFlight distribution and advise testers to uninstall and reset device permissions.",
+      "Sentiment": "Negative",
+      "Score": 0.93,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1056: Input Capture"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 7.4,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Beta Testers"],
+        "IoCs": {
+          "file_extensions": [".ipa"],
+          "permissions": ["CAMERA", "MICROPHONE"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze an Android Trojan disguised as a battery optimization tool.",
+      "Input": "Tool persistently runs in the background, capturing keystrokes and sending them to remote C2 servers.",
+      "Output": "A standard Trojan. Instruct users to uninstall, block outbound connections to C2, and run AV scans.",
+      "Sentiment": "Negative",
+      "Score": 0.92,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1056: Input Capture"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 7.7,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "package_names": ["com.battery.booster"],
+          "domains": ["trojan-c2.com"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if a suspicious call-blocker app is actually collecting call audio recordings.",
+      "Input": "Analysis shows hidden code capturing call audio and sending it to an IP in another country.",
+      "Output": "Illicit eavesdropping. Immediate uninstall recommended. Potential legal implications for developers.",
+      "Sentiment": "Negative",
+      "Score": 0.95,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1420: Audio Capture"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 7.2,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "package_names": ["com.callblocker.spy"],
+          "ip_addresses": ["198.51.100.10"]
+        }
+      }
+    },
+    {
+      "Instruction": "Detect if a 'free scanning tool' on iOS is hijacking the camera roll and uploading images.",
+      "Input": "The app claims to convert images to PDF but triggers uploads of entire camera roll to remote servers.",
+      "Output": "Highly intrusive behavior, akin to spyware. Revoke the app's photo permissions and uninstall.",
+      "Sentiment": "Negative",
+      "Score": 0.91,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1412: Data from Local System (Mobile)"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 6.5,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "domains": ["image-upload.co"],
+          "permissions": ["PHOTO_LIBRARY"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze a malicious iOS configuration profile that bypasses default security settings.",
+      "Input": "Profile installs root certificates enabling SSL interception for all device traffic.",
+      "Output": "Serious security risk. Remove the profile, revoke certificates, and reset network settings immediately.",
+      "Sentiment": "Negative",
+      "Score": 0.94,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1407: Install Insecure or Malicious Configuration"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 8.3,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Enterprise Mobility"],
+        "IoCs": {
+          "certificates": ["RootCA-Install.mobileconfig"]
+        }
+      }
+    },
+    {
+      "Instruction": "Evaluate if an Android game hack tool includes hidden remote access trojan (RAT) capabilities.",
+      "Input": "The hack tool promises in-game currency but also opens TCP ports and listens for commands from unknown IPs.",
+      "Output": "Likely an Android RAT. Users should remove the hack tool, reset credentials, and block suspicious IP addresses.",
+      "Sentiment": "Negative",
+      "Score": 0.93,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1069.001: Local Account"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 7.6,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Gaming Community"],
+        "IoCs": {
+          "ports": ["8080"],
+          "ip_addresses": ["203.0.113.200"],
+          "package_names": ["com.gamehack.rat"]
+        }
+      }
+    },
+    {
+      "Instruction": "Assess an iOS photo filter app that silently subscribes users to premium plans.",
+      "Input": "Multiple users report unexpected credit card charges after installing the 'free' filter app.",
+      "Output": "Unethical subscription model or scam. Remove the app, dispute charges, and warn other users.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1486: Data Encrypted for Impact" 
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 5.1,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "package_names": ["com.photofilter.scam"],
+          "permissions": ["APP_PURCHASE"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if the built-in QR code scanner on certain Android devices is sending data to third parties.",
+      "Input": "Scanner logs every scanned URL and product barcode, forwarding them to an analytics domain.",
+      "Output": "Data privacy concern. Urge vendor to remove or secure the data flow, or use trusted third-party scanners.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1412: Data from Local System (Mobile)"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 4.9,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["OEM Android Vendors"],
+        "IoCs": {
+          "domains": ["qr-analytics.com"]
+        }
+      }
+    },
+    {
+      "Instruction": "Examine if a digital wallet app is deliberately obfuscating transaction logs for money laundering.",
+      "Input": "Forensic analysis shows tampered or missing logs for high-value transactions in the wallet's internal database.",
+      "Output": "App may facilitate money laundering. Regulatory bodies should investigate; uninstall or suspend usage pending review.",
+      "Sentiment": "Negative",
+      "Score": 0.97,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1492: Stored Data Manipulation"
+        ],
+        "Kill_Chain_Stage": "Actions on Objectives",
+        "CVSS": 8.4,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Financial Services"],
+        "IoCs": {
+          "package_names": ["com.digitalwallet.suspicious"]
+        }
+      }
+    },
+    {
+      "Instruction": "Evaluate whether a Bluetooth-based tracking app is collecting user IDs and location data without consent.",
+      "Input": "App logs reveal user IDs mapped to approximate GPS positions each time Bluetooth beacons are detected.",
+      "Output": "Unauthorized surveillance. Remove or restrict app, and require explicit opt-in for location tracking.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1412: Data from Local System (Mobile)"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 5.7,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Retail Analytics"],
+        "IoCs": {
+          "domains": ["tracking-beacons.net"],
+          "permissions": ["BLUETOOTH", "ACCESS_FINE_LOCATION"]
+        }
+      }
+    },
+    {
+      "Instruction": "Detect if a malicious push notification library is auto-installing new modules without user knowledge.",
+      "Input": "Developers found a push SDK that downloads hidden .apk modules in the background when users connect to Wi-Fi.",
+      "Output": "Malicious auto-installation. Remove the SDK and re-release app updates without it. Users should reinstall the clean version.",
+      "Sentiment": "Negative",
+      "Score": 0.92,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1407: Install Insecure or Malicious Configuration"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 7.0,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Mobile Developers"],
+        "IoCs": {
+          "file_extensions": [".apk"],
+          "domains": ["push-malware.net"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze an iOS glitch that leaks HomeKit device data to third-party apps.",
+      "Input": "Bug in iOS HomeKit framework reveals device IP addresses and status to unauthorized apps.",
+      "Output": "Privacy vulnerability. Patch required. Meanwhile, restrict third-party app access to HomeKit data.",
+      "Sentiment": "Negative",
+      "Score": 0.89,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1414: Exploit OS Vulnerability"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 6.6,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Smart Home Users"],
+        "IoCs": {
+          "system_component": ["iOS HomeKit"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if a refurbished phone's pre-installed apps are injecting ads and collecting user info.",
+      "Input": "Users with second-hand devices notice forced ads in system UI and data usage spikes from unknown background processes.",
+      "Output": "Pre-installed adware. Flash official ROM or remove suspicious system apps, then scan the device thoroughly.",
+      "Sentiment": "Negative",
+      "Score": 0.95,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1406: Obfuscated Files or Information"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 6.1,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Used Device Market"],
+        "IoCs": {
+          "package_names": ["com.system.adinjector"],
+          "domains": ["ads-inject.com"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if a newly discovered vulnerability in Android's NFC stack can be exploited for data theft.",
+      "Input": "Researchers demonstrate that a custom NFC tag can force the phone to install malicious payloads if NFC is enabled.",
+      "Output": "Critical NFC exploit. Disable NFC when not in use and apply patches from OEM as soon as available.",
+      "Sentiment": "Negative",
+      "Score": 0.9,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1428: Exploit Network Protocols"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 8.2,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "system_component": ["NFC Stack"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if an iOS music player application logs user search queries to a public server.",
+      "Input": "Encrypted traffic analysis reveals plaintext logs of songs searched and user IDs posted to an unprotected endpoint.",
+      "Output": "Privacy violation. Urgent fix or removal recommended. Data is accessible to anyone intercepting the traffic.",
+      "Sentiment": "Negative",
+      "Score": 0.86,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1412: Data from Local System (Mobile)"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 5.4,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Media Streaming"],
+        "IoCs": {
+          "domains": ["music-logs.com"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if forced system ads on an entry-level phone brand are an intentional revenue stream or malicious software.",
+      "Input": "The device came with a 'System Ads' service that runs at boot, cannot be disabled, and displays full-screen ads.",
+      "Output": "Likely bloatware or adware. While it may be from the OEM, it compromises user experience and privacy. Recommend alternative firmware or vendor resolution.",
+      "Sentiment": "Negative",
+      "Score": 0.88,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1406: Obfuscated Files or Information"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 3.9,
+        "Threat_Actor": "OEM Partner",
+        "Sector_Impact": ["Budget Phone Users"],
+        "IoCs": {
+          "package_names": ["com.system.ads"],
+          "domains": []
+        }
+      }
+    },
+    {
+      "Instruction": "Check if a malicious push notification disguised as a system update requests credit card information.",
+      "Input": "A system popup claims: 'Enter card details to verify identity before continuing OS update.'",
+      "Output": "Phishing scam. System updates never require credit card info. Advise users to cancel and ignore.",
+      "Sentiment": "Negative",
+      "Score": 0.97,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1566: Phishing"
+        ],
+        "Kill_Chain_Stage": "Delivery",
+        "CVSS": 4.4,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "domains": [],
+          "phone_numbers": []
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze repeated pop-ups asking for accessibility permissions in a new utility app.",
+      "Input": "Users see random prompts for Accessibility Services to 'improve performance,' but code reveals the app can overlay screens for phishing.",
+      "Output": "Malware exploiting accessibility overlay. Urge users to deny permission and uninstall the app.",
+      "Sentiment": "Negative",
+      "Score": 0.94,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1410: Use of Deobfuscation or Decoding"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 7.1,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "package_names": ["com.utility.access"],
+          "permissions": ["ACCESSIBILITY_SERVICE"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if an iOS parental control app is illegally logging social media usage and message content.",
+      "Input": "Logs show timestamps and partial message text from various social platforms, all sent to the app's server.",
+      "Output": "Overreaching data capture, likely violating privacy regulations. Users should switch to a known reputable parental control solution.",
+      "Sentiment": "Negative",
+      "Score": 0.92,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1056: Input Capture"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 6.3,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Parents", "Minors"],
+        "IoCs": {
+          "package_names": ["com.parental.spyapp"],
+          "domains": ["activity-logger.net"]
+        }
+      }
+    },
+    {
+      "Instruction": "Examine if the free background wallpaper app that automatically changes daily backgrounds is draining data.",
+      "Input": "App downloads large images from random servers every 15 minutes, ignoring user data limits.",
+      "Output": "Possible data-harvesting or adware. Remove or limit usage; developer must provide an option to reduce bandwidth usage.",
+      "Sentiment": "Negative",
+      "Score": 0.86,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1406: Obfuscated Files or Information"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 3.8,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "package_names": ["com.wallpaper.dailychanger"],
+          "domains": ["random-image-source.org"]
+        }
+      }
+    },
+    {
+      "Instruction": "Identify if a proprietary corporate Android app is leaking confidential emails to a third-party analytics platform.",
+      "Input": "Post-analysis shows email contents included in analytics logs. The logs are publicly accessible via a misconfigured bucket.",
+      "Output": "Leaking sensitive corporate data. Immediately disable analytics, secure the bucket, and update the app to prevent data exfiltration.",
+      "Sentiment": "Negative",
+      "Score": 0.94,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1412: Data from Local System (Mobile)"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 8.3,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Corporate BYOD"],
+        "IoCs": {
+          "domains": ["open-analytics.bucket.com"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if a suspicious custom ROM on Android is embedding a keylogger.",
+      "Input": "Custom ROM downloads from a shady forum. Users notice typed passwords appearing in logs forwarded to an IP.",
+      "Output": "Keylogger embedded. Strongly recommend flashing official firmware or a verified custom ROM from trusted sources.",
+      "Sentiment": "Negative",
+      "Score": 0.96,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1056: Input Capture"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 9.0,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Custom ROM Community"],
+        "IoCs": {
+          "ip_addresses": ["198.51.100.99"],
+          "package_names": ["com.customrom.keylogger"]
+        }
+      }
+    },
+    {
+      "Instruction": "Check if the ephemeral messaging app is truly deleting chats or storing them on a hidden server.",
+      "Input": "Forensic snapshot found older messages recoverable from the app’s encrypted database and references to an unknown domain.",
+      "Output": "Misleading ephemeral claims. Chats not fully deleted. Potential privacy breach; remove or limit usage immediately.",
+      "Sentiment": "Negative",
+      "Score": 0.89,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1412: Data from Local System (Mobile)"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 5.6,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Chat & Messaging Services"],
+        "IoCs": {
+          "domains": ["hidden-server.chatapp.com"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if an educational app is covertly mining personal data for targeted advertising.",
+      "Input": "Parents report the app requesting excessive permissions and seeing tailored ads for children’s personal interests.",
+      "Output": "Violates child privacy guidelines. Remove or restrict the app. Urge developer compliance with COPPA or similar regulations.",
+      "Sentiment": "Negative",
+      "Score": 0.92,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1412: Data from Local System (Mobile)"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 6.0,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Education Sector", "Minors"],
+        "IoCs": {
+          "package_names": ["com.edutech.kidsapp"],
+          "permissions": ["READ_CONTACTS", "RECORD_AUDIO"]
+        }
+      }
+    },
+    {
+      "Instruction": "Detect if an iOS wallpaper site’s Safari extension is injecting malicious JavaScript.",
+      "Input": "Extension claims to optimize wallpapers, but it modifies all web traffic, injecting trackers and script redirects.",
+      "Output": "Malicious extension. Revoke Safari extension access and run a device scan. Avoid unverified extensions.",
+      "Sentiment": "Negative",
+      "Score": 0.93,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1406: Obfuscated Files or Information"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 6.7,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "domains": ["wallpaper-redirect.com"]
+        }
+      }
+    },
+    {
+      "Instruction": "Examine whether a call recorder app is illegally storing user calls in an unsecured online database.",
+      "Input": "Researchers discovered open directories listing .wav files along with user phone numbers and timestamps.",
+      "Output": "Severe privacy breach. Disable or remove the app, secure the directory, and notify affected users.",
+      "Sentiment": "Negative",
+      "Score": 0.95,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1420: Audio Capture"
+        ],
+        "Kill_Chain_Stage": "Installation",
+        "CVSS": 7.8,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "file_extensions": [".wav"],
+          "domains": ["open-call-records.com"]
+        }
+      }
+    },
+    {
+      "Instruction": "Analyze if a GPS spoofing tool is covertly collecting real GPS data and selling it.",
+      "Input": "The tool fakes location but logs real coordinates in background, uploading them to a marketplace for location-based data.",
+      "Output": "Double-dealing tool. Avoid using the spoofing app; it’s monetizing real user data.",
+      "Sentiment": "Negative",
+      "Score": 0.94,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1412: Data from Local System (Mobile)"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 6.4,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["General Consumers"],
+        "IoCs": {
+          "package_names": ["com.gps.spoof"],
+          "domains": ["location-market.io"]
+        }
+      }
+    },
+    {
+      "Instruction": "Determine if a newly discovered NFC payment overlay allows attackers to skim payment credentials.",
+      "Input": "Malicious overlay pops up during legitimate NFC payment, capturing card details before passing them to the real payment process.",
+      "Output": "Skimming malware. Urgent fix required to block overlays. Advise disabling NFC payments or using biometric checks.",
+      "Sentiment": "Negative",
+      "Score": 0.99,
+      "Metadata": {
+        "threat_type": "mobile",
+        "TTP": [
+          "T1428: Exploit Network Protocols",
+          "T1056: Input Capture"
+        ],
+        "Kill_Chain_Stage": "Exploitation",
+        "CVSS": 8.5,
+        "Threat_Actor": "Unknown",
+        "Sector_Impact": ["Mobile Payments"],
+        "IoCs": {
+          "permissions": ["NFC"],
+          "package_names": ["com.payment.overlay"]
+        }
+      }
+    }
+  ]
+  

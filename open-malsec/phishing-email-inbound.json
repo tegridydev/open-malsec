@@ -617,9 +617,7 @@
           "Generic 'someone requested' claim",
           "Likely credential-harvesting page"
         ]
-      }
-   ,
-    {
+      },
       "id": 32,
       "instruction": "Classify this email from a 'gaming platform' about a reward code. Is it phishing?",
       "input": {
